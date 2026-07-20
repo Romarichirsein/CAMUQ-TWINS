@@ -1,0 +1,6 @@
+{
+  "name": "CAMUQ & TWINS EMPIRE",
+  "description": "Services secrétariat bureautique bilingue, imprimerie numérique, formations professionnelles certifiantes, services financiers et boutique en ligne.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
