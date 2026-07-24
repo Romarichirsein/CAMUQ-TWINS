@@ -49,7 +49,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
           </div>
           <div className="flex items-center gap-3 text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-yellow-400">
             <Globe className="w-3.5 h-3.5 animate-spin-slow text-white" />
-            <span>Papeterie Bilingue & Services</span>
+            <span>Commerce Général - Édition - Prestation de services</span>
           </div>
         </div>
       </div>
