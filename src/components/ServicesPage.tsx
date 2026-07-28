@@ -4,10 +4,15 @@ import { SERVICES_DATA } from "../data";
 
 interface ServicesPageProps {
   onQuoteRequest: (serviceName: string) => void;
+  activeFilter?: string;
+  setActiveFilter?: (filter: string) => void;
 }
 
-export default function ServicesPage({ onQuoteRequest }: ServicesPageProps) {
-  const [filterCat, setFilterCat] = useState<string>("all");
+export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFilter }: ServicesPageProps) {
+  const [localFilterCat, setLocalFilterCat] = useState<string>("all");
+  
+  const filterCat = activeFilter !== undefined ? activeFilter : localFilterCat;
+  const setFilterCat = setActiveFilter !== undefined ? setActiveFilter : setLocalFilterCat;
 
   const categories = [
     { id: "all", label: "Tous nos services" },
@@ -32,7 +37,7 @@ export default function ServicesPage({ onQuoteRequest }: ServicesPageProps) {
         {/* Title Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-black uppercase tracking-wider text-blue-900 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-            Prestations de Services C&T
+            Prestations de Services - CAMUQ & TWINS EMPIRE Ltd
           </span>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
             Des Services d&apos;Élite Taillés Pour Vos Exigences

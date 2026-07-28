@@ -150,7 +150,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
 
                 <div className="space-y-4 text-sm text-gray-600 leading-relaxed">
                   <p className="font-medium text-gray-800">{selectedFormation.description}</p>
-                  <p>{selectedFormation.longDescription || "Cette formation pratique intensive est jalonnée de cas réels d'entreprise, d'ateliers dirigés et d'un projet final validé par notre jury pour l'obtention de votre certificat professionnel C&T d'excellence."}</p>
+                  <p>{selectedFormation.longDescription || "Cette formation pratique intensive est jalonnée de cas réels d'entreprise, d'ateliers dirigés et d'un projet final validé par notre jury pour l'obtention de votre certificat professionnel CAMUQ & TWINS EMPIRE d'excellence."}</p>
                 </div>
 
                 <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-between flex-wrap gap-4">

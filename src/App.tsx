@@ -27,9 +27,15 @@ export default function App() {
   >("home");
 
   const [prefilledSubject, setPrefilledSubject] = useState("");
+  const [servicesFilter, setServicesFilter] = useState("all");
 
-  const handleNavigate = (view: typeof currentView) => {
+  const handleNavigate = (view: typeof currentView, subCategoryOrSubject?: string) => {
     setCurrentView(view);
+    if (view === "services") {
+      setServicesFilter(subCategoryOrSubject || "all");
+    } else if (view === "contact" && subCategoryOrSubject) {
+      setPrefilledSubject(subCategoryOrSubject);
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -111,7 +117,7 @@ export default function App() {
         )}
 
         {currentView === "services" && (
-          <ServicesPage onQuoteRequest={handleQuoteRequest} />
+          <ServicesPage onQuoteRequest={handleQuoteRequest} activeFilter={servicesFilter} setActiveFilter={setServicesFilter} />
         )}
 
         {currentView === "products" && (

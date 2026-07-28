@@ -40,7 +40,7 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
         {/* Title Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-black uppercase tracking-wider text-yellow-600 bg-yellow-100/60 px-3 py-1.5 rounded-full border border-yellow-200">
-            Catalogue de Vente C&T
+            Catalogue de Vente CAMUQ & TWINS EMPIRE
           </span>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
             Notre Boutique & Articles Exclusivement Sélectionnés

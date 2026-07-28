@@ -6,7 +6,7 @@ export default function ChatBotWidget() {
   const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([
     {
       role: "assistant",
-      content: "Bonjour ! Je suis C&T Empire AI, votre conseiller virtuel bilingue. Comment puis-je vous aider aujourd'hui ? Saisie de mémoire, impression grand format, formations d'IA ou de marketing ?"
+      content: "Bonjour ! Je suis CAMUQ & TWINS EMPIRE AI, votre conseiller virtuel bilingue. Comment puis-je vous aider aujourd'hui ? Saisie de mémoire, impression grand format, formations d'IA ou de marketing ?"
     }
   ]);
   const [input, setInput] = useState("");
@@ -60,7 +60,7 @@ export default function ChatBotWidget() {
         <button
           onClick={() => setIsOpen(true)}
           className="p-4 rounded-full bg-blue-900 hover:bg-blue-950 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-blue-800 flex items-center justify-center relative cursor-pointer group"
-          title="Discuter avec l'IA C&T"
+          title="Discuter avec l'IA CAMUQ & TWINS EMPIRE"
         >
           <Sparkles className="absolute -top-1 -right-1 w-5 h-5 text-yellow-400 animate-pulse bg-blue-950 rounded-full p-1" />
           <MessageSquare className="w-6 h-6 group-hover:rotate-6 transition-transform" />
@@ -79,7 +79,7 @@ export default function ChatBotWidget() {
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-blue-900"></span>
               </div>
               <div>
-                <h4 className="font-extrabold text-xs sm:text-sm tracking-tight">C&T Empire AI</h4>
+                <h4 className="font-extrabold text-xs sm:text-sm tracking-tight">CAMUQ & TWINS EMPIRE AI</h4>
                 <p className="text-[10px] text-blue-200 uppercase tracking-widest font-bold">Assistant Bilingue</p>
               </div>
             </div>

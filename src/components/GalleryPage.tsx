@@ -39,7 +39,7 @@ export default function GalleryPage() {
         {/* Title Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-black uppercase tracking-wider text-blue-900 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-            Galerie d&apos;Images C&T
+            Galerie d&apos;Images CAMUQ & TWINS EMPIRE
           </span>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
             Immersion Visuelle au Cœur de Notre Empire

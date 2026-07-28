@@ -82,7 +82,7 @@ export default function BlogPage() {
             {/* Index Header */}
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-xs font-black uppercase tracking-wider text-yellow-600 bg-yellow-100/60 px-3 py-1.5 rounded-full border border-yellow-200">
-                Le Mag C&T Empire
+                Le Mag CAMUQ & TWINS EMPIRE
               </span>
               <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
                 Actualités, Conseils Pro & Guides Pratiques

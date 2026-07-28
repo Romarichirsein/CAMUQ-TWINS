@@ -167,7 +167,7 @@ let database = {
       content: "Votre image de marque est le premier contact avec votre prospect. Un flyer mal structuré ou une banderole pixélisée transmettent une image de manque de professionnalisme. L'impression sur des supports de qualité augmente instantanément la perception de valeur.",
       image: "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=600&auto=format&fit=crop",
       date: "01 Juillet 2026",
-      author: "Responsable Marketing C&T",
+      author: "Responsable Marketing CAMUQ & TWINS EMPIRE",
       category: "Marketing",
       views: 215
     }
@@ -213,7 +213,7 @@ let database = {
     "contact@nhrdigital.com"
   ],
   users: [
-    { id: "u-1", email: "admin@empire.com", name: "C&T Admin Supérieur", role: "admin", createdAt: new Date().toISOString() },
+    { id: "u-1", email: "admin@empire.com", name: "CAMUQ & TWINS EMPIRE Admin Supérieur", role: "admin", createdAt: new Date().toISOString() },
     { id: "u-2", email: "employee@empire.com", name: "Responsable Formation", role: "employee", createdAt: new Date().toISOString() }
   ]
 };
@@ -471,7 +471,7 @@ app.post("/api/blog", (req, res) => {
     category: category || "Actualité",
     image: image || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop",
     date: new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" }),
-    author: author || "C&T Admin",
+    author: author || "CAMUQ & TWINS EMPIRE Admin",
     views: 1
   };
   database.blog.push(newPost);
@@ -508,7 +508,7 @@ app.post("/api/newsletter", (req, res) => {
   res.json({ success: true, message: "Inscription à la newsletter validée avec succès !" });
 });
 
-// API: AI Assistant Chatbot representing CAMUQ AND TWINS EMPIRE Ltd (C&T)
+// API: AI Assistant Chatbot representing CAMUQ & TWINS EMPIRE Ltd
 app.post("/api/chat", async (req, res) => {
   try {
     const { messages } = req.body;
@@ -518,11 +518,11 @@ app.post("/api/chat", async (req, res) => {
     }
 
     const systemPrompt = `
-Vous êtes "C&T Empire AI", l'assistant d'élite virtuel de CAMUQ & TWINS EMPIRE Ltd (représenté par le sigle "C&T").
+Vous êtes "CAMUQ & TWINS EMPIRE AI", l'assistant d'élite virtuel de CAMUQ & TWINS EMPIRE Ltd.
 Votre but est d'accueillir les visiteurs, de répondre à leurs questions sur notre histoire, nos valeurs, nos dirigeants, nos services, nos formations, nos démarches administratives, et de les convertir en clients payants.
 
-Voici les informations officielles sur C&T :
-- Nom : CAMUQ AND TWINS EMPIRE Ltd (C&T)
+Voici les informations officielles sur CAMUQ & TWINS EMPIRE Ltd :
+- Nom : CAMUQ & TWINS EMPIRE Ltd
 - Slogan : "Building an empire without borders" (Bâtir un empire sans frontières)
 - Siège social : Nkolfoulou, Cameroun.
 - Direction Générale : Mme Flore NOUTELI-FOYETT (Directrice Générale & Promotrice), forte de plus de 15 années d'expérience en gestion d'entreprises.
@@ -568,7 +568,7 @@ Directives de communication :
     const reply = response.text || "Désolé, je rencontre des difficultés à formuler une réponse. Veuillez réessayer ou nous contacter directement.";
     res.json({ reply });
   } catch (err: any) {
-    console.error("Gemini API error in C&T Chat:", err);
+    console.error("Gemini API error in CAMUQ & TWINS EMPIRE Chat:", err);
     res.status(500).json({ error: "Erreur de l'assistant IA. Veuillez vérifier votre clé d'API ou réessayer." });
   }
 });
@@ -590,7 +590,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`[C&T SERVER] Serveur premium actif sur http://localhost:${PORT}`);
+    console.log(`[CAMUQ & TWINS EMPIRE SERVER] Serveur premium actif sur http://localhost:${PORT}`);
   });
 }
 

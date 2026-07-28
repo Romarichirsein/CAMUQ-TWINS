@@ -47,8 +47,8 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate("estimator")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400">
-                  <ArrowRight className="w-3 h-3 text-yellow-400" /> Calculateur de Tarifs & Devis
+                <button onClick={() => onNavigate("contact", "Demande de devis gratuit")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400">
+                  <ArrowRight className="w-3 h-3 text-yellow-400" /> Demander un Devis
                 </button>
               </li>
               <li>

@@ -57,7 +57,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
   // Pre-configured WhatsApp click launcher link
   const handleWhatsAppRedirect = () => {
     const formattedPhone = COMPANY_PHONES[0].replace(/\+/g, "").replace(/\s+/g, "");
-    const text = encodeURIComponent(`Bonjour C&T Empire, je vous contacte depuis votre site internet concernant : ${formData.subject || 'Vos services'}.`);
+    const text = encodeURIComponent(`Bonjour CAMUQ & TWINS EMPIRE, je vous contacte depuis votre site internet concernant : ${formData.subject || 'Vos services'}.`);
     window.open(`https://wa.me/${formattedPhone}?text=${text}`, "_blank");
   };
 
@@ -68,7 +68,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
         {/* Title Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-black uppercase tracking-wider text-yellow-600 bg-yellow-100/60 px-3 py-1.5 rounded-full border border-yellow-200">
-            Contactez C&T Empire
+            Contactez CAMUQ & TWINS EMPIRE
           </span>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
             Mettons en Place Votre Prochain Grand Projet
@@ -83,7 +83,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
           {/* Contact Details & Maps block (Col span 5) */}
           <div className="lg:col-span-5 space-y-8">
             
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm space-y-6">
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-150 shadow-sm space-y-6">
               <h3 className="font-sans font-bold text-lg text-blue-950">
                 Nos Canaux de Communication
               </h3>
@@ -144,7 +144,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
               ></iframe>
               <div className="absolute bottom-3 left-3 bg-blue-950/90 text-white text-[10px] uppercase font-bold px-3 py-1.5 rounded-xl border border-white/10 backdrop-blur-sm shadow flex items-center gap-1.5 pointer-events-none">
                 <Landmark className="w-3.5 h-3.5 text-yellow-400" />
-                <span>C&T Empire Ltd, Cameroun</span>
+                <span>CAMUQ & TWINS EMPIRE Ltd, Cameroun</span>
               </div>
             </div>
 

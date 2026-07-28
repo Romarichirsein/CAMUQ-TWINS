@@ -18,7 +18,7 @@ export default function FaqPage() {
         {/* Header Title */}
         <div className="text-center space-y-3">
           <span className="text-xs font-black uppercase tracking-wider text-blue-900 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-            Foire Aux Questions C&T
+            Foire Aux Questions CAMUQ & TWINS EMPIRE
           </span>
           <h2 className="font-sans font-black text-3xl text-blue-950 tracking-tight">
             Des Réponses Claires à Vos Questions

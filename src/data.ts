@@ -1,6 +1,6 @@
 import { ServiceItem, TrainingItem, ProductItem, BlogPost, GalleryItem, TestimonialItem, FaqItem } from "./types";
 
-export const COMPANY_NAME = "CAMUQ AND TWINS EMPIRE Ltd";
+export const COMPANY_NAME = "CAMUQ & TWINS EMPIRE Ltd";
 export const COMPANY_SLOGAN = "Building an empire without borders";
 export const COMPANY_EMAIL = "camuq2002@gmail.com";
 export const COMPANY_PHONES = ["+237 675 23 12 83", "+237 656 49 62 36"];
@@ -364,7 +364,7 @@ export const BLOG_DATA: BlogPost[] = [
     content: "Votre image de marque est le premier contact avec votre prospect. Un flyer mal structuré ou une banderole pixélisée transmettent une image de manque de professionnalisme. L'impression sur des supports de qualité (papier couché, bâches denses) avec un design moderne augmente instantanément la perception de valeur de vos produits de 40%.",
     image: "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=600&auto=format&fit=crop",
     date: "01 Juillet 2026",
-    author: "Responsable Marketing C&T",
+    author: "Responsable Marketing CAMUQ & TWINS EMPIRE",
     category: "Marketing",
     views: 215
   }

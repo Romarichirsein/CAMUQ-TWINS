@@ -21,10 +21,6 @@ export default function Hero({ onNavigate }: HeroProps) {
           
           {/* Main Hero Headline and Copy */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-900 text-xs font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-              Bilingual Stationery & Business Empire
-            </div>
             
             <h1 className="font-sans font-black text-4xl sm:text-5xl lg:text-6xl text-blue-950 tracking-tight leading-[1.1] text-balance">
               {COMPANY_NAME}
@@ -37,18 +33,18 @@ export default function Hero({ onNavigate }: HeroProps) {
             <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Propulsez votre entreprise ou votre carrière vers de nouveaux sommets ! 
               Bénéficiez de nos services premium en <strong className="text-blue-900 font-semibold">secrétariat bilingue</strong>, 
-              <strong className="text-blue-900 font-semibold">imprimerie numérique</strong> de haute qualité, et de nos <strong className="text-blue-900 font-semibold">formations professionnelles certifiées</strong> 
+              <strong className="text-blue-900 font-semibold">imprimerie numérique</strong> de haute qualité, et de nos <strong className="text-blue-900 font-semibold">formations professionnelles certifiées</strong>, 
               allant du design à l'intégration de l'Intelligence Artificielle.
             </p>
 
             {/* CTA action buttons to drive conversions */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
               <button
-                onClick={() => onNavigate("estimator")}
+                onClick={() => onNavigate("contact", "Demande de devis gratuit")}
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-extrabold text-base tracking-wide shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/20 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Calculator className="w-5 h-5 shrink-0" />
-                Estimer un Devis Instantané
+                Demander un Devis Instantané
               </button>
               
               <button
@@ -71,8 +67,8 @@ export default function Hero({ onNavigate }: HeroProps) {
                 <div className="text-xs text-gray-500 mt-1">Formations Pro</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="font-sans font-extrabold text-2xl text-blue-950">24h/48h</div>
-                <div className="text-xs text-gray-500 mt-1">Livraison Imprimerie</div>
+                <div className="font-sans font-extrabold text-2xl text-blue-950">Rapide</div>
+                <div className="text-xs text-gray-500 mt-1">Service & Livraison</div>
               </div>
             </div>
           </div>
@@ -84,7 +80,7 @@ export default function Hero({ onNavigate }: HeroProps) {
               
               <h3 className="font-sans font-bold text-lg text-blue-950 tracking-tight mb-4 flex items-center gap-2">
                 <Shield className="w-5 h-5 text-blue-900" />
-                Pourquoi choisir l'Empire ?
+                Pourquoi choisir CAMUQ & TWINS EMPIRE ?
               </h3>
               
               <div className="space-y-4">
