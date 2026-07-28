@@ -81,32 +81,24 @@ export default function AboutUs() {
               </p>
             </div>
 
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              L'histoire de <strong>CAMUQ AND TWINS EMPIRE Ltd</strong> est celle d'une entreprise portée par une ambition claire : proposer des solutions professionnelles innovantes tout en contribuant au développement des compétences, à l'entrepreneuriat et à l'autonomisation des populations.
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed italic border-l-2 border-slate-200 pl-3">
+              &ldquo; Chaque grande aventure commence par une rencontre. La nôtre est née du partage d'une même vision, de la confiance mutuelle et de la conviction qu'ensemble, nous pouvons aller plus loin. &rdquo;
             </p>
 
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Tout commence en <strong>août 2021</strong>, avec la création de <strong>CAMUQ TRADING HOUSE</strong>, entreprise individuelle soumise à l'impôt libératoire. Dès ses débuts, elle se spécialise dans le secrétariat bureautique, la commercialisation de fournitures scolaires et de matériel de bureau, ainsi que dans la formation à l'initiation à l'informatique destinée aux jeunes et aux femmes. Portée par une équipe de deux employés, elle se fait rapidement remarquer pour son professionnalisme, sa proximité avec la clientèle et la qualité de ses prestations.
+              Chez <strong>CAMUQ AND TWINS EMPIRE Ltd</strong>, plus de 20 années d'expérience dans la gestion d'entreprises de secteurs variés ont conduit notre Directrice Générale à créer CAMUQ en 2021. Animée par une vision ambitieuse, elle a ensuite choisi d'ouvrir le capital de l'entreprise afin d'unir son expérience au dynamisme, au talent et à l'engagement de deux jeunes dirigeants passionnés : notre Directeur des Opérations et notre Directeur Commercial et Marketing, eux aussi forts de plus de dix années d'expérience dans leurs domaines respectifs.
             </p>
 
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Convaincue que la croissance durable passe par l'innovation et la collaboration, la promotrice franchit une nouvelle étape en <strong>2025</strong> en ouvrant le capital de l'entreprise à deux nouveaux associés. Cette évolution stratégique, marquée par la cession de 50 % des parts sociales, donne naissance à <strong>CAMUQ AND TWINS EMPIRE Ltd</strong> — une entreprise renforcée, portée par une vision élargie et de nouvelles ambitions.
+              Ensemble, nous avons choisi de bâtir bien plus qu'une entreprise : un projet fondé sur la complémentarité, l'innovation et l'excellence. Nous sommes convaincus que les plus grandes réussites se construisent en équipe et que les rêves les plus ambitieux deviennent réalité lorsque les talents se rassemblent autour d'une même vision.
             </p>
 
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Aujourd'hui installée à <strong>Nkolfoulou</strong>, CAMUQ AND TWINS EMPIRE Ltd intervient sur plusieurs secteurs complémentaires : prestations de services, formation professionnelle, édition, services bureautiques et solutions sur mesure destinées aux particuliers, entreprises, administrations et organisations.
+              Animés par notre slogan, <strong className="text-yellow-600">« Build an Empire Without Borders »</strong>, nous avançons chaque jour avec la volonté de créer un empire durable, innovant et sans frontières.
             </p>
 
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              La création de ce site web s'inscrit pleinement dans cette dynamique de croissance. Il vise à rapprocher l'entreprise de ses clients et partenaires, à faire connaître son expertise, à présenter l'étendue de ses services et à renforcer la confiance de toutes les parties prenantes.
-            </p>
-
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Guidée par les valeurs d'excellence, de professionnalisme, d'innovation, d'intégrité et de satisfaction client, CAMUQ AND TWINS EMPIRE Ltd poursuit son ambition de devenir une référence africaine et un partenaire de confiance pour tous ceux qui recherchent des solutions efficaces, durables et adaptées à leurs besoins.
-            </p>
-
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-bold text-blue-950 italic">
-              Plus qu'une entreprise, CAMUQ AND TWINS EMPIRE Ltd se veut un partenaire engagé dans la création de valeur, le développement des compétences et la promotion de l'excellence au service du progrès.
+            <p className="text-sm sm:text-base text-gray-750 font-bold text-blue-950 leading-relaxed mt-4">
+              Bienvenue dans notre histoire. Bienvenue chez CAMUQ AND TWINS EMPIRE Ltd.
             </p>
           </div>
 
@@ -184,9 +176,9 @@ export default function AboutUs() {
                 <div className="absolute inset-0 bg-black rounded-3xl -rotate-2 transform scale-102 group-hover:rotate-0 transition-transform duration-300"></div>
                 <div className="relative w-64 h-80 rounded-3xl overflow-hidden bg-black border-2 border-yellow-400 shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600&h=800" 
+                    src="/images/flore-nouteli-foyett.jpg" 
                     alt="Mme Flore NOUTELI FOYETT, Directrice Générale" 
-                    className="w-full h-full object-cover object-top opacity-90 contrast-105"
+                    className="w-full h-full object-cover object-top opacity-95 contrast-105"
                     referrerPolicy="no-referrer"
                   />
                   {/* Mask or subtle shadow cropped look to look polished */}
@@ -283,27 +275,28 @@ export default function AboutUs() {
             
             {/* Level 1: DG (Top Center) */}
             <div className="flex flex-col items-center">
-              <div className="bg-white p-4 rounded-3xl border border-yellow-400 shadow-xl max-w-xs text-center space-y-4 transform transition-transform hover:scale-105">
+              <div className="bg-white p-6 rounded-3xl border border-yellow-400/50 shadow-xl max-w-md text-center space-y-4 transform transition-transform hover:scale-102">
                 {/* Photo cropped below elbow with black background as requested */}
-                <div className="w-56 h-72 rounded-2xl overflow-hidden bg-black relative border border-slate-900 mx-auto">
+                <div className="w-60 h-80 rounded-2xl overflow-hidden bg-black relative border border-slate-900 mx-auto">
                   <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600&h=800" 
-                    alt="Mme Flore NOUTELI FOYETT" 
-                    className="w-full h-full object-cover object-top opacity-90 contrast-105"
+                    src="/images/flore-nouteli-foyett.jpg" 
+                    alt="Flore NOUTELI FOYETT" 
+                    className="w-full h-full object-cover object-top opacity-95 contrast-105"
                     referrerPolicy="no-referrer"
                   />
-                  {/* Subtle elegant border */}
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-center">
-                    <span className="text-[9px] bg-yellow-400 text-blue-950 font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
+                    <span className="text-[9px] bg-yellow-400 text-blue-950 font-bold px-2.5 py-0.5 rounded-full uppercase tracking-widest">
                       DG - Promotrice
                     </span>
                   </div>
                 </div>
 
-                <div className="space-y-1">
-                  <h4 className="font-bold text-base text-blue-950 leading-tight">Mme Flore NOUTELI-FOYETT</h4>
+                <div className="space-y-2">
+                  <h4 className="font-bold text-lg text-blue-950 leading-tight">Flore NOUTELI FOYETT</h4>
                   <p className="text-xs font-semibold text-yellow-600">Directrice Générale</p>
-                  <p className="text-[10px] text-gray-400 pt-1 border-t border-slate-100">Plus de 15 ans d'expérience en gestion d'entreprises</p>
+                  <p className="text-xs text-gray-500 pt-2 border-t border-slate-100 leading-relaxed text-justify px-2">
+                    Entrepreneure visionnaire, forte de plus de 20 ans d'expérience dans la gestion d'entreprises de secteurs variés, Mme Foyett Flore incarne le leadership, l'innovation et la résilience. Convaincue que les plus grands succès se construisent ensemble, elle porte avec passion la vision de CAMUQ AND TWINS EMPIRE Ltd : bâtir un empire sans frontières.
+                  </p>
                 </div>
               </div>
             </div>
@@ -319,12 +312,12 @@ export default function AboutUs() {
             </div>
 
             {/* Level 2: DCM to her right (left on screen) & DO to her left (right on screen) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
               
               {/* DCM (Directeur Commercial et Marketing) - on her right (left of screen) */}
               <div className="flex justify-center">
-                <div className="bg-white p-4 rounded-3xl border border-slate-150 shadow-lg w-full max-w-xs text-center space-y-4 transform transition-transform hover:scale-105">
-                  <div className="w-52 h-64 rounded-2xl overflow-hidden bg-slate-100 relative mx-auto border border-slate-150">
+                <div className="bg-white p-5 rounded-3xl border border-slate-150 shadow-lg w-full max-w-sm text-center space-y-4 transform transition-transform hover:scale-102">
+                  <div className="w-56 h-72 rounded-2xl overflow-hidden bg-slate-100 relative mx-auto border border-slate-150">
                     <img 
                       src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=500&h=700" 
                       alt="Directeur Commercial et Marketing" 
@@ -338,22 +331,24 @@ export default function AboutUs() {
                     </div>
                   </div>
 
-                  <div className="space-y-1">
-                    <h4 className="font-bold text-base text-blue-950 leading-tight">DCM</h4>
-                    <p className="text-xs font-semibold text-blue-900">Directeur Commercial & Marketing</p>
-                    <p className="text-[10px] text-gray-400 pt-1 border-t border-slate-100">Stratégie d'acquisition, partenariats & rayonnement</p>
+                  <div className="space-y-2">
+                    <h4 className="font-bold text-base text-blue-950 leading-tight">Luke</h4>
+                    <p className="text-xs font-semibold text-blue-900">Directeur Commercial et Marketing</p>
+                    <p className="text-xs text-gray-500 pt-2 border-t border-slate-100 leading-relaxed text-justify px-2">
+                      Avec plus de 10 ans d'expérience dans le développement commercial et le marketing, Luke met son sens de la stratégie, de la communication et de la relation client au service de la croissance de l'entreprise. Son ambition est de faire rayonner la marque et de créer des partenariats durables.
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* DO (Directeur des Opérations) - on her left (right of screen) */}
               <div className="flex justify-center">
-                <div className="bg-white p-4 rounded-3xl border border-slate-150 shadow-lg w-full max-w-xs text-center space-y-4 transform transition-transform hover:scale-105">
-                  <div className="w-52 h-64 rounded-2xl overflow-hidden bg-slate-100 relative mx-auto border border-slate-150">
+                <div className="bg-white p-5 rounded-3xl border border-slate-150 shadow-lg w-full max-w-sm text-center space-y-4 transform transition-transform hover:scale-102">
+                  <div className="w-56 h-72 rounded-2xl overflow-hidden bg-black relative mx-auto border border-slate-150">
                     <img 
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500&h=700" 
-                      alt="Directeur des Opérations" 
-                      className="w-full h-full object-cover object-top"
+                      src="/images/limnyuy-luke-senyuy.jpg" 
+                      alt="LIMNYUY Luke SENYUY" 
+                      className="w-full h-full object-cover object-top opacity-95 contrast-105"
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-2 text-center">
@@ -363,10 +358,12 @@ export default function AboutUs() {
                     </div>
                   </div>
 
-                  <div className="space-y-1">
-                    <h4 className="font-bold text-base text-blue-950 leading-tight">DO</h4>
+                  <div className="space-y-2">
+                    <h4 className="font-bold text-base text-blue-950 leading-tight">LIMNYUY Luke SENYUY</h4>
                     <p className="text-xs font-semibold text-blue-900">Directeur des Opérations</p>
-                    <p className="text-[10px] text-gray-400 pt-1 border-t border-slate-100">Coordination des services, formations & logistique</p>
+                    <p className="text-xs text-gray-500 pt-2 border-t border-slate-100 leading-relaxed text-justify px-2">
+                      Professionnel engagé et rigoureux, Mark cumule plus de 10 ans d'expérience dans la gestion des opérations. Il veille à l'efficacité des processus, à la qualité des services et à la bonne exécution de la vision de l'entreprise, en faisant de l'excellence opérationnelle une priorité.
+                    </p>
                   </div>
                 </div>
               </div>

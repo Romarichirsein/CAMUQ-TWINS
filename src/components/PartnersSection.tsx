@@ -6,6 +6,7 @@ interface PartnerProps {
   name: string;
   fullName: string;
   role: string;
+  subtitle: string;
   description: string;
   website?: string;
   logoColor: string;
@@ -363,10 +364,11 @@ export default function PartnersSection() {
   const partners: PartnerProps[] = [
     {
       id: "sky-twins",
-      name: "SKY TWINS",
-      fullName: "Sky Twins Services",
-      role: "Partenaire Import-Export & Services Généraux",
-      description: "Collaboration stratégique facilitant le transit international, l'approvisionnement en fournitures d'exception et le déploiement logistique sans frontières.",
+      name: "Ets SKY TWINS EMPIRE",
+      fullName: "Ets SKY TWINS EMPIRE",
+      role: "Distribution & Approvisionnement",
+      subtitle: "Notre partenaire en distribution et approvisionnement",
+      description: "Les Ets SKY TWINS EMPIRE assurent la distribution des ouvrages édités par CAMUQ AND TWINS EMPIRE Ltd à travers leur réseau de librairie. Ils contribuent également à notre approvisionnement en diverses marchandises, renforçant ainsi notre capacité à offrir des produits et services de qualité à notre clientèle.",
       logoColor: "border-emerald-500/20 hover:border-emerald-500 bg-emerald-50/10 hover:bg-emerald-50/30",
       imagePath: "/images/sky-twins.jpg"
     },
@@ -374,17 +376,19 @@ export default function PartnersSection() {
       id: "aprosac",
       name: "APROSAC",
       fullName: "APROSAC Association",
-      role: "Partenaire Social & Développement Communautaire",
-      description: "Alliance dédiée à la promotion de l'excellence, l'autonomisation des femmes et l'insertion professionnelle par des cycles de formation certifiés.",
+      role: "Impact Social & Compétences",
+      subtitle: "Notre partenaire pour l'impact social et le renforcement des compétences",
+      description: "APROSAC accompagne CAMUQ AND TWINS EMPIRE Ltd dans ses actions de formation et de développement humain. Ensemble, nous œuvrons pour l'autonomisation des femmes, l'encadrement des jeunes et la promotion des compétences numériques, afin de contribuer durablement au développement de nos communautés.",
       logoColor: "border-blue-500/20 hover:border-blue-500 bg-blue-50/10 hover:bg-blue-50/30",
       imagePath: "/images/aprosac.jpg"
     },
     {
       id: "coact",
-      name: "COACT",
-      fullName: "COACT Technologies",
-      role: "Partenaire Solutions Numériques & Bureautique",
-      description: "Soutien technologique de pointe pour l'intégration de progiciels, l'édition moderne de thèses/rapports et l'infographie propulsée par l'intelligence artificielle.",
+      name: "COACT Imprints",
+      fullName: "COACT Imprints Pvt Ltd",
+      role: "Impression Industrielle",
+      subtitle: "Notre partenaire international en impression",
+      description: "COACT Imprints Pvt Ltd est notre partenaire privilégié pour l'impression de livres, d'ouvrages et de documents en grands volumes. Grâce à son expertise et à son savoir-faire international, cette imprimerie basée en Inde garantit des impressions de haute qualité.",
       logoColor: "border-purple-500/20 hover:border-purple-500 bg-purple-50/10 hover:bg-purple-50/30",
       imagePath: "/images/coact.jpg"
     }
@@ -452,11 +456,14 @@ export default function PartnersSection() {
                   <h3 className="font-sans font-black text-xl text-blue-950 tracking-tight group-hover:text-blue-900 transition-colors">
                     {partner.name}
                   </h3>
-                  <p className="text-xs text-yellow-600 font-extrabold uppercase tracking-widest">
+                  <p className="text-xs text-yellow-600 font-extrabold uppercase tracking-widest leading-normal">
                     {partner.role}
                   </p>
+                  <p className="text-[11px] text-slate-400 italic">
+                    {partner.subtitle}
+                  </p>
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed min-h-[80px]">
+                <p className="text-sm text-gray-500 leading-relaxed min-h-[90px]">
                   {partner.description}
                 </p>
               </div>
