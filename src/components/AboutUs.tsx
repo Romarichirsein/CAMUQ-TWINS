@@ -249,11 +249,11 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* SECTION 3: Notre Équipe Dirigeante with Photos */}
-        <div className="space-y-12">
+        {/* SECTION 3: Les Acteurs de CAMUQ AND TWINS EMPIRE Ltd */}
+        <div id="acteurs-section" className="space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-[10px] bg-blue-100 text-blue-900 font-bold px-3 py-1.5 rounded-full uppercase tracking-widest inline-block">
-              Notre Équipe Dirigeante
+            <span className="text-[10px] bg-blue-100 text-blue-900 font-bold px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block">
+              Les Acteurs de CAMUQ AND TWINS EMPIRE Ltd
             </span>
             <h3 className="font-sans font-black text-2xl sm:text-3xl text-blue-950 tracking-tight">
               Bâtisseurs d'un Empire sans Frontières
@@ -262,10 +262,7 @@ export default function AboutUs() {
               « Build an Empire Without Borders »
             </p>
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              Portée par le slogan « Build an Empire Without Borders », CAMUQ AND TWINS EMPIRE Ltd s'appuie sur une équipe dirigeante expérimentée et visionnaire. Conduite par une Directrice Générale forte de plus de 15 années d'expérience en gestion d'entreprises, aux côtés d'un Directeur des Opérations et d'un Directeur Commercial et Marketing, notre équipe met son expertise, son leadership et son engagement au service de l'innovation, de la performance et d'une croissance durable.
-            </p>
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-semibold">
-              Ensemble, nous travaillons chaque jour à bâtir un empire sans frontières, fondé sur l'excellence, la confiance et la création de valeur pour nos clients, partenaires et communautés.
+              Découvrez les acteurs majeurs de CAMUQ AND TWINS EMPIRE Ltd : une équipe expérimentée et visionnaire, conduite par une Directrice Générale passionnée, aux côtés du Directeur des Opérations et du Directeur Commercial et Marketing.
             </p>
           </div>
 
