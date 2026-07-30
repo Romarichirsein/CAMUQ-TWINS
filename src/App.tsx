@@ -23,10 +23,41 @@ import ChatBotWidget from "./components/ChatBotWidget";
 import WhatsAppButton from "./components/WhatsAppButton";
 import { Language } from "./i18n";
 
+type ViewType = "home" | "about" | "training" | "services" | "products" | "gallery" | "blog" | "faq" | "contact" | "appointment" | "admin";
+
+const pathToViewMap: Record<string, ViewType> = {
+  "/": "home",
+  "/accueil": "home",
+  "/nos-services": "services",
+  "/nos-formations": "training",
+  "/a-propos": "about",
+  "/produits": "products",
+  "/galerie": "gallery",
+  "/blog": "blog",
+  "/faq": "faq",
+  "/contact": "contact",
+  "/assistant-ia": "contact",
+  "/rendez-vous": "appointment",
+  "/admin": "admin"
+};
+
+const viewToPathMap: Record<string, string> = {
+  home: "/accueil",
+  services: "/nos-services",
+  training: "/nos-formations",
+  about: "/a-propos",
+  products: "/produits",
+  gallery: "/galerie",
+  blog: "/blog",
+  faq: "/faq",
+  contact: "/contact",
+  "ai-bot": "/assistant-ia",
+  appointment: "/rendez-vous",
+  admin: "/admin"
+};
+
 export default function App() {
-  const [currentView, setCurrentView] = useState<
-    "home" | "about" | "training" | "services" | "products" | "gallery" | "blog" | "faq" | "contact" | "appointment" | "admin"
-  >("home");
+  const [currentView, setCurrentView] = useState<ViewType>("home");
 
   const [prefilledSubject, setPrefilledSubject] = useState("");
   const [servicesFilter, setServicesFilter] = useState("all");
@@ -35,6 +66,27 @@ export default function App() {
   const handleToggleLang = () => {
     setLang((prev) => (prev === "fr" ? "en" : "fr"));
   };
+
+  // URL Path Synchronization & Browser Back/Forward Handling
+  useEffect(() => {
+    const handlePopState = () => {
+      const pathname = window.location.pathname.toLowerCase().replace(/\/$/, "") || "/";
+      const targetView = pathToViewMap[pathname] || "home";
+      setCurrentView(targetView);
+    };
+
+    const pathname = window.location.pathname.toLowerCase().replace(/\/$/, "") || "/";
+    if (pathname === "/" || pathname === "") {
+      window.history.replaceState({}, "", "/accueil");
+      setCurrentView("home");
+    } else {
+      const targetView = pathToViewMap[pathname] || "home";
+      setCurrentView(targetView);
+    }
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   // Global Scroll Reveal Observer for dynamic section entrance animations
   useEffect(() => {
@@ -60,8 +112,12 @@ export default function App() {
     return () => observer.disconnect();
   }, [currentView, servicesFilter]);
 
-  const handleNavigate = (view: typeof currentView, subCategoryOrSubject?: string) => {
+  const handleNavigate = (view: ViewType, subCategoryOrSubject?: string) => {
     setCurrentView(view);
+    const targetPath = viewToPathMap[view] || "/accueil";
+    if (window.location.pathname !== targetPath) {
+      window.history.pushState({}, "", targetPath);
+    }
     if (view === "services") {
       setServicesFilter(subCategoryOrSubject || "all");
     } else if (view === "contact" && subCategoryOrSubject) {
@@ -73,20 +129,17 @@ export default function App() {
   // Convert clicks on "Inscrire" or "Commander" into automatic navigation with prefilled subject/inputs
   const handleRegisterTraining = (trainingName: string) => {
     setPrefilledSubject(`Inscription à la Formation : ${trainingName}`);
-    setCurrentView("contact");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    handleNavigate("contact");
   };
 
   const handleOrderProduct = (productName: string) => {
     setPrefilledSubject(`Achat de Produit : ${productName}`);
-    setCurrentView("contact");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    handleNavigate("contact");
   };
 
   const handleQuoteRequest = (serviceName: string) => {
     setPrefilledSubject(`Demande de Devis : ${serviceName}`);
-    setCurrentView("contact");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    handleNavigate("contact");
   };
 
   return (
