@@ -20,7 +20,7 @@ export default function Hero({ onNavigate }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Main Hero Headline and Copy */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left animate-slide-left">
             
             <h1 className="font-sans font-black text-4xl sm:text-5xl lg:text-6xl text-blue-950 tracking-tight leading-[1.1] text-balance">
               {COMPANY_NAME}
@@ -41,32 +41,32 @@ export default function Hero({ onNavigate }: HeroProps) {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
               <button
                 onClick={() => onNavigate("contact", "Demande de devis gratuit")}
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-extrabold text-base tracking-wide shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/20 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-extrabold text-base tracking-wide shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/20 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Calculator className="w-5 h-5 shrink-0" />
+                <Calculator className="w-5 h-5 shrink-0 animate-bounce" />
                 Demander un Devis Instantané
               </button>
               
               <button
                 onClick={() => onNavigate("ai-bot")}
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-900 hover:bg-blue-950 text-white font-bold text-base tracking-wide shadow-lg shadow-blue-950/10 hover:shadow-blue-950/20 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 border border-blue-850 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-900 hover:bg-blue-950 text-white font-bold text-base tracking-wide shadow-lg shadow-blue-950/10 hover:shadow-blue-950/20 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 border border-blue-850 cursor-pointer"
               >
-                <MessageSquareCode className="w-5 h-5 shrink-0 text-yellow-400" />
+                <MessageSquareCode className="w-5 h-5 shrink-0 text-yellow-400 animate-pulse" />
                 Discuter avec l'IA
               </button>
             </div>
 
             {/* Multi-points highlight ribbon */}
             <div className="grid grid-cols-3 gap-4 pt-8 border-t border-gray-100 max-w-lg mx-auto lg:mx-0">
-              <div className="text-center lg:text-left">
+              <div className="text-center lg:text-left transform transition-transform hover:scale-105">
                 <div className="font-sans font-extrabold text-2xl text-blue-950">100%</div>
                 <div className="text-xs text-gray-500 mt-1">Bilingue & Qualifié</div>
               </div>
-              <div className="text-center lg:text-left">
+              <div className="text-center lg:text-left transform transition-transform hover:scale-105">
                 <div className="font-sans font-extrabold text-2xl text-blue-950">8+</div>
                 <div className="text-xs text-gray-500 mt-1">Formations Pro</div>
               </div>
-              <div className="text-center lg:text-left">
+              <div className="text-center lg:text-left transform transition-transform hover:scale-105">
                 <div className="font-sans font-extrabold text-2xl text-blue-950">Rapide</div>
                 <div className="text-xs text-gray-500 mt-1">Service & Livraison</div>
               </div>
@@ -74,8 +74,8 @@ export default function Hero({ onNavigate }: HeroProps) {
           </div>
 
           {/* Feature Highlight Card / Visual Mock */}
-          <div className="lg:col-span-5 relative mt-8 lg:mt-0">
-            <div className="relative mx-auto max-w-sm lg:max-w-none rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-blue-950/10 p-6 sm:p-8 overflow-hidden">
+          <div className="lg:col-span-5 relative mt-8 lg:mt-0 animate-slide-right">
+            <div className="relative mx-auto max-w-sm lg:max-w-none rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-blue-950/10 p-6 sm:p-8 overflow-hidden transition-all duration-300 hover:shadow-yellow-500/10 hover:-translate-y-1">
               <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-yellow-350 to-transparent rounded-tr-3xl opacity-25"></div>
               
               <h3 className="font-sans font-bold text-lg text-blue-950 tracking-tight mb-4 flex items-center gap-2">

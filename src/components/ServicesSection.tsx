@@ -31,17 +31,17 @@ export default function ServicesSection({ onNavigateToEstimator, onNavigateToTra
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3 reveal-on-scroll">
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
             Découvrez Notre Univers Multidirectionnel
           </h2>
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            De la papeterie bureautique bilingue à l&apos;imprimerie de pointe, en passant par les services financiers mobiles et des formations professionnelles certifiées. Choisissez une catégorie pour en savoir plus.
+            Du commerce général et de l&apos;édition à l&apos;imprimerie de pointe, en passant par les démarches administratives et des formations professionnelles certifiées.
           </p>
         </div>
 
         {/* Tab Controls */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12 p-1.5 bg-gray-50 rounded-2xl max-w-2xl mx-auto border border-gray-100">
+        <div className="flex flex-wrap justify-center gap-2 mb-12 p-1.5 bg-gray-50 rounded-2xl max-w-2xl mx-auto border border-gray-100 reveal-on-scroll">
           <button
             onClick={() => setActiveTab("services")}
             className={`flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer ${

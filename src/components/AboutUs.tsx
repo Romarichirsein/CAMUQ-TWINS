@@ -71,7 +71,7 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Block: Narrative text */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-6 reveal-left">
             <div className="border-l-4 border-yellow-400 pl-4">
               <h2 className="font-sans font-black text-2xl sm:text-3xl text-blue-950 tracking-tight">
                 Notre Histoire
@@ -103,7 +103,7 @@ export default function AboutUs() {
           </div>
 
           {/* Right Block: Visual Roadmap card */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-6 reveal-right">
             <div className="bg-white p-8 rounded-3xl border border-slate-150 shadow-lg space-y-6 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/5 rounded-full pointer-events-none"></div>
               
@@ -271,7 +271,7 @@ export default function AboutUs() {
           <div className="max-w-4xl mx-auto flex flex-col items-center gap-12">
             
             {/* Level 1: DG (Top Center) */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center reveal-scale">
               <div className="bg-white p-6 rounded-3xl border border-yellow-400/50 shadow-xl max-w-md text-center space-y-4 transform transition-transform hover:scale-102">
                 {/* Photo cropped below elbow with black background as requested */}
                 <div className="w-60 h-80 rounded-2xl overflow-hidden bg-black relative border border-slate-900 mx-auto">
@@ -309,7 +309,7 @@ export default function AboutUs() {
             </div>
 
             {/* Level 2: DCM to her right (left on screen) & DO to her left (right on screen) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl reveal-on-scroll">
               
               {/* DCM (Directeur Commercial et Marketing) - on her right (left of screen) */}
               <div className="flex justify-center">

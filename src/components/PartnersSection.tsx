@@ -403,9 +403,9 @@ export default function PartnersSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16 reveal-on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-900">
-            <Handshake className="w-4 h-4 text-yellow-500" />
+            <Handshake className="w-4 h-4 text-yellow-500 animate-pulse" />
             <span className="text-[10px] font-bold uppercase tracking-wider">Synergie de Croissance</span>
           </div>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight leading-tight">
@@ -421,7 +421,7 @@ export default function PartnersSection() {
           {partners.map((partner) => (
             <div
               key={partner.id}
-              className={`flex flex-col justify-between bg-white rounded-3xl p-8 border text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl ${partner.logoColor} relative group`}
+              className={`flex flex-col justify-between bg-white rounded-3xl p-8 border text-center transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl ${partner.logoColor} relative group reveal-scale`}
             >
               {/* Corner badge deco */}
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

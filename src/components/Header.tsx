@@ -47,8 +47,8 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
               </a>
             </span>
           </div>
-          <div className="flex items-center gap-3 text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-yellow-400">
-            <Globe className="w-3.5 h-3.5 animate-spin-slow text-white" />
+          <div className="flex items-center gap-3 text-[10px] sm:text-xs font-black tracking-wider uppercase text-slate-900 bg-yellow-400/90 px-3 py-1 rounded-full shadow-xs">
+            <Globe className="w-3.5 h-3.5 animate-spin-slow text-slate-900" />
             <span>Commerce Général - Édition - Prestation de services</span>
           </div>
         </div>

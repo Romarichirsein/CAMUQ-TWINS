@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ServicesSection from "./components/ServicesSection";
@@ -28,6 +28,30 @@ export default function App() {
 
   const [prefilledSubject, setPrefilledSubject] = useState("");
   const [servicesFilter, setServicesFilter] = useState("all");
+
+  // Global Scroll Reveal Observer for dynamic section entrance animations
+  useEffect(() => {
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      threshold: 0.08,
+      rootMargin: "0px 0px -40px 0px"
+    });
+
+    const elements = document.querySelectorAll(
+      ".reveal-on-scroll, .reveal-left, .reveal-right, .reveal-scale"
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [currentView, servicesFilter]);
 
   const handleNavigate = (view: typeof currentView, subCategoryOrSubject?: string) => {
     setCurrentView(view);
