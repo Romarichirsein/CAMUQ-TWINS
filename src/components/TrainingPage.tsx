@@ -10,7 +10,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
   const [selectedFormation, setSelectedFormation] = useState<typeof FORMATIONS_DATA[0] | null>(null);
   const [filterLevel, setFilterLevel] = useState<string>("all");
 
-  const levels = ["all", "Débutant", "Intermédiaire", "Tous niveaux"];
+  const levels = ["all", "Débutant", "Intermédiaire", "Expert"];
 
   const filteredFormations = filterLevel === "all" 
     ? FORMATIONS_DATA 
@@ -33,8 +33,8 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
             Propulsez Votre Carrière avec l&apos;Élite
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            Des cursus immersifs et 100% pratiques animés par des experts. Conçus pour vous donner les compétences opérationnelles les plus recherchées par les recruteurs et investisseurs.
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+            80% pratique, animé par des experts, conçu pour vous donner les compétences opérationnelles les plus recherchées par les recruteurs et investisseurs.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
           {filteredFormations.map((form) => (
             <div 
               key={form.id} 
-              className="group bg-white rounded-3xl border border-gray-100 hover:border-blue-150 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between"
+              className="group bg-white rounded-3xl border border-gray-100 hover:border-blue-150 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between reveal-scale"
             >
               {/* Image & Ribbon Banner */}
               <div className="relative h-48 overflow-hidden bg-slate-200">
@@ -75,10 +75,8 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
                     {form.level}
                   </span>
                 </div>
-                <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-2xl shadow-md border border-gray-150">
-                  <span className="text-sm font-black text-blue-950">
-                    {form.price.toLocaleString()} <span className="text-[10px] text-gray-400 font-bold">FCFA</span>
-                  </span>
+                <div className="absolute bottom-4 right-4 bg-yellow-400 text-blue-950 px-3.5 py-1.5 rounded-2xl shadow-md font-black text-xs uppercase tracking-wider">
+                  Sur inscription
                 </div>
               </div>
 

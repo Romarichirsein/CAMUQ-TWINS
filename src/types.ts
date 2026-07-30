@@ -1,20 +1,22 @@
 export interface ServiceItem {
   id: string;
   name: string;
-  category: "secretariat" | "imprimerie" | "autres" | "commerce";
+  category: "secretariat" | "imprimerie" | "edition" | "autres" | "commerce" | "personnalise" | string;
+  subCategory?: "industrial" | "communication" | "grand-format" | "goodies" | "textile" | "litterature" | "education" | string;
   priceEstimate: string;
   unit: string;
   baseCost: number;
   description: string;
   icon: string;
+  hidePrice?: boolean;
 }
 
 export interface TrainingItem {
   id: string;
   name: string;
   duration: string;
-  level: "Débutant" | "Intermédiaire" | "Avancé" | "Tous niveaux";
-  price: number;
+  level: "Débutant" | "Intermédiaire" | "Expert";
+  price?: number | string;
   icon: string;
   description: string;
   longDescription?: string;
@@ -24,7 +26,7 @@ export interface TrainingItem {
 export interface ProductItem {
   id: string;
   name: string;
-  category: "fourniture" | "longrich" | "bijoux";
+  category: "fourniture" | "papeterie" | "longrich" | "bijoux" | string;
   price: number;
   unit: string;
   image: string;

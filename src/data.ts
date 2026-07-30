@@ -6,15 +6,99 @@ export const COMPANY_EMAIL = "camuq2002@gmail.com";
 export const COMPANY_PHONES = ["+237 675 23 12 83", "+237 656 49 62 36"];
 
 export const SERVICES_DATA: ServiceItem[] = [
-  // Secrétariat
+  // IMPRESSION - 5 Sous-catégories
+  {
+    id: "imp-ind-1",
+    name: "Impression Industrielle & Grands Tirages",
+    category: "imprimerie",
+    subCategory: "industrial",
+    priceEstimate: "Sur devis / À la commande",
+    unit: "commande",
+    baseCost: 0,
+    hidePrice: true,
+    description: "Tirages industriels haute capacité, impression de livres et magazines d'usine en gros volume.",
+    icon: "Printer"
+  },
+  {
+    id: "imp-com-1",
+    name: "Flyers, Cartes de Visite & Dépliants",
+    category: "imprimerie",
+    subCategory: "communication",
+    priceEstimate: "15 000 FCFA / 100 pcs",
+    unit: "100 pièces",
+    baseCost: 15000,
+    description: "Supports de communication d'entreprise : flyers haute définition, cartes de visite de luxe et dépliants 2 ou 3 volets.",
+    icon: "Layers"
+  },
+  {
+    id: "imp-gf-1",
+    name: "Banderoles, Roll-Up, Deuil & Anniversaires",
+    category: "imprimerie",
+    subCategory: "grand-format",
+    priceEstimate: "6 000 FCFA / m²",
+    unit: "m²",
+    baseCost: 6000,
+    description: "Impression grand format sur bâches renforcées : banderoles publicitaires, roll-ups autoportants, affiches pour cérémonies de deuil et bâches d'anniversaire.",
+    icon: "Flag"
+  },
+  {
+    id: "imp-g-1",
+    name: "Goodies, Tasses, Stylos & Porte-Clés",
+    category: "imprimerie",
+    subCategory: "goodies",
+    priceEstimate: "2 500 FCFA / pièce",
+    unit: "unité",
+    baseCost: 2500,
+    description: "Personnalisation d'objets publicitaires : tasses (mugs), stylos corporatifs gravés, porte-clés et gadgets de marque.",
+    icon: "Coffee"
+  },
+  {
+    id: "imp-text-1",
+    name: "Marquage Textile : T-Shirts, Polos, Casquettes & Pagnes",
+    category: "imprimerie",
+    subCategory: "textile",
+    priceEstimate: "4 500 FCFA / pièce",
+    unit: "unité",
+    baseCost: 4500,
+    description: "Flocage, sérigraphie et broderie sur T-shirts corporatifs, polos d'entreprise, casquettes promotionnelles et pagnes événementiels.",
+    icon: "Shirt"
+  },
+
+  // ÉDITION - 2 Sous-catégories
+  {
+    id: "ed-lit-1",
+    name: "Édition de Littérature Générale",
+    category: "edition",
+    subCategory: "litterature",
+    priceEstimate: "Sur devis",
+    unit: "ouvrage",
+    baseCost: 0,
+    hidePrice: true,
+    description: "Édition, correction et impression d'ouvrages littéraires : romans, poésies, essais, beaux livres et autobiographies.",
+    icon: "BookOpen"
+  },
+  {
+    id: "ed-edu-1",
+    name: "Édition d'Ouvrages Éducatifs & Scolaires",
+    category: "edition",
+    subCategory: "education",
+    priceEstimate: "Sur devis",
+    unit: "ouvrage",
+    baseCost: 0,
+    hidePrice: true,
+    description: "Édition de manuels scolaires, cahiers d'exercices, annales d'examens et guides pédagogiques aux normes académiques.",
+    icon: "GraduationCap"
+  },
+
+  // SECRÉTARIAT BUREAUTIQUE BILINGUE
   {
     id: "s-1",
-    name: "Saisie Professionnelle",
+    name: "Saisie Professionnelle Bilingue",
     category: "secretariat",
     priceEstimate: "500 FCFA / page",
     unit: "page",
     baseCost: 500,
-    description: "Saisie ultra-rapide et rigoureuse de rapports, mémoires de fin d'études et correspondances administratives.",
+    description: "Saisie ultra-rapide et rigoureuse de rapports, correspondances administratives et documents de travail.",
     icon: "FileText"
   },
   {
@@ -24,14 +108,14 @@ export const SERVICES_DATA: ServiceItem[] = [
     priceEstimate: "100 FCFA / page",
     unit: "page",
     baseCost: 100,
-    description: "Impression laser haute fidélité en noir et blanc ou en couleurs éclatantes sur papier de qualité supérieure.",
+    description: "Impression laser haute fidélité en noir et blanc ou couleurs éclatantes sur papier de qualité supérieure.",
     icon: "Printer"
   },
   {
     id: "s-3",
-    name: "Reliure & Numérisation",
+    name: "Reliure & Numérisation (Scan)",
     category: "secretariat",
-    priceEstimate: "1 500 FCFA / document",
+    priceEstimate: "1 500 FCFA / doc",
     unit: "document",
     baseCost: 1500,
     description: "Reliure spirale ou thermique professionnelle, et numérisation (scan) haute vitesse vers formats PDF ou images.",
@@ -39,16 +123,6 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
   {
     id: "s-4",
-    name: "Rédaction de CV Moderne",
-    category: "secretariat",
-    priceEstimate: "3 000 FCFA / CV",
-    unit: "CV",
-    baseCost: 3000,
-    description: "Valorisation de votre parcours professionnel avec une mise en page moderne, percutante et optimisée ATS.",
-    icon: "UserCheck"
-  },
-  {
-    id: "s-5",
     name: "Plastification de Documents",
     category: "secretariat",
     priceEstimate: "1 000 FCFA / doc",
@@ -58,151 +132,143 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "ShieldAlert"
   },
 
-  // Imprimerie
+  // COMMERCE
   {
-    id: "i-1",
-    name: "Banderoles & Banners",
-    category: "imprimerie",
-    priceEstimate: "6 000 FCFA / m²",
-    unit: "m²",
-    baseCost: 6000,
-    description: "Impression grand format sur bâche résistante aux intempéries pour vos campagnes promotionnelles ou événements.",
-    icon: "Flag"
+    id: "com-1",
+    name: "Fournitures de Bureau & Papeterie Bilingue",
+    category: "commerce",
+    priceEstimate: "Selon article",
+    unit: "article",
+    baseCost: 0,
+    description: "Vente de fournitures de bureau, papier A4 Premium, registres, carnets et papeterie bilingue certifiée.",
+    icon: "ShoppingBag"
   },
   {
-    id: "i-2",
-    name: "Roll-up Publicitaires",
-    category: "imprimerie",
-    priceEstimate: "35 000 FCFA / kit",
-    unit: "kit complet",
-    baseCost: 35000,
-    description: "Supports autoportants parfaits pour les salons d'exposition, présentations d'entreprises ou points de vente.",
-    icon: "Image"
+    id: "com-2",
+    name: "Gamme Longrich & Produits de Soins",
+    category: "commerce",
+    priceEstimate: "Selon produit",
+    unit: "article",
+    baseCost: 0,
+    description: "Produits d'hygiène et de bien-être naturels Longrich (dentifrices, gobelets alcalins, soins corporels).",
+    icon: "Sparkles"
   },
   {
-    id: "i-3",
-    name: "Flyers & Dépliants",
-    category: "imprimerie",
-    priceEstimate: "15 000 FCFA / 100 pcs",
-    unit: "100 pièces",
-    baseCost: 150,
-    description: "Conception graphique et tirage de flyers haute définition pour capter l'attention de vos prospects.",
-    icon: "Layers"
-  },
-  {
-    id: "i-4",
-    name: "Mugs & Stylos Personnalisés",
-    category: "imprimerie",
-    priceEstimate: "3 500 FCFA / pièce",
-    unit: "unité",
-    baseCost: 3500,
-    description: "Personnalisation d'objets publicitaires de haute qualité pour renforcer la fidélité de vos clients et votre marque.",
-    icon: "Coffee"
-  },
-  {
-    id: "i-5",
-    name: "T-Shirts & Casquettes Floqués",
-    category: "imprimerie",
-    priceEstimate: "5 500 FCFA / pièce",
-    unit: "unité",
-    baseCost: 5500,
-    description: "Flocage, sérigraphie ou sublimation professionnelle sur textiles de grande durabilité.",
-    icon: "Shirt"
+    id: "com-3",
+    name: "Bijoux & Accessoires de Mode",
+    category: "commerce",
+    priceEstimate: "Selon modèle",
+    unit: "article",
+    baseCost: 0,
+    description: "Sélection raffinée de bijoux en argent, colliers élégants et accessoires de mode.",
+    icon: "Gem"
   },
 
-  // Autres Services (Cyber, Admin, Mobile Money, Canal+)
+  // AUTRE (Toute la plaque : Cyber, Mobile Money, Canal+, Services en ligne)
   {
     id: "a-1",
-    name: "Cyber Café & Photo Minute",
+    name: "Cyber Café & Impression Internet",
     category: "autres",
     priceEstimate: "500 FCFA / session",
     unit: "session",
     baseCost: 500,
-    description: "Connexion internet ultra-rapide par fibre optique et service de photo d'identité minute aux normes internationales.",
-    icon: "Camera"
+    description: "Espace cyber connecté en fibre optique ultra-rapide pour toutes vos recherches, impressions et démarches Web.",
+    icon: "Globe"
   },
   {
     id: "a-2",
-    name: "MTN MoMo & Orange Money",
+    name: "Mobile Money (MTN MoMo & Orange Money)",
     category: "autres",
-    priceEstimate: "Selon grille",
+    priceEstimate: "Selon montant",
     unit: "transaction",
     baseCost: 0,
-    description: "Dépôts, retraits et transferts d'argent instantanés et sécurisés au sein des deux principaux réseaux.",
+    description: "Dépôts, retraits, transferts d'argent nationaux et internationaux instantanés en toute sécurité.",
     icon: "Smartphone"
   },
   {
     id: "a-3",
-    name: "Pré-enrôlement CNI & Passeport",
-    category: "autres",
-    priceEstimate: "1 500 FCFA / demande",
-    unit: "demande",
-    baseCost: 1500,
-    description: "Assistance et saisie complète de vos formulaires administratifs pour l'obtention de passeport ou carte d'identité.",
-    icon: "FileCheck"
-  },
-  {
-    id: "a-4",
-    name: "Abonnement Canal+",
+    name: "Abonnements & Recharges TV (Canal+)",
     category: "autres",
     priceEstimate: "Selon bouquet",
-    unit: "mois",
+    unit: "recharge",
     baseCost: 0,
-    description: "Activation de vos bouquets Canal+, changement de formule et paiements de factures simplifiés.",
+    description: "Recharges et réabonnements instantanés de vos bouquets Canal+ et autres opérateurs de télévision.",
     icon: "Tv"
   },
   {
-    id: "a-5",
-    name: "Paiement de Factures en ligne",
+    id: "a-4",
+    name: "Pré-enrôlement CNI & Services en Ligne",
     category: "autres",
-    priceEstimate: "500 FCFA / facture",
-    unit: "facture",
-    baseCost: 500,
-    description: "Règlement sécurisé de vos factures d'électricité Eneo, factures d'eau Camwater et autres services numériques.",
-    icon: "Receipt"
+    priceEstimate: "1 500 FCFA / démarche",
+    unit: "démarche",
+    baseCost: 1500,
+    description: "Assistance et pré-enrôlement pour CNI, passeports, concours administratifs et paiement de factures.",
+    icon: "FileCheck"
+  },
+
+  // PERSONNALISÉ
+  {
+    id: "p-1",
+    name: "Rédaction de CV & Lettres de Motivation",
+    category: "personnalise",
+    priceEstimate: "Sur demande",
+    unit: "prestation",
+    baseCost: 0,
+    description: "Rédaction et valorisation de votre parcours professionnel avec une mise en page moderne, percutante et optimisée.",
+    icon: "UserCheck"
+  },
+  {
+    id: "p-2",
+    name: "Correction & Mise en Forme / Page de Rapports et Mémoires",
+    category: "personnalise",
+    priceEstimate: "Sur devis",
+    unit: "travail",
+    baseCost: 0,
+    description: "Correction orthographique, relecture académique, structuration et mise en page de vos rapports de stage et mémoires de fin d'études.",
+    icon: "CheckCircle"
   }
 ];
 
 export const FORMATIONS_DATA: TrainingItem[] = [
   {
     id: "f-1",
-    name: "Initiation à l'Informatique",
+    name: "Initiation à l'Intelligence Artificielle",
     duration: "1 Mois",
-    level: "Débutant",
-    price: 30000,
-    icon: "Monitor",
-    description: "Prenez en main un ordinateur moderne : environnement Windows, navigation internet sécurisée, gestion des fichiers.",
-    longDescription: "Ce module complet s'adresse à toute personne désireuse d'acquérir les bases de l'informatique. Vous apprendrez à manipuler le clavier, organiser vos dossiers, envoyer des emails professionnels et naviguer en toute sécurité.",
-    image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=600&auto=format&fit=crop"
+    level: "Intermédiaire",
+    price: "Sur inscription",
+    icon: "Brain",
+    description: "Exploitez la puissance des modèles d'IA (ChatGPT, Midjourney, Claude) pour multiplier votre productivité.",
+    longDescription: "Une formation révolutionnaire et inédite ! Apprenez à concevoir des prompts puissants, rédiger des rapports complexes en quelques secondes, générer des images commerciales d'exception et automatiser vos tâches bureautiques récurrentes.",
+    image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=600&auto=format&fit=crop"
   },
   {
     id: "f-2",
-    name: "Secrétariat Bureautique",
-    duration: "2 Mois",
-    level: "Tous niveaux",
-    price: 45000,
-    icon: "Briefcase",
-    description: "Maîtrise complète de la suite Office : Microsoft Word, Excel de base, PowerPoint pour présentations.",
-    longDescription: "Devenez un professionnel de l'administration. Ce cursus inclut la mise en page de documents complexes sous Word, le traitement et l'analyse de données sur tableurs Excel et la création de diaporamas percutants pour des réunions d'affaires.",
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=600&auto=format&fit=crop"
-  },
-  {
-    id: "f-3",
     name: "Infographie & Graphic Design",
     duration: "3 Mois",
     level: "Intermédiaire",
-    price: 75000,
+    price: "Sur inscription",
     icon: "Palette",
     description: "Conception graphique professionnelle avec Adobe Photoshop, Illustrator et les bases de la typographie.",
     longDescription: "Apprenez à concevoir des visuels publicitaires, des chartes graphiques, des logos et des maquettes d'impression. Ce module intensif vous donne les clés pour intégrer une agence de communication ou exercer en freelance.",
     image: "https://images.unsplash.com/photo-1561070791-26c113006238?q=80&w=600&auto=format&fit=crop"
   },
   {
-    id: "f-4",
-    name: "Marketing Digital & Réseaux Sociaux",
+    id: "f-3",
+    name: "Secrétariat & Bureautique Bilingue",
     duration: "2 Mois",
     level: "Intermédiaire",
-    price: 60000,
+    price: "Sur inscription",
+    icon: "Briefcase",
+    description: "Maîtrise complète de la suite Office : Microsoft Word, Excel avancé, PowerPoint et bilinguisme administratif.",
+    longDescription: "Devenez un professionnel de l'administration. Ce cursus inclut la mise en page de documents complexes sous Word, le traitement et l'analyse de données sur tableurs Excel et la création de diaporamas percutants pour des réunions d'affaires.",
+    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    id: "f-4",
+    name: "Marketing Digital & Stratégie",
+    duration: "2 Mois",
+    level: "Expert",
+    price: "Sur inscription",
     icon: "TrendingUp",
     description: "Apprenez à promouvoir vos produits, paramétrer des publicités Facebook/Google et animer une communauté.",
     longDescription: "Le marketing digital est le moteur de croissance moderne. Maîtrisez le SEO, le copywriting, la création d'audiences publicitaires, l'analyse des indicateurs clés (KPIs) et le community management sur Instagram, Facebook et TikTok.",
@@ -210,10 +276,10 @@ export const FORMATIONS_DATA: TrainingItem[] = [
   },
   {
     id: "f-5",
-    name: "Montage Vidéo Professionnel",
+    name: "Montage Vidéo & Multi-média",
     duration: "2 Mois",
     level: "Intermédiaire",
-    price: 65000,
+    price: "Sur inscription",
     icon: "Video",
     description: "Maîtrisez le montage vidéo numérique, l'étalonnage, l'ajout d'effets visuels et de transitions sonores.",
     longDescription: "Créez des vidéos dynamiques pour YouTube, la télévision ou les réseaux sociaux. Apprenez à importer des rushes, couper, ajouter des transitions professionnelles, corriger les couleurs et intégrer des éléments de motion design.",
@@ -221,25 +287,25 @@ export const FORMATIONS_DATA: TrainingItem[] = [
   },
   {
     id: "f-6",
-    name: "Bilinguisme & Langues d'Affaires",
+    name: "Bilinguisme & Communication Pro",
     duration: "3 Mois",
-    level: "Tous niveaux",
-    price: 50000,
+    level: "Débutant",
+    price: "Sur inscription",
     icon: "Languages",
-    description: "Perfectionnement en Anglais et Chinois des affaires pour communiquer efficacement avec vos partenaires.",
+    description: "Perfectionnement en Anglais et Français des affaires pour communiquer efficacement avec vos partenaires.",
     longDescription: "Dans un monde interconnecté, le multilinguisme est un passeport vers la réussite. Pratiquez l'expression orale, l'écoute de correspondances d'affaires et apprenez le vocabulaire technique nécessaire pour négocier sereinement à l'international.",
     image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=600&auto=format&fit=crop"
   },
   {
     id: "f-7",
-    name: "Initiation à l'Intelligence Artificielle",
+    name: "Initiation à l'Informatique",
     duration: "1 Mois",
-    level: "Tous niveaux",
-    price: 40000,
-    icon: "Brain",
-    description: "Exploitez la puissance des modèles d'IA (ChatGPT, Midjourney, Claude) pour multiplier votre productivité.",
-    longDescription: "Une formation révolutionnaire et inédite ! Apprenez à concevoir des prompts puissants, rédiger des rapports complexes en quelques secondes, générer des images commerciales d'exception et automatiser vos tâches bureautiques récurrentes.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=600&auto=format&fit=crop"
+    level: "Débutant",
+    price: "Sur inscription",
+    icon: "Monitor",
+    description: "Prenez en main un ordinateur moderne : environnement Windows, navigation internet sécurisée, gestion des fichiers.",
+    longDescription: "Ce module complet s'adresse à toute personne désireuse d'acquérir les bases de l'informatique. Vous apprendrez à manipuler le clavier, organiser vos dossiers, envoyer des emails professionnels et naviguer en toute sécurité.",
+    image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=600&auto=format&fit=crop"
   }
 ];
 

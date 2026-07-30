@@ -20,6 +20,8 @@ import AdminDashboard from "./components/AdminDashboard";
 
 // Widgets
 import ChatBotWidget from "./components/ChatBotWidget";
+import WhatsAppButton from "./components/WhatsAppButton";
+import { Language } from "./i18n";
 
 export default function App() {
   const [currentView, setCurrentView] = useState<
@@ -28,6 +30,11 @@ export default function App() {
 
   const [prefilledSubject, setPrefilledSubject] = useState("");
   const [servicesFilter, setServicesFilter] = useState("all");
+  const [lang, setLang] = useState<Language>("fr");
+
+  const handleToggleLang = () => {
+    setLang((prev) => (prev === "fr" ? "en" : "fr"));
+  };
 
   // Global Scroll Reveal Observer for dynamic section entrance animations
   useEffect(() => {
@@ -85,8 +92,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between selection:bg-blue-900 selection:text-white font-sans antialiased text-gray-800">
       
-      {/* Universal Sticky Header with Quick Contact Rail */}
-      <Header onNavigate={handleNavigate} activeSection={currentView} />
+      {/* Universal Sticky Header with Quick Contact Rail & Language Switcher */}
+      <Header onNavigate={handleNavigate} activeSection={currentView} lang={lang} onToggleLang={handleToggleLang} />
 
       {/* Main Content Area */}
       <main className="flex-grow">
@@ -166,8 +173,11 @@ export default function App() {
       {/* Universal Footer with Brand description and Newsletter */}
       <Footer onNavigate={handleNavigate} />
 
-      {/* Floating AI Empire Chatbot Widget - Invisible on Admin Area to keep it professional */}
+      {/* Floating AI Empire Chatbot Widget */}
       {currentView !== "admin" && <ChatBotWidget />}
+
+      {/* Floating WhatsApp Customer Service Button */}
+      <WhatsAppButton />
 
     </div>
   );

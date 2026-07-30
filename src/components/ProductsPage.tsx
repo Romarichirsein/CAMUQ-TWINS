@@ -14,7 +14,8 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
   const categories = [
     { id: "all", label: "Tout le Catalogue" },
     { id: "fourniture", label: "Fournitures de Bureau" },
-    { id: "longrich", label: "Produits de Santé Longrich" },
+    { id: "papeterie", label: "Papeterie Bilingue" },
+    { id: "longrich", label: "Produits Longrich" },
     { id: "bijoux", label: "Bijoux & Accessoires" }
   ];
 

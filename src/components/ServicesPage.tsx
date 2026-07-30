@@ -10,20 +10,57 @@ interface ServicesPageProps {
 
 export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFilter }: ServicesPageProps) {
   const [localFilterCat, setLocalFilterCat] = useState<string>("all");
+  const [subFilter, setSubFilter] = useState<string>("all");
   
   const filterCat = activeFilter !== undefined ? activeFilter : localFilterCat;
-  const setFilterCat = setActiveFilter !== undefined ? setActiveFilter : setLocalFilterCat;
+  const setFilterCat = (cat: string) => {
+    setSubFilter("all");
+    if (setActiveFilter) {
+      setActiveFilter(cat);
+    } else {
+      setLocalFilterCat(cat);
+    }
+  };
 
   const categories = [
     { id: "all", label: "Tous nos services" },
     { id: "secretariat", label: "Secrétariat Bilingue" },
-    { id: "imprimerie", label: "Imprimerie Professionnelle" },
-    { id: "autres", label: "Cyber Café & Services en ligne" }
+    { id: "imprimerie", label: "Impression" },
+    { id: "edition", label: "Édition" },
+    { id: "commerce", label: "Commerce" },
+    { id: "autres", label: "Autre (Cyber, Mobile Money)" },
+    { id: "personnalise", label: "Service Personnalisé" }
   ];
 
-  const filteredServices = filterCat === "all"
-    ? SERVICES_DATA
-    : SERVICES_DATA.filter(s => s.category === filterCat);
+  // Impression Sub-tabs
+  const impressionSubCategories = [
+    { id: "all", label: "Toutes les impressions" },
+    { id: "industrial", label: "Industriel (Sur devis)" },
+    { id: "communication", label: "Communication (Flyers, cartes...)" },
+    { id: "grand-format", label: "Grand Format & Banderoles" },
+    { id: "goodies", label: "Goodies Publicitaires (Tasses, stylos...)" },
+    { id: "textile", label: "Marquage Textile (T-shirts, polos, pagnes...)" }
+  ];
+
+  // Édition Sub-tabs
+  const editionSubCategories = [
+    { id: "all", label: "Toute l'Édition" },
+    { id: "litterature", label: "Littérature Générale" },
+    { id: "education", label: "Éducation & Manuels Scolaires" }
+  ];
+
+  const filteredServices = SERVICES_DATA.filter(service => {
+    if (filterCat !== "all" && service.category !== filterCat) {
+      return false;
+    }
+    if (filterCat === "imprimerie" && subFilter !== "all" && service.subCategory !== subFilter) {
+      return false;
+    }
+    if (filterCat === "edition" && subFilter !== "all" && service.subCategory !== subFilter) {
+      return false;
+    }
+    return true;
+  });
 
   const renderIcon = (iconName: string, className: string = "w-5 h-5") => {
     const IconComponent = (Icons as any)[iconName] || Icons.HelpCircle;
@@ -32,28 +69,25 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
 
   return (
     <div id="services-page-view" className="py-16 bg-white animate-fade-in">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
-        {/* Title Header */}
+        {/* Title Header - Top badge removed as requested */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-black uppercase tracking-wider text-blue-900 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-            Prestations de Services - CAMUQ & TWINS EMPIRE Ltd
-          </span>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
             Des Services d&apos;Élite Taillés Pour Vos Exigences
           </h2>
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            De la saisie professionnelle bilingue à l&apos;édition grand format de flyers et banderoles publicitaires, ou pour tous vos transferts et démarches administratives officielles en ligne.
+            De la papeterie bilingue et l&apos;impression industrielle ou textile, à l&apos;édition littéraire, en passant par le cyber café et la rédaction de rapports/CV.
           </p>
         </div>
 
-        {/* Tab category selectors */}
+        {/* Main Tab category selectors */}
         <div className="flex flex-wrap items-center justify-center gap-2 border-b border-gray-150 pb-6">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setFilterCat(cat.id)}
-              className={`px-5 py-3 rounded-xl text-xs sm:text-sm font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer ${
                 filterCat === cat.id
                   ? "bg-blue-900 text-white shadow-md shadow-blue-900/10"
                   : "bg-slate-50 text-gray-500 hover:text-blue-900 hover:bg-slate-100/80 border border-slate-100"
@@ -63,6 +97,44 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
             </button>
           ))}
         </div>
+
+        {/* Sub-category Filter Pills for Impression */}
+        {filterCat === "imprimerie" && (
+          <div className="flex flex-wrap justify-center gap-2 bg-blue-50/60 p-3 rounded-2xl border border-blue-100 animate-slide-down max-w-4xl mx-auto">
+            {impressionSubCategories.map((sub) => (
+              <button
+                key={sub.id}
+                onClick={() => setSubFilter(sub.id)}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
+                  subFilter === sub.id
+                    ? "bg-yellow-400 text-blue-950 shadow-xs"
+                    : "bg-white text-blue-900 hover:bg-yellow-100 border border-blue-100"
+                }`}
+              >
+                {sub.label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Sub-category Filter Pills for Édition */}
+        {filterCat === "edition" && (
+          <div className="flex flex-wrap justify-center gap-2 bg-yellow-50/60 p-3 rounded-2xl border border-yellow-200 animate-slide-down max-w-2xl mx-auto">
+            {editionSubCategories.map((sub) => (
+              <button
+                key={sub.id}
+                onClick={() => setSubFilter(sub.id)}
+                className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all cursor-pointer ${
+                  subFilter === sub.id
+                    ? "bg-blue-900 text-white shadow-xs"
+                    : "bg-white text-blue-900 hover:bg-yellow-100 border border-yellow-200"
+                }`}
+              >
+                {sub.label}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Services Listing Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
