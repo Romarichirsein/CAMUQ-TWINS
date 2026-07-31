@@ -68,18 +68,34 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
   };
 
   return (
-    <div id="services-page-view" className="py-16 bg-white animate-fade-in">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        
-        {/* Title Header - Top badge removed as requested */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
+    <div id="services-page-view" className="bg-white animate-fade-in pb-16">
+      
+      {/* Full-width Hero Header Banner with Background Image */}
+      <div className="relative w-full py-20 sm:py-28 bg-slate-950 overflow-hidden text-white mb-10 shadow-xl">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/hero-services.jpg" 
+            alt="Nos Services CAMUQ & TWINS EMPIRE" 
+            className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000"
+          />
+          {/* Black overlay with opacity as requested */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/75 to-black/85 backdrop-blur-[1px]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+          <span className="text-xs font-black uppercase tracking-widest text-yellow-400 bg-yellow-400/10 px-4 py-1.5 rounded-full border border-yellow-400/30 inline-block animate-fade-in">
+            Nos Prestations & Expertises
+          </span>
+          <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight text-balance">
             Des Services d&apos;Élite Taillés Pour Vos Exigences
-          </h2>
-          <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
+          </h1>
+          <p className="text-sm sm:text-lg text-slate-200 leading-relaxed font-medium max-w-3xl mx-auto text-balance">
             De la papeterie bilingue et l&apos;impression industrielle ou textile, à l&apos;édition littéraire, en passant par le cyber café et la rédaction de rapports/CV.
           </p>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Main Tab category selectors */}
         <div className="flex flex-wrap items-center justify-center gap-2 border-b border-gray-150 pb-6">
