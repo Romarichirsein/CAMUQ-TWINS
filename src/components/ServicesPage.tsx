@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as Icons from "lucide-react";
 import { SERVICES_DATA } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ServicesPageProps {
   onQuoteRequest: (serviceName: string) => void;
@@ -12,6 +13,9 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
   const [localFilterCat, setLocalFilterCat] = useState<string>("all");
   const [subFilter, setSubFilter] = useState<string>("all");
   
+  const { lang, t } = useLanguage();
+  const sT = t.servicesSection;
+
   const filterCat = activeFilter !== undefined ? activeFilter : localFilterCat;
   const setFilterCat = (cat: string) => {
     setSubFilter("all");
@@ -23,30 +27,30 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
   };
 
   const categories = [
-    { id: "all", label: "Tous nos services" },
-    { id: "secretariat", label: "Secrétariat Bilingue" },
-    { id: "imprimerie", label: "Impression" },
-    { id: "edition", label: "Édition" },
-    { id: "commerce", label: "Commerce" },
-    { id: "autres", label: "Autre (Cyber, Mobile Money)" },
-    { id: "personnalise", label: "Service Personnalisé" }
+    { id: "all", label: sT.tabAll },
+    { id: "secretariat", label: sT.tabSecretariat },
+    { id: "imprimerie", label: sT.tabImpression },
+    { id: "edition", label: sT.tabEdition },
+    { id: "commerce", label: sT.tabCommerce },
+    { id: "autres", label: sT.tabAutre },
+    { id: "personnalise", label: sT.tabPersonnalise }
   ];
 
   // Impression Sub-tabs
   const impressionSubCategories = [
-    { id: "all", label: "Toutes les impressions" },
-    { id: "industrial", label: "Industriel (Sur devis)" },
-    { id: "communication", label: "Communication (Flyers, cartes...)" },
-    { id: "grand-format", label: "Grand Format & Banderoles" },
-    { id: "goodies", label: "Goodies Publicitaires (Tasses, stylos...)" },
-    { id: "textile", label: "Marquage Textile (T-shirts, polos, pagnes...)" }
+    { id: "all", label: sT.tabAll },
+    { id: "industrial", label: sT.impIndustrial },
+    { id: "communication", label: sT.impCommunication },
+    { id: "grand-format", label: sT.impGrandFormat },
+    { id: "goodies", label: sT.impGoodies },
+    { id: "textile", label: sT.impTextile }
   ];
 
   // Édition Sub-tabs
   const editionSubCategories = [
-    { id: "all", label: "Toute l'Édition" },
-    { id: "litterature", label: "Littérature Générale" },
-    { id: "education", label: "Éducation & Manuels Scolaires" }
+    { id: "all", label: sT.tabAll },
+    { id: "litterature", label: sT.edLitterature },
+    { id: "education", label: sT.edEducation }
   ];
 
   const filteredServices = SERVICES_DATA.filter(service => {
@@ -84,13 +88,13 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <span className="text-xs font-black uppercase tracking-widest text-yellow-400 bg-yellow-400/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-yellow-400/40 inline-block shadow-md">
-            Nos Prestations & Expertises
+            {sT.tabAll}
           </span>
           <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight text-balance drop-shadow-lg">
-            Des Services d&apos;Élite Taillés Pour Vos Exigences
+            {sT.pageTitle}
           </h1>
           <p className="text-sm sm:text-lg text-slate-100 leading-relaxed font-medium max-w-3xl mx-auto text-balance drop-shadow-md">
-            De la papeterie bilingue et l&apos;impression industrielle ou textile, à l&apos;édition littéraire, en passant par le cyber café et la rédaction de rapports/CV.
+            {sT.pageSubtitle}
           </p>
         </div>
       </div>

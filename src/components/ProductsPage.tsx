@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Search, ShoppingCart, Check, SlidersHorizontal, AlertCircle } from "lucide-react";
 import { PRODUCT_DATA } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ProductsPageProps {
   onOrderProduct: (productName: string) => void;
@@ -11,12 +12,15 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [successOrder, setSuccessOrder] = useState<string | null>(null);
 
+  const { t } = useLanguage();
+  const prodT = t.products;
+
   const categories = [
-    { id: "all", label: "Tout le Catalogue" },
-    { id: "fourniture", label: "Fournitures de Bureau" },
-    { id: "papeterie", label: "Papeterie Bilingue" },
-    { id: "longrich", label: "Produits Longrich" },
-    { id: "bijoux", label: "Bijoux & Accessoires" }
+    { id: "all", label: prodT.allCat },
+    { id: "fourniture", label: prodT.fournitureCat },
+    { id: "papeterie", label: prodT.papeterieCat },
+    { id: "longrich", label: prodT.longrichCat },
+    { id: "bijoux", label: prodT.bijouxCat }
   ];
 
   const filteredProducts = PRODUCT_DATA.filter((product) => {
@@ -38,54 +42,47 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
     <div id="products-view" className="py-16 bg-slate-50 animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Title Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-black uppercase tracking-wider text-yellow-600 bg-yellow-100/60 px-3 py-1.5 rounded-full border border-yellow-200">
-            Catalogue de Vente CAMUQ & TWINS EMPIRE
+        {/* Page Title & Search Bar */}
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <span className="text-xs font-black uppercase tracking-wider text-yellow-600 bg-yellow-100/60 px-3.5 py-1.5 rounded-full border border-yellow-200">
+            {prodT.pageTag}
           </span>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
-            Notre Boutique & Articles Exclusivement Sélectionnés
+            {prodT.pageTitle}
           </h2>
-          <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            Trouvez vos fournitures scolaires, équipez vos bureaux, prenez soin de votre corps avec les produits Longrich d&apos;origine naturelle, ou offrez-vous des bijoux raffinés.
+          <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-medium">
+            {prodT.pageSubtitle}
           </p>
+
+          {/* Search input bar */}
+          <div className="pt-4 max-w-xl mx-auto relative">
+            <Search className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={prodT.searchPlaceholder}
+              className="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white border border-gray-200 text-gray-800 text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900 transition-all"
+            />
+          </div>
         </div>
 
-        {/* Search and Filters panel */}
-        <div className="bg-white p-6 rounded-3xl border border-gray-150 shadow-sm space-y-4 max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            
-            {/* Search Input */}
-            <div className="relative w-full md:flex-1">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input 
-                type="text"
-                placeholder="Rechercher un article (cahier, Longrich, bijoux...)"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 bg-slate-50 rounded-xl text-sm border-0 focus:ring-2 focus:ring-blue-900 focus:bg-white outline-none transition-all"
-              />
-            </div>
-
-            {/* Category Selectors */}
-            <div className="flex flex-wrap gap-2 w-full md:w-auto">
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 ${
-                    selectedCategory === cat.id
-                      ? "bg-blue-900 text-white shadow-sm"
-                      : "bg-slate-50 text-gray-500 hover:bg-slate-100 hover:text-blue-900"
-                  }`}
-                >
-                  {cat.id === "all" && <SlidersHorizontal className="w-3.5 h-3.5" />}
-                  {cat.label}
-                </button>
-              ))}
-            </div>
-
-          </div>
+        {/* Category Selectors */}
+        <div className="flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto pb-4">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 ${
+                selectedCategory === cat.id
+                  ? "bg-blue-900 text-white shadow-sm"
+                  : "bg-white text-gray-500 hover:bg-slate-100 hover:text-blue-900 border border-gray-150"
+              }`}
+            >
+              {cat.id === "all" && <SlidersHorizontal className="w-3.5 h-3.5" />}
+              {cat.label}
+            </button>
+          ))}
         </div>
 
         {/* Success Alert Banner */}

@@ -1,12 +1,16 @@
 import React from "react";
 import { ArrowRight, MessageSquareCode, Calculator, Shield, Users, BookOpen } from "lucide-react";
-import { COMPANY_NAME, COMPANY_SLOGAN } from "../data";
+import { COMPANY_NAME } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 interface HeroProps {
-  onNavigate: (section: string) => void;
+  onNavigate: (section: string, subCategoryOrSubject?: string) => void;
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
+  const { t } = useLanguage();
+  const heroT = t.hero;
+
   return (
     <section id="hero-section" className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50/50 pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
       {/* Decorative colored grid/shapes */}
@@ -27,14 +31,11 @@ export default function Hero({ onNavigate }: HeroProps) {
             </h1>
             
             <p className="font-sans font-medium text-lg sm:text-xl text-yellow-600 tracking-tight leading-relaxed italic uppercase">
-              &ldquo;{COMPANY_SLOGAN}&rdquo;
+              &ldquo;{heroT.slogan}&rdquo;
             </p>
 
             <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Propulsez votre entreprise ou votre carrière vers de nouveaux sommets ! 
-              Bénéficiez de nos services premium en <strong className="text-blue-900 font-semibold">secrétariat bilingue</strong>, 
-              <strong className="text-blue-900 font-semibold">imprimerie numérique</strong> de haute qualité, et de nos <strong className="text-blue-900 font-semibold">formations professionnelles certifiées</strong>, 
-              allant du design à l'intégration de l'Intelligence Artificielle.
+              {heroT.description}
             </p>
 
             {/* CTA action buttons to drive conversions */}
@@ -44,7 +45,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-extrabold text-base tracking-wide shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/20 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Calculator className="w-5 h-5 shrink-0 animate-bounce" />
-                Demander un Devis Instantané
+                {heroT.requestQuoteBtn}
               </button>
               
               <button
@@ -52,7 +53,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                 className="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-900 hover:bg-blue-950 text-white font-bold text-base tracking-wide shadow-lg shadow-blue-950/10 hover:shadow-blue-950/20 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 border border-blue-850 cursor-pointer"
               >
                 <MessageSquareCode className="w-5 h-5 shrink-0 text-yellow-400 animate-pulse" />
-                Discuter avec l'IA
+                {heroT.chatAiBtn}
               </button>
             </div>
 
@@ -60,15 +61,15 @@ export default function Hero({ onNavigate }: HeroProps) {
             <div className="grid grid-cols-3 gap-4 pt-8 border-t border-gray-100 max-w-lg mx-auto lg:mx-0">
               <div className="text-center lg:text-left transform transition-transform hover:scale-105">
                 <div className="font-sans font-extrabold text-2xl text-blue-950">100%</div>
-                <div className="text-xs text-gray-500 mt-1">Bilingue & Qualifié</div>
+                <div className="text-xs text-gray-500 mt-1">{heroT.statBilingual}</div>
               </div>
               <div className="text-center lg:text-left transform transition-transform hover:scale-105">
                 <div className="font-sans font-extrabold text-2xl text-blue-950">8+</div>
-                <div className="text-xs text-gray-500 mt-1">Formations Pro</div>
+                <div className="text-xs text-gray-500 mt-1">{heroT.statTrainings}</div>
               </div>
               <div className="text-center lg:text-left transform transition-transform hover:scale-105">
                 <div className="font-sans font-extrabold text-2xl text-blue-950">Rapide</div>
-                <div className="text-xs text-gray-500 mt-1">Service & Livraison</div>
+                <div className="text-xs text-gray-500 mt-1">{heroT.statFast}</div>
               </div>
             </div>
           </div>

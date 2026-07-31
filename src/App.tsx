@@ -146,7 +146,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between selection:bg-blue-900 selection:text-white font-sans antialiased text-gray-800">
       
       {/* Universal Sticky Header with Quick Contact Rail & Language Switcher */}
-      <Header onNavigate={handleNavigate} activeSection={currentView} lang={lang} onToggleLang={handleToggleLang} />
+      <Header onNavigate={handleNavigate} activeSection={currentView} />
 
       {/* Main Content Area */}
       <main className="flex-grow">

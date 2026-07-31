@@ -2,12 +2,17 @@ import React from "react";
 import { Phone, Mail, Clock, ArrowRight, ShieldCheck } from "lucide-react";
 import { COMPANY_NAME, COMPANY_SLOGAN, COMPANY_EMAIL, COMPANY_PHONES } from "../data";
 import Logo from "./Logo";
+import { useLanguage } from "../context/LanguageContext";
 
 interface FooterProps {
   onNavigate: (section: string) => void;
 }
 
 export default function Footer({ onNavigate }: FooterProps) {
+  const { t } = useLanguage();
+  const fT = t.footer;
+  const navT = t.nav;
+
   return (
     <footer id="app-footer" className="bg-gradient-to-b from-slate-900 to-slate-950 text-gray-350 border-t border-slate-800 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,39 +26,34 @@ export default function Footer({ onNavigate }: FooterProps) {
               &ldquo;{COMPANY_SLOGAN}&rdquo;
             </p>
             <p className="text-xs text-gray-500">
-              Votre partenaire de confiance en Papeterie Bilingue, Imprimerie et Formations Professionnelles d'Élite au Cameroun et au-delà.
+              {fT.description}
             </p>
           </div>
 
           {/* Quick links */}
           <div>
             <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-yellow-400 pl-3">
-              Ressources & Navigation
+              {fT.quickLinks}
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <button onClick={() => onNavigate("home")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400">
-                  <ArrowRight className="w-3 h-3 text-yellow-400" /> Accueil
+                <button onClick={() => onNavigate("home")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400 cursor-pointer">
+                  <ArrowRight className="w-3 h-3 text-yellow-400" /> {navT.home}
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate("services")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400">
-                  <ArrowRight className="w-3 h-3 text-yellow-400" /> Services de Bureau & Imprimerie
+                <button onClick={() => onNavigate("services")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400 cursor-pointer">
+                  <ArrowRight className="w-3 h-3 text-yellow-400" /> {navT.services}
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate("training")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400">
-                  <ArrowRight className="w-3 h-3 text-yellow-400" /> Formations Certifiantes
+                <button onClick={() => onNavigate("training")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400 cursor-pointer">
+                  <ArrowRight className="w-3 h-3 text-yellow-400" /> {navT.trainings}
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate("contact", "Demande de devis gratuit")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400">
-                  <ArrowRight className="w-3 h-3 text-yellow-400" /> Demander un Devis
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate("ai-bot")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400">
-                  <ArrowRight className="w-3 h-3 text-yellow-400" /> Assistant Intelligent (IA)
+                <button onClick={() => onNavigate("contact")} className="hover:text-yellow-400 transition-colors flex items-center gap-2 text-gray-400 cursor-pointer">
+                  <ArrowRight className="w-3 h-3 text-yellow-400" /> {fT.contactUs}
                 </button>
               </li>
             </ul>

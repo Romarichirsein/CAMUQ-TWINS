@@ -74,31 +74,31 @@ export default function AboutUs() {
           <div className="lg:col-span-7 space-y-6 reveal-left">
             <div className="border-l-4 border-yellow-400 pl-4">
               <h2 className="font-sans font-black text-2xl sm:text-3xl text-blue-950 tracking-tight">
-                Notre Histoire
+                {aboutT.historyTag}
               </h2>
               <p className="text-xs text-yellow-600 font-extrabold uppercase tracking-widest mt-1">
-                Un parcours marqué par l'excellence et la croissance
+                {aboutT.historySub}
               </p>
             </div>
 
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed italic border-l-2 border-slate-200 pl-3">
-              &ldquo; Chaque grande aventure commence par une rencontre. La nôtre est née du partage d'une même vision, de la confiance mutuelle et de la conviction qu'ensemble, nous pouvons aller plus loin. &rdquo;
+              {aboutT.historyP1}
             </p>
 
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Chez <strong>CAMUQ AND TWINS EMPIRE Ltd</strong>, plus de 20 années d'expérience dans la gestion d'entreprises de secteurs variés ont conduit notre Directrice Générale à créer CAMUQ en 2021. Animée par une vision ambitieuse, elle a ensuite choisi d'ouvrir le capital de l'entreprise afin d'unir son expérience au dynamisme, au talent et à l'engagement de deux jeunes dirigeants passionnés : notre Directeur des Opérations et notre Directeur Commercial et Marketing, eux aussi forts de plus de dix années d'expérience dans leurs domaines respectifs.
+              {aboutT.historyP2}
             </p>
 
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Ensemble, nous avons choisi de bâtir bien plus qu'une entreprise : un projet fondé sur la complémentarité, l'innovation et l'excellence. Nous sommes convaincus que les plus grandes réussites se construisent en équipe et que les rêves les plus ambitieux deviennent réalité lorsque les talents se rassemblent autour d'une même vision.
+              {aboutT.historyP3}
             </p>
 
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Animés par notre slogan, <strong className="text-yellow-600">« Build an Empire Without Borders »</strong>, nous avançons chaque jour avec la volonté de créer un empire durable, innovant et sans frontières.
+              {aboutT.historyP4}
             </p>
 
             <p className="text-sm sm:text-base text-gray-750 font-bold text-blue-950 leading-relaxed mt-4">
-              Bienvenue dans notre histoire. Bienvenue chez CAMUQ AND TWINS EMPIRE Ltd.
+              {aboutT.historyP5}
             </p>
           </div>
 
@@ -253,16 +253,16 @@ export default function AboutUs() {
         <div id="acteurs-section" className="space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-[10px] bg-blue-100 text-blue-900 font-bold px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block">
-              Les Acteurs de CAMUQ AND TWINS EMPIRE Ltd
+              {aboutT.acteursSectionTag}
             </span>
             <h3 className="font-sans font-black text-2xl sm:text-3xl text-blue-950 tracking-tight">
-              Bâtisseurs d'un Empire sans Frontières
+              {aboutT.acteursSectionTitle}
             </h3>
             <p className="text-xs sm:text-sm text-yellow-600 font-extrabold uppercase tracking-widest italic">
               « Build an Empire Without Borders »
             </p>
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              Découvrez les acteurs majeurs de CAMUQ AND TWINS EMPIRE Ltd : une équipe expérimentée et visionnaire, conduite par une Directrice Générale passionnée, aux côtés du Directeur des Opérations et du Directeur Commercial et Marketing.
+              {aboutT.acteursSub}
             </p>
           </div>
 
@@ -277,7 +277,7 @@ export default function AboutUs() {
                 <div className="w-60 h-80 rounded-2xl overflow-hidden bg-black relative border border-slate-900 mx-auto">
                   <img 
                     src="/images/flore-nouteli-foyett.jpg" 
-                    alt="Flore NOUTELI FOYETT" 
+                    alt={aboutT.dgName} 
                     className="w-full h-full object-cover object-top opacity-95 contrast-105"
                     referrerPolicy="no-referrer"
                   />
@@ -289,10 +289,10 @@ export default function AboutUs() {
                 </div>
 
                 <div className="space-y-2">
-                  <h4 className="font-bold text-lg text-blue-950 leading-tight">Flore NOUTELI FOYETT</h4>
-                  <p className="text-xs font-semibold text-yellow-600">Directrice Générale</p>
+                  <h4 className="font-bold text-lg text-blue-950 leading-tight">{aboutT.dgName}</h4>
+                  <p className="text-xs font-semibold text-yellow-600">{aboutT.dgTitle}</p>
                   <p className="text-xs text-gray-500 pt-2 border-t border-slate-100 leading-relaxed text-justify px-2">
-                    Entrepreneure visionnaire, forte de plus de 20 ans d'expérience dans la gestion d'entreprises de secteurs variés, Mme Foyett Flore incarne le leadership, l'innovation et la résilience. Convaincue que les plus grands succès se construisent ensemble, elle porte avec passion la vision de CAMUQ AND TWINS EMPIRE Ltd : bâtir un empire sans frontières.
+                    {aboutT.dgBio}
                   </p>
                 </div>
               </div>
@@ -317,7 +317,7 @@ export default function AboutUs() {
                   <div className="w-56 h-72 rounded-2xl overflow-hidden bg-slate-100 relative mx-auto border border-slate-150">
                     <img 
                       src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=500&h=700" 
-                      alt="Directeur Commercial et Marketing" 
+                      alt={aboutT.dcmName} 
                       className="w-full h-full object-cover object-top"
                       referrerPolicy="no-referrer"
                     />
@@ -329,10 +329,10 @@ export default function AboutUs() {
                   </div>
 
                   <div className="space-y-2">
-                    <h4 className="font-bold text-base text-blue-950 leading-tight">Luke</h4>
-                    <p className="text-xs font-semibold text-blue-900">Directeur Commercial et Marketing</p>
+                    <h4 className="font-bold text-base text-blue-950 leading-tight">{aboutT.dcmName}</h4>
+                    <p className="text-xs font-semibold text-blue-900">{aboutT.dcmTitle}</p>
                     <p className="text-xs text-gray-500 pt-2 border-t border-slate-100 leading-relaxed text-justify px-2">
-                      Avec plus de 10 ans d'expérience dans le développement commercial et le marketing, Luke met son sens de la stratégie, de la communication et de la relation client au service de la croissance de l'entreprise. Son ambition est de faire rayonner la marque et de créer des partenariats durables.
+                      {aboutT.dcmBio}
                     </p>
                   </div>
                 </div>
@@ -344,7 +344,7 @@ export default function AboutUs() {
                   <div className="w-56 h-72 rounded-2xl overflow-hidden bg-black relative mx-auto border border-slate-150">
                     <img 
                       src="/images/limnyuy-luke-senyuy.jpg" 
-                      alt="LIMNYUY Luke SENYUY" 
+                      alt={aboutT.doName} 
                       className="w-full h-full object-cover object-top opacity-95 contrast-105"
                       referrerPolicy="no-referrer"
                     />
@@ -356,10 +356,10 @@ export default function AboutUs() {
                   </div>
 
                   <div className="space-y-2">
-                    <h4 className="font-bold text-base text-blue-950 leading-tight">LIMNYUY Luke SENYUY</h4>
-                    <p className="text-xs font-semibold text-blue-900">Directeur des Opérations</p>
+                    <h4 className="font-bold text-base text-blue-950 leading-tight">{aboutT.doName}</h4>
+                    <p className="text-xs font-semibold text-blue-900">{aboutT.doTitle}</p>
                     <p className="text-xs text-gray-500 pt-2 border-t border-slate-100 leading-relaxed text-justify px-2">
-                      Professionnel engagé et rigoureux, Mark cumule plus de 10 ans d'expérience dans la gestion des opérations. Il veille à l'efficacité des processus, à la qualité des services et à la bonne exécution de la vision de l'entreprise, en faisant de l'excellence opérationnelle une priorité.
+                      {aboutT.doBio}
                     </p>
                   </div>
                 </div>

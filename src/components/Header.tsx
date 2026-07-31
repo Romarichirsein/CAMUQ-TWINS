@@ -2,21 +2,20 @@ import React, { useState } from "react";
 import { Menu, X, Phone, Mail, Globe, ChevronDown, Sparkles } from "lucide-react";
 import { COMPANY_PHONES, COMPANY_EMAIL } from "../data";
 import Logo from "./Logo";
-import { Language, translations } from "../i18n";
+import { useLanguage } from "../context/LanguageContext";
 
 interface HeaderProps {
   onNavigate: (section: string, subCategory?: string) => void;
   activeSection: string;
-  lang?: Language;
-  onToggleLang?: () => void;
 }
 
-export default function Header({ onNavigate, activeSection, lang = "fr", onToggleLang }: HeaderProps) {
+export default function Header({ onNavigate, activeSection }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
-  const t = translations[lang];
+  const { lang, t, toggleLang } = useLanguage();
+  const navT = t.nav;
 
   const handleItemClick = (id: string, subCategory?: string) => {
     onNavigate(id, subCategory);
@@ -53,21 +52,19 @@ export default function Header({ onNavigate, activeSection, lang = "fr", onToggl
             {/* Preheader Tagline Pill - Black bold text as requested */}
             <div className="hidden sm:flex items-center gap-2 text-[10px] sm:text-xs font-black tracking-wider uppercase text-slate-900 bg-yellow-400 px-3 py-0.5 rounded-full shadow-xs">
               <Globe className="w-3 h-3 animate-spin-slow text-slate-900" />
-              <span>{t.preheader}</span>
+              <span>{navT.preheader}</span>
             </div>
 
             {/* Functional Language Switcher (FR / EN) */}
-            {onToggleLang && (
-              <button
-                onClick={onToggleLang}
-                className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-[11px] font-extrabold uppercase tracking-wider transition-colors cursor-pointer border border-white/10"
-                title="Changer de langue / Switch language"
-              >
-                <span className={lang === "fr" ? "text-yellow-400 font-black" : "text-gray-300"}>FR</span>
-                <span className="text-gray-400">/</span>
-                <span className={lang === "en" ? "text-yellow-400 font-black" : "text-gray-300"}>EN</span>
-              </button>
-            )}
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-[11px] font-extrabold uppercase tracking-wider transition-colors cursor-pointer border border-white/10"
+              title="Changer de langue / Switch language"
+            >
+              <span className={lang === "fr" ? "text-yellow-400 font-black" : "text-gray-300"}>FR</span>
+              <span className="text-gray-400">/</span>
+              <span className={lang === "en" ? "text-yellow-400 font-black" : "text-gray-300"}>EN</span>
+            </button>
           </div>
         </div>
       </div>

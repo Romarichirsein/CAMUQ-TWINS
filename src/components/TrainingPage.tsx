@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as Icons from "lucide-react";
 import { FORMATIONS_DATA } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 interface TrainingPageProps {
   onRegister: (formationName: string) => void;
@@ -10,7 +11,18 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
   const [selectedFormation, setSelectedFormation] = useState<typeof FORMATIONS_DATA[0] | null>(null);
   const [filterLevel, setFilterLevel] = useState<string>("all");
 
+  const { lang, t } = useLanguage();
+  const trT = t.training;
+
   const levels = ["all", "Débutant", "Intermédiaire", "Expert"];
+
+  const getLevelLabel = (lvl: string) => {
+    if (lvl === "all") return trT.allLevels;
+    if (lvl === "Débutant") return trT.levelBeginner;
+    if (lvl === "Intermédiaire") return trT.levelIntermediate;
+    if (lvl === "Expert") return trT.levelExpert;
+    return lvl;
+  };
 
   const filteredFormations = filterLevel === "all" 
     ? FORMATIONS_DATA 
@@ -38,13 +50,13 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <span className="text-xs font-black uppercase tracking-widest text-yellow-400 bg-yellow-400/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-yellow-400/40 inline-block shadow-md">
-            Formations Professionnelles Certifiantes
+            {trT.pageTag}
           </span>
           <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight text-balance drop-shadow-lg">
-            Propulsez Votre Carrière avec l&apos;Élite
+            {trT.pageTitle}
           </h1>
           <p className="text-sm sm:text-lg text-slate-100 leading-relaxed font-medium max-w-3xl mx-auto text-balance drop-shadow-md">
-            80% pratique, animé par des experts, conçu pour vous donner les compétences opérationnelles les plus recherchées par les recruteurs et investisseurs.
+            {trT.pageSubtitle}
           </p>
         </div>
       </div>
@@ -53,7 +65,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
 
         {/* Level Filters bar */}
         <div className="flex flex-wrap items-center justify-center gap-2 pb-4">
-          <span className="text-xs font-bold uppercase tracking-wider text-gray-400 mr-2">Niveau :</span>
+          <span className="text-xs font-bold uppercase tracking-wider text-gray-400 mr-2">{trT.filterLevel}</span>
           {levels.map((lvl) => (
             <button
               key={lvl}
@@ -64,7 +76,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
                   : "bg-white text-gray-600 border border-gray-150 hover:bg-gray-50"
               }`}
             >
-              {lvl === "all" ? "Tous les Niveaux" : lvl}
+              {getLevelLabel(lvl)}
             </button>
           ))}
         </div>
