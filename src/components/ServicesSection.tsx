@@ -7,12 +7,29 @@ import {
 } from "../data";
 
 interface ServicesSectionProps {
-  onNavigateToEstimator: (serviceName?: string) => void;
-  onNavigateToTraining: (trainingName: string) => void;
+  onQuoteRequest?: (serviceName: string) => void;
+  onNavigateToEstimator?: (serviceName?: string) => void;
+  onNavigateToTraining?: (trainingName?: string) => void;
 }
 
-export default function ServicesSection({ onNavigateToEstimator, onNavigateToTraining }: ServicesSectionProps) {
+export default function ServicesSection({ onQuoteRequest, onNavigateToEstimator, onNavigateToTraining }: ServicesSectionProps) {
   const [activeTab, setActiveTab] = useState<"services" | "formations" | "autres" | "commerce">("services");
+
+  const handleEstimate = (name?: string) => {
+    if (onQuoteRequest) {
+      onQuoteRequest(name || "");
+    } else if (onNavigateToEstimator) {
+      onNavigateToEstimator(name);
+    }
+  };
+
+  const handleTrainingClick = (name?: string) => {
+    if (onNavigateToTraining) {
+      onNavigateToTraining(name || "");
+    } else if (onQuoteRequest) {
+      onQuoteRequest(`Formation: ${name || ""}`);
+    }
+  };
 
   // Dynamic icon renderer helper
   const renderIcon = (iconName: string, className: string = "w-5 h-5") => {
@@ -127,7 +144,7 @@ export default function ServicesSection({ onNavigateToEstimator, onNavigateToTra
                           <span className="text-xs sm:text-sm font-extrabold text-yellow-600 block">{item.priceEstimate}</span>
                         </div>
                         <button
-                          onClick={() => onNavigateToEstimator(item.name)}
+                          onClick={() => handleEstimate(item.name)}
                           className="px-3 py-1.5 text-xs font-bold text-blue-900 bg-white hover:bg-blue-900 hover:text-white rounded-lg border border-blue-200 transition-all cursor-pointer flex items-center gap-1"
                         >
                           Commander <Icons.ArrowRight className="w-3 h-3" />
@@ -168,7 +185,7 @@ export default function ServicesSection({ onNavigateToEstimator, onNavigateToTra
                           <span className="text-xs sm:text-sm font-extrabold text-yellow-600 block">{item.priceEstimate}</span>
                         </div>
                         <button
-                          onClick={() => onNavigateToEstimator(item.name)}
+                          onClick={() => handleEstimate(item.name)}
                           className="px-3 py-1.5 text-xs font-bold text-blue-900 bg-white hover:bg-blue-900 hover:text-white rounded-lg border border-blue-200 transition-all cursor-pointer flex items-center gap-1"
                         >
                           Commander <Icons.ArrowRight className="w-3 h-3" />
@@ -222,7 +239,7 @@ export default function ServicesSection({ onNavigateToEstimator, onNavigateToTra
                         <span className="text-base font-black text-blue-950">{form.price.toLocaleString()} <span className="text-xs font-bold text-gray-400">FCFA</span></span>
                       </div>
                       <button
-                        onClick={() => onNavigateToTraining(form.name)}
+                        onClick={() => handleTrainingClick(form.name)}
                         className="px-3.5 py-2 rounded-lg bg-blue-900 hover:bg-blue-950 text-white text-xs font-bold transition-all shadow-sm flex items-center gap-1 cursor-pointer"
                       >
                         S&apos;inscrire <Icons.UserPlus className="w-3.5 h-3.5" />
@@ -302,7 +319,7 @@ export default function ServicesSection({ onNavigateToEstimator, onNavigateToTra
                     <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
                       <span className="text-sm font-black text-yellow-600">{prod.price.toLocaleString()} FCFA</span>
                       <button
-                        onClick={() => onNavigateToEstimator(prod.name)}
+                        onClick={() => handleEstimate(prod.name)}
                         className="px-4 py-2 rounded-lg bg-blue-900 hover:bg-blue-950 text-white text-xs font-bold transition-all cursor-pointer flex items-center gap-1"
                       >
                         Acheter <Icons.ArrowRight className="w-3.5 h-3.5" />
