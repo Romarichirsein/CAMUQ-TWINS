@@ -90,7 +90,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                   : "text-gray-700 hover:text-blue-900 hover:bg-gray-50"
               }`}
             >
-              {t.home}
+              {navT.home}
             </button>
 
             {/* 2. Nos Services (Dropdown) */}
@@ -103,7 +103,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                     : "text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 }`}
               >
-                {t.services}
+                {navT.services}
                 <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover/dropdown:rotate-180 duration-200 text-gray-400" />
               </button>
 
@@ -113,62 +113,32 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                   onClick={() => handleItemClick("services", "secretariat")}
                   className="w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-950 transition-colors font-bold block"
                 >
-                  {t.secretariat}
+                  {navT.secretariat}
                 </button>
 
                 {/* Impression Submenu */}
                 <div className="border-t border-gray-100 pt-1">
                   <div className="px-3.5 py-1 text-[10px] font-black uppercase text-yellow-600 tracking-wider">
-                    {t.impression}
+                    {navT.impression}
                   </div>
                   <button
                     onClick={() => handleItemClick("services", "imprimerie")}
                     className="w-full text-left px-3.5 py-1.5 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
                   >
-                    • {t.impressionIndustrielle}
-                  </button>
-                  <button
-                    onClick={() => handleItemClick("services", "imprimerie")}
-                    className="w-full text-left px-3.5 py-1.5 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
-                  >
-                    • {t.impressionCommunication}
-                  </button>
-                  <button
-                    onClick={() => handleItemClick("services", "imprimerie")}
-                    className="w-full text-left px-3.5 py-1.5 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
-                  >
-                    • {t.impressionGrandFormat}
-                  </button>
-                  <button
-                    onClick={() => handleItemClick("services", "imprimerie")}
-                    className="w-full text-left px-3.5 py-1.5 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
-                  >
-                    • {t.goodiesPublicitaires}
-                  </button>
-                  <button
-                    onClick={() => handleItemClick("services", "imprimerie")}
-                    className="w-full text-left px-3.5 py-1.5 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
-                  >
-                    • {t.marquageTextile}
+                    • {navT.impression}
                   </button>
                 </div>
 
                 {/* Édition Submenu */}
                 <div className="border-t border-gray-100 pt-1">
                   <div className="px-3.5 py-1 text-[10px] font-black uppercase text-yellow-600 tracking-wider">
-                    {t.edition}
+                    {navT.edition}
                   </div>
                   <button
                     onClick={() => handleItemClick("services", "edition")}
                     className="w-full text-left px-3.5 py-1.5 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
                   >
-                    • {t.litteratureGenerale}
-                  </button>
-                  <button
-                    onClick={() => handleItemClick("services", "edition")}
-                    className="w-full text-left px-3.5 py-1.5 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
-                  >
-                    • {t.education}
+                    • {navT.edition}
                   </button>
                 </div>
 
@@ -176,21 +146,21 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                   onClick={() => handleItemClick("products")}
                   className="w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-950 transition-colors font-bold block border-t border-gray-100 pt-2"
                 >
-                  {t.commerce} (Fournitures, Longrich, Bijoux)
+                  {navT.commerce} (Fournitures, Longrich, Bijoux)
                 </button>
 
                 <button
                   onClick={() => handleItemClick("services", "autres")}
                   className="w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-950 transition-colors font-bold block"
                 >
-                  {t.autre}
+                  {navT.autre}
                 </button>
 
                 <button
                   onClick={() => handleItemClick("services", "personnalise")}
                   className="w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-950 transition-colors font-bold block text-yellow-700 bg-yellow-50/50"
                 >
-                  {t.personnalise} (CV, Rapports, Mémoires)
+                  {navT.personnalise} (CV, Rapports, Mémoires)
                 </button>
               </div>
             </div>
@@ -204,7 +174,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                   : "text-gray-700 hover:text-blue-900 hover:bg-gray-50"
               }`}
             >
-              {t.trainings}
+              {navT.trainings}
             </button>
 
             {/* 4. À Propos (Dropdown: Notre histoire, Mot de la DG, Équipe dirigeante) */}
@@ -217,7 +187,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                     : "text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                 }`}
               >
-                {t.about}
+                {navT.about}
                 <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover/aboutdropdown:rotate-180 duration-200 text-gray-400" />
               </button>
 
@@ -226,19 +196,19 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                   onClick={() => handleItemClick("about")}
                   className="w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-950 transition-colors font-bold block"
                 >
-                  {t.history}
+                  {navT.history}
                 </button>
                 <button
                   onClick={() => handleItemClick("about")}
                   className="w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-950 transition-colors font-bold block"
                 >
-                  {t.ceoMessage}
+                  {navT.ceoMessage}
                 </button>
                 <button
                   onClick={() => handleItemClick("about")}
                   className="w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-950 transition-colors font-bold block"
                 >
-                  {t.leadership} (Acteurs)
+                  {navT.leadership}
                 </button>
               </div>
             </div>
@@ -253,7 +223,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
               }`}
             >
               <Sparkles className="w-3.5 h-3.5 text-yellow-500" />
-              {t.aiAssistant}
+              {navT.aiAssistant}
             </button>
 
             {/* 6. Main Contact Button (Far Right) */}
@@ -261,20 +231,18 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
               onClick={() => handleItemClick("contact")}
               className="ml-3 px-5 py-2.5 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-black text-sm tracking-wide shadow-md shadow-yellow-500/10 hover:shadow-yellow-500/20 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
             >
-              {t.contact}
+              {navT.contact}
             </button>
           </nav>
 
           {/* Mobile menu button */}
           <div className="flex lg:hidden items-center gap-2">
-            {onToggleLang && (
-              <button
-                onClick={onToggleLang}
-                className="px-2.5 py-1 rounded-full bg-blue-900 text-yellow-400 text-xs font-black uppercase tracking-wider"
-              >
-                {lang === "fr" ? "EN" : "FR"}
-              </button>
-            )}
+            <button
+              onClick={toggleLang}
+              className="px-2.5 py-1 rounded-full bg-blue-900 text-yellow-400 text-xs font-black uppercase tracking-wider cursor-pointer"
+            >
+              {lang === "fr" ? "EN" : "FR"}
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               id="mobile-menu-toggle"
@@ -294,7 +262,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
               onClick={() => handleItemClick("home")}
               className="block w-full text-left px-4 py-2.5 rounded-xl text-base font-bold text-gray-800 hover:bg-blue-50"
             >
-              {t.home}
+              {navT.home}
             </button>
 
             {/* Nos Services Mobile Dropdown */}
@@ -303,7 +271,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 className="flex items-center justify-between w-full text-left py-2 text-base font-black text-blue-950"
               >
-                <span>{t.services}</span>
+                <span>{navT.services}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${servicesDropdownOpen ? "rotate-180" : ""}`} />
               </button>
               
@@ -313,37 +281,37 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                     onClick={() => handleItemClick("services", "secretariat")}
                     className="block w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-50"
                   >
-                    • {t.secretariat}
+                    • {navT.secretariat}
                   </button>
                   <button
                     onClick={() => handleItemClick("services", "imprimerie")}
                     className="block w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-50"
                   >
-                    • {t.impression} (Industriel, Communication, Grand Format, Goodies, Textile)
+                    • {navT.impression}
                   </button>
                   <button
                     onClick={() => handleItemClick("services", "edition")}
                     className="block w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-50"
                   >
-                    • {t.edition} (Littérature Générale, Éducation)
+                    • {navT.edition}
                   </button>
                   <button
                     onClick={() => handleItemClick("products")}
                     className="block w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-50"
                   >
-                    • {t.commerce}
+                    • {navT.commerce}
                   </button>
                   <button
                     onClick={() => handleItemClick("services", "autres")}
                     className="block w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-50"
                   >
-                    • {t.autre}
+                    • {navT.autre}
                   </button>
                   <button
                     onClick={() => handleItemClick("services", "personnalise")}
                     className="block w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold text-yellow-700 bg-yellow-50"
                   >
-                    • {t.personnalise}
+                    • {navT.personnalise}
                   </button>
                 </div>
               )}
@@ -354,7 +322,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
               onClick={() => handleItemClick("training")}
               className="block w-full text-left px-4 py-2.5 rounded-xl text-base font-bold text-gray-800 hover:bg-blue-50"
             >
-              {t.trainings}
+              {navT.trainings}
             </button>
 
             {/* À Propos Mobile Dropdown */}
@@ -363,7 +331,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                 onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
                 className="flex items-center justify-between w-full text-left py-2 text-base font-black text-blue-950"
               >
-                <span>{t.about}</span>
+                <span>{navT.about}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${aboutDropdownOpen ? "rotate-180" : ""}`} />
               </button>
 
@@ -373,19 +341,19 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                     onClick={() => handleItemClick("about")}
                     className="block w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-50"
                   >
-                    • {t.history}
+                    • {navT.history}
                   </button>
                   <button
                     onClick={() => handleItemClick("about")}
                     className="block w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-50"
                   >
-                    • {t.ceoMessage}
+                    • {navT.ceoMessage}
                   </button>
                   <button
                     onClick={() => handleItemClick("about")}
                     className="block w-full text-left px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-600 hover:bg-gray-50"
                   >
-                    • {t.leadership}
+                    • {navT.leadership}
                   </button>
                 </div>
               )}
@@ -396,7 +364,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
               onClick={() => handleItemClick("ai-bot")}
               className="block w-full text-left px-4 py-2.5 rounded-xl text-base font-bold text-gray-800 hover:bg-blue-50"
             >
-              {t.aiAssistant}
+              {navT.aiAssistant}
             </button>
 
             {/* Contact Button Mobile */}
@@ -405,7 +373,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                 onClick={() => handleItemClick("contact")}
                 className="w-full py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-black text-center tracking-wide shadow-md cursor-pointer"
               >
-                {t.contact}
+                {navT.contact}
               </button>
             </div>
           </div>
