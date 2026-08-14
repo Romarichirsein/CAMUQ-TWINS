@@ -31,6 +31,7 @@ export interface ProductItem {
   name: string;
   category: "fourniture" | "papeterie" | "longrich" | "bijoux" | string;
   price: number;
+  hidePrice?: boolean;
   unit: string;
   image: string;
   description: string;

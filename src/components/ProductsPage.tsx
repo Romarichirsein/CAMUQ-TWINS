@@ -119,7 +119,7 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
                   )}
                   <div className="absolute top-4 left-4">
                     <span className="text-[9px] font-extrabold uppercase bg-blue-900 text-white px-2.5 py-1 rounded-full shadow-sm tracking-wider">
-                      {product.category === "fourniture" ? "Bureau" : product.category === "longrich" ? "Longrich" : "Bijoux"}
+                      {product.category === "fourniture" || product.category === "papeterie" ? "Papeterie Bilingue" : product.category === "longrich" ? "Longrich" : "Bijoux"}
                     </span>
                   </div>
                 </div>
@@ -137,8 +137,14 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
 
                   <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                     <div>
-                      <span className="text-[9px] text-gray-400 block uppercase font-bold tracking-wider">Prix / {product.unit}</span>
-                      <span className="text-base font-black text-yellow-600">{product.price.toLocaleString()} FCFA</span>
+                      <span className="text-[9px] text-gray-400 block uppercase font-bold tracking-wider">
+                        {product.hidePrice || product.price === 0 || product.category === "fourniture" || product.category === "papeterie" || product.category === "bijoux" ? "Tarification" : `Prix / ${product.unit}`}
+                      </span>
+                      {product.hidePrice || product.price === 0 || product.category === "fourniture" || product.category === "papeterie" || product.category === "bijoux" ? (
+                        <span className="text-xs font-black text-blue-900 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-100 block mt-0.5">Sur devis / À la commande</span>
+                      ) : (
+                        <span className="text-base font-black text-yellow-600">{product.price.toLocaleString()} FCFA</span>
+                      )}
                     </div>
                     <button
                       onClick={() => handleQuickOrder(product.name)}

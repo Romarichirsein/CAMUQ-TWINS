@@ -317,12 +317,16 @@ export default function ServicesSection({ onQuoteRequest, onNavigateToEstimator,
                     </div>
 
                     <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                      <span className="text-sm font-black text-yellow-600">{prod.price.toLocaleString()} FCFA</span>
+                      {prod.hidePrice || prod.price === 0 || prod.category === "fourniture" || prod.category === "papeterie" || prod.category === "bijoux" ? (
+                        <span className="text-xs font-black text-blue-900 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-100">Sur devis</span>
+                      ) : (
+                        <span className="text-sm font-black text-yellow-600">{prod.price.toLocaleString()} FCFA</span>
+                      )}
                       <button
                         onClick={() => handleEstimate(prod.name)}
                         className="px-4 py-2 rounded-lg bg-blue-900 hover:bg-blue-950 text-white text-xs font-bold transition-all cursor-pointer flex items-center gap-1"
                       >
-                        Acheter <Icons.ArrowRight className="w-3.5 h-3.5" />
+                        Commander <Icons.ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
                   </div>

@@ -158,7 +158,7 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                   onClick={() => handleItemClick("products")}
                   className="w-full text-left px-3.5 py-2 rounded-xl text-xs sm:text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-950 transition-colors font-bold block border-t border-gray-100 pt-2"
                 >
-                  {navT.commerce} (Fournitures, Longrich, Bijoux)
+                  {navT.commerce} (Papeterie Bilingue, Longrich, Bijoux)
                 </button>
 
                 <button

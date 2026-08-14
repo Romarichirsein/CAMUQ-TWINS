@@ -119,10 +119,10 @@ export const translations = {
     products: {
       pageTag: "Catalogue de Vente CAMUQ & TWINS EMPIRE",
       pageTitle: "Notre Boutique & Articles Exclusivement Sélectionnés",
-      pageSubtitle: "Trouvez vos fournitures scolaires, équipez vos bureaux, prenez soin de votre corps avec les produits Longrich d'origine naturelle, ou offrez-vous des bijoux raffinés.",
-      searchPlaceholder: "Rechercher un produit, un fourniture, Longrich...",
+      pageSubtitle: "Procurez-vous votre papeterie bilingue, équipez vos bureaux, prenez soin de votre corps avec les produits Longrich d'origine naturelle, ou offrez-vous des bijoux raffinés.",
+      searchPlaceholder: "Rechercher un produit, papeterie bilingue, Longrich...",
       allCat: "Tout le Catalogue",
-      fournitureCat: "Fournitures de Bureau",
+      fournitureCat: "Papeterie Bilingue",
       papeterieCat: "Papeterie Bilingue",
       longrichCat: "Produits Longrich",
       bijouxCat: "Bijoux & Accessoires",

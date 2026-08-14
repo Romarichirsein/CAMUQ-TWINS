@@ -132,10 +132,10 @@ let database = {
     { id: "s-13", name: "Abonnement Canal+ & Factures", category: "autres", priceEstimate: "Selon bouquet", unit: "renouvellement", baseCost: 0, description: "Réabonnement direct sans frais supplémentaires.", icon: "Tv" }
   ],
   products: [
-    { id: "p-1", name: "Rames de Papier A4 Premium", category: "fourniture", price: 2500, unit: "rame", image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=600&auto=format&fit=crop", description: "Papier blanc A4 ultra-polyvalent pour photocopieurs.", available: true },
-    { id: "p-2", name: "Dentifrice au Thé Blanc Longrich", category: "longrich", price: 3500, unit: "tube", image: "https://images.unsplash.com/photo-1559599101-30972241702d?q=80&w=600&auto=format&fit=crop", description: "Soin complet, prévient la sensibilité dentaire.", available: true },
-    { id: "p-3", name: "Gobelet Alcalin de Santé Longrich", category: "longrich", price: 45000, unit: "gobelet", image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=600&auto=format&fit=crop", description: "Transforme l'eau en eau alcaline saine.", available: true },
-    { id: "p-4", name: "Parures & Bijoux d'Exception", category: "bijoux", price: 15000, unit: "parure", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600&auto=format&fit=crop", description: "Bijoux raffinés pour vos soirées de gala.", available: true }
+    { id: "p-1", name: "Papeterie Bilingue & Bureau", category: "fourniture", price: 0, hidePrice: true, unit: "commande", image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=600&auto=format&fit=crop", description: "Rames de papier A4, registres bilingues, fournitures de bureau et école.", available: true },
+    { id: "p-2", name: "Dentifrice au Thé Blanc Longrich", category: "longrich", price: 4000, unit: "tube 200g", image: "/images/dentifrice-longrich.jpg", description: "Soin complet, prévient la sensibilité dentaire.", available: true },
+    { id: "p-3", name: "Gobelet Alcalin de Santé Longrich", category: "longrich", price: 50000, unit: "gobelet", image: "/images/gobelet-alcalin-longrich.jpg", description: "Transforme l'eau en eau alcaline saine.", available: true },
+    { id: "p-4", name: "Parures & Bijoux d'Exception", category: "bijoux", price: 0, hidePrice: true, unit: "parure", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600&auto=format&fit=crop", description: "Bijoux raffinés pour vos soirées de gala.", available: true }
   ],
   blog: [
     {
