@@ -127,7 +127,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     category: "secretariat",
     priceEstimate: "À partir de 300 FCFA",
     unit: "document",
-    baseCost: 1000,
+    baseCost: 300,
     description: "Protection de vos diplômes et documents d'importance contre l'humidité et l'usure grâce à notre plastification à chaud.",
     icon: "ShieldAlert"
   },
