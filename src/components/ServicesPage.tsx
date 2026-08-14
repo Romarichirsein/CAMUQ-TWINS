@@ -209,7 +209,7 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
                 Cyber Café Ultra-Rapide, Mobile Money & Abonnements Canal+
               </h3>
               <p className="text-sm text-blue-100 leading-relaxed">
-                Notre espace technologique vous accueille 6 jours sur 7 avec une connexion par fibre optique stable pour toutes vos démarches administratives complexes (Pré-enrôlement passeport, CNI, attestation d&apos;immatriculation).
+                Notre espace technologique vous accueille 6 jours sur 7 avec une connexion par fibre optique stable pour toutes vos démarches administratives complexes (Pré-enrôlement passeport, CNI, attestation d&apos;immatriculation...).
               </p>
               <p className="text-xs text-blue-200">
                 Nous sommes agréés et sécurisés pour tous vos dépôts/retraits MTN Mobile Money, Orange Money et renouvellement Canal+ sans délai ni tracas.
