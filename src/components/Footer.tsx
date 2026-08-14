@@ -100,11 +100,39 @@ export default function Footer({ onNavigate }: FooterProps) {
             <p className="text-xs text-gray-400 mb-3 leading-relaxed">
               Nous opérons les transferts de fonds via MTN Mobile Money & Orange Money, les abonnements Canal+, et le pré-enrôlement CNI/Passeport officiels.
             </p>
-            <div className="flex flex-wrap gap-2 pt-2">
-              <span className="bg-slate-800 text-yellow-400 text-[10px] font-bold px-2 py-1 rounded border border-slate-700">MTN MoMo</span>
-              <span className="bg-slate-800 text-orange-400 text-[10px] font-bold px-2 py-1 rounded border border-slate-700">Orange Money</span>
-              <span className="bg-slate-800 text-white text-[10px] font-bold px-2 py-1 rounded border border-slate-700">Canal+</span>
-              <span className="bg-slate-800 text-teal-400 text-[10px] font-bold px-2 py-1 rounded border border-slate-700">Longrich</span>
+            <div className="flex flex-wrap gap-3 pt-2 items-center">
+              {/* MTN MoMo */}
+              <div className="bg-white rounded-lg px-2 py-1.5 border border-slate-700 flex items-center justify-center" title="MTN Mobile Money">
+                <img
+                  src="/images/logo-mtn-momo.jpg"
+                  alt="MTN MoMo"
+                  className="h-7 w-auto object-contain"
+                />
+              </div>
+              {/* Orange Money */}
+              <div className="bg-white rounded-lg px-2 py-1.5 border border-slate-700 flex items-center justify-center" title="Orange Money">
+                <img
+                  src="/images/logo-orange-money.png"
+                  alt="Orange Money"
+                  className="h-7 w-auto object-contain"
+                />
+              </div>
+              {/* Canal+ */}
+              <div className="bg-white rounded-lg px-2 py-1.5 border border-slate-700 flex items-center justify-center" title="Canal+">
+                <img
+                  src="/images/logo-canal-plus.png"
+                  alt="Canal+"
+                  className="h-7 w-auto object-contain"
+                />
+              </div>
+              {/* Longrich */}
+              <div className="bg-white rounded-lg px-2 py-1.5 border border-slate-700 flex items-center justify-center" title="Longrich">
+                <img
+                  src="/images/logo-longrich.jpg"
+                  alt="Longrich"
+                  className="h-7 w-auto object-contain"
+                />
+              </div>
             </div>
             <div className="mt-4 flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
               <ShieldCheck className="w-4 h-4" />
