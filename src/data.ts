@@ -115,9 +115,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "s-3",
     name: "Reliure & Numérisation (Scan)",
     category: "secretariat",
-    priceEstimate: "1 500 FCFA / doc",
+    priceEstimate: "À partir de 300 FCFA",
     unit: "document",
-    baseCost: 1500,
+    baseCost: 300,
     description: "Reliure spirale ou thermique professionnelle, et numérisation (scan) haute vitesse vers formats PDF ou images.",
     icon: "FolderOpen"
   },
