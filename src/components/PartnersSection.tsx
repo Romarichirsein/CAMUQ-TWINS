@@ -409,7 +409,7 @@ export default function PartnersSection() {
             <span className="text-[10px] font-bold uppercase tracking-wider">Synergie de Croissance</span>
           </div>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight leading-tight">
-            Nos Partenaires de Confiance
+            Nos Partenaires
           </h2>
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-2xl mx-auto">
             Pour bâtir un empire sans frontières, nous nous entourons d'institutions et de marques d'excellence. Ensemble, nous créons de la valeur et offrons des solutions robustes à notre communauté.
