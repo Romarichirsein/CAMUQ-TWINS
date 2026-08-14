@@ -24,9 +24,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     name: "Flyers, Cartes de Visite & Dépliants",
     category: "imprimerie",
     subCategory: "communication",
-    priceEstimate: "15 000 FCFA / 100 pcs",
+    priceEstimate: "À partir de 4 999 FCFA / 100 pcs",
     unit: "100 pièces",
-    baseCost: 15000,
+    baseCost: 4999,
     description: "Supports de communication d'entreprise : flyers haute définition, cartes de visite de luxe et dépliants 2 ou 3 volets.",
     icon: "Layers"
   },
@@ -35,9 +35,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     name: "Banderoles, Roll-Up, Deuil & Anniversaires",
     category: "imprimerie",
     subCategory: "grand-format",
-    priceEstimate: "6 000 FCFA / m²",
+    priceEstimate: "À partir de 4 999 FCFA",
     unit: "m²",
-    baseCost: 6000,
+    baseCost: 4999,
     description: "Impression grand format sur bâches renforcées : banderoles publicitaires, roll-ups autoportants, affiches pour cérémonies de deuil et bâches d'anniversaire.",
     icon: "Flag"
   },
