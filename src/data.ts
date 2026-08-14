@@ -125,7 +125,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "s-4",
     name: "Plastification de Documents",
     category: "secretariat",
-    priceEstimate: "1 000 FCFA / doc",
+    priceEstimate: "À partir de 300 FCFA",
     unit: "document",
     baseCost: 1000,
     description: "Protection de vos diplômes et documents d'importance contre l'humidité et l'usure grâce à notre plastification à chaud.",
