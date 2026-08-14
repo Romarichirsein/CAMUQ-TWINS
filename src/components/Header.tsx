@@ -136,9 +136,21 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
                   </div>
                   <button
                     onClick={() => handleItemClick("services", "edition")}
-                    className="w-full text-left px-3.5 py-1.5 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
+                    className="w-full text-left px-3.5 py-1 rounded-lg text-xs font-bold text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-4"
                   >
-                    • {navT.edition}
+                    • {navT.edition} (Tous)
+                  </button>
+                  <button
+                    onClick={() => handleItemClick("services", "edition")}
+                    className="w-full text-left px-3.5 py-1 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
+                  >
+                    - Littérature Générale
+                  </button>
+                  <button
+                    onClick={() => handleItemClick("services", "edition")}
+                    className="w-full text-left px-3.5 py-1 rounded-lg text-xs text-gray-600 hover:bg-blue-50 hover:text-blue-900 transition-colors block pl-6"
+                  >
+                    - Éducation, Supports Pro & Manuels...
                   </button>
                 </div>
 

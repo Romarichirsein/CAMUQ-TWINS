@@ -164,20 +164,57 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
               className="p-6 rounded-3xl bg-slate-50/70 hover:bg-white border border-slate-100 hover:border-blue-150 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-900 group-hover:bg-blue-900 group-hover:text-white flex items-center justify-center border border-blue-100 transition-all duration-300">
-                  {renderIcon(service.icon, "w-6 h-6")}
-                </div>
+                {service.coverImage ? (
+                  <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md bg-slate-900 border border-slate-200/80 group-hover:shadow-xl transition-all duration-300">
+                    <img 
+                      src={service.coverImage} 
+                      alt={service.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-95"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20"></div>
+                    {service.badge && (
+                      <span className="absolute top-3 left-3 text-[10px] bg-yellow-400 text-blue-950 font-black uppercase px-2.5 py-1 rounded-full shadow-md">
+                        {service.badge}
+                      </span>
+                    )}
+                    <div className="absolute bottom-3 left-3 right-3 text-white">
+                      <p className="text-xs font-bold text-yellow-300 drop-shadow">{service.priceEstimate}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-900 group-hover:bg-blue-900 group-hover:text-white flex items-center justify-center border border-blue-100 transition-all duration-300">
+                    {renderIcon(service.icon, "w-6 h-6")}
+                  </div>
+                )}
+
                 <div>
                   <span className="text-[10px] bg-yellow-100/70 text-yellow-800 border border-yellow-200 font-extrabold uppercase px-2 py-0.5 rounded-full">
-                    {service.category === "secretariat" ? "Secrétariat" : service.category === "imprimerie" ? "Imprimerie" : "En ligne & Finances"}
+                    {service.category === "secretariat" 
+                      ? "Secrétariat" 
+                      : service.category === "imprimerie" 
+                      ? "Imprimerie" 
+                      : service.category === "edition"
+                      ? (service.subCategory === "litterature" ? "Littérature Générale" : "Éducation & Scolaire")
+                      : "En ligne & Finances"}
                   </span>
                   <h3 className="font-sans font-bold text-lg sm:text-xl text-blue-950 mt-2.5">
                     {service.name}
                   </h3>
                 </div>
+
                 <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
                   {service.description}
                 </p>
+
+                {service.features && service.features.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {service.features.map((feat, idx) => (
+                      <span key={idx} className="text-[10px] bg-blue-50 text-blue-900 font-semibold px-2 py-0.5 rounded-md border border-blue-100">
+                        ✓ {feat}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between">
@@ -187,7 +224,7 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
                 </div>
                 <button
                   onClick={() => onQuoteRequest(service.name)}
-                  className="px-4 py-2 bg-white hover:bg-blue-900 hover:text-white text-xs font-black text-blue-900 border border-blue-200 rounded-xl shadow-sm transition-all flex items-center gap-1 cursor-pointer"
+                  className="px-4 py-2 bg-blue-900 hover:bg-yellow-400 hover:text-blue-950 text-xs font-black text-white rounded-xl shadow-sm transition-all flex items-center gap-1 cursor-pointer"
                 >
                   Commander <Icons.ArrowRight className="w-3.5 h-3.5" />
                 </button>

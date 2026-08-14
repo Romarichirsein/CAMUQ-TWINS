@@ -9,6 +9,9 @@ export interface ServiceItem {
   description: string;
   icon: string;
   hidePrice?: boolean;
+  coverImage?: string;
+  badge?: string;
+  features?: string[];
 }
 
 export interface TrainingItem {

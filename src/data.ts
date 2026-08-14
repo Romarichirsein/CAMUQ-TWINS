@@ -64,30 +64,105 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "Shirt"
   },
 
-  // ÉDITIONS - 2 Sous-catégories
+  // ÉDITIONS - Littérature Générale & Ouvrages Éducatifs
   {
-    id: "ed-lit-1",
-    name: "Éditions de Littérature Générale",
+    id: "ed-lit-roman",
+    name: "Romans & Récits de Fiction",
     category: "edition",
     subCategory: "litterature",
-    priceEstimate: "Sur devis",
-    unit: "ouvrage",
-    baseCost: 0,
-    hidePrice: true,
-    description: "Éditions, correction et impression d'ouvrages littéraires : romans, poésies, essais, beaux livres et autobiographies.",
-    icon: "BookOpen"
+    priceEstimate: "À partir de 4 999 FCFA / livre",
+    unit: "livre",
+    baseCost: 4999,
+    description: "Édition, correction éditoriale, mise en page et impression haute définition de romans, récits littéraires et oeuvres de fiction...",
+    icon: "BookOpen",
+    coverImage: "/images/book_cover_novel.jpg",
+    badge: "Roman & Fiction",
+    features: ["Correction orthotypographique", "Mise en page Roman", "Pelliculage Mat/Brillant..."]
   },
   {
-    id: "ed-edu-1",
-    name: "Éditions d'Ouvrages Éducatifs & Scolaires",
+    id: "ed-lit-poetry",
+    name: "Recueils de Poésie & Essais",
+    category: "edition",
+    subCategory: "litterature",
+    priceEstimate: "À partir de 3 500 FCFA / livre",
+    unit: "livre",
+    baseCost: 3500,
+    description: "Mise en page artistique, typographie soignée, correction et tirage de recueils de poésie, essais et écrits philosophiques...",
+    icon: "Feather",
+    coverImage: "/images/book_cover_poetry.jpg",
+    badge: "Poésie & Essais",
+    features: ["Typographie soignée", "Finition Luxe", "Reliure cousue/collée..."]
+  },
+  {
+    id: "ed-lit-bio",
+    name: "Autobiographies & Récits de Vie",
+    category: "edition",
+    subCategory: "litterature",
+    priceEstimate: "À partir de 5 000 FCFA / livre",
+    unit: "livre",
+    baseCost: 5000,
+    description: "Accompagnement éditorial bilingue, correction littéraire, mise en page et impression d'autobiographies et témoignages...",
+    icon: "UserCheck",
+    coverImage: "/images/flore-nouteli-foyett.jpg",
+    badge: "Autobiographie",
+    features: ["Retouche photo", "Mise en page personnalisée", "Tirage sur-mesure..."]
+  },
+  {
+    id: "ed-lit-beaux-livres",
+    name: "Beaux-Livres & Contes Illustrés",
+    category: "edition",
+    subCategory: "litterature",
+    priceEstimate: "À partir de 7 500 FCFA / livre",
+    unit: "livre",
+    baseCost: 7500,
+    description: "Édition grand format, illustration couleur HD et reliure de prestige pour beaux-livres, contes et albums d'art...",
+    icon: "BookMarked",
+    coverImage: "/images/limnyuy-luke-senyuy.jpg",
+    badge: "Beaux-Livres & Contes",
+    features: ["Grand Format A4/Carré", "Papier Couché 135g HD", "Couverture Rigide..."]
+  },
+
+  {
+    id: "ed-edu-manuels",
+    name: "Édition de Manuels Scolaires",
     category: "edition",
     subCategory: "education",
-    priceEstimate: "Sur devis",
-    unit: "ouvrage",
-    baseCost: 0,
-    hidePrice: true,
-    description: "Éditions de manuels scolaires, cahiers d'exercices, annales d'examens et guides pédagogiques aux normes académiques.",
-    icon: "GraduationCap"
+    priceEstimate: "À partir de 2 500 FCFA / manuel",
+    unit: "manuel",
+    baseCost: 2500,
+    description: "Conception, impression et édition de manuels scolaires conformes aux normes académiques et programmes officiels...",
+    icon: "GraduationCap",
+    coverImage: "/images/book_cover_textbook.jpg",
+    badge: "Manuels Scolaires",
+    features: ["Normes académiques", "Impression masse ou demande", "Reliure renforcée..."]
+  },
+  {
+    id: "ed-edu-supports-pro",
+    name: "Supports de Cours Professionnels",
+    category: "edition",
+    subCategory: "education",
+    priceEstimate: "À partir de 1 500 FCFA / support",
+    unit: "support",
+    baseCost: 1500,
+    description: "Édition et impression de supports de cours professionnels, polycopiés universitaires et modules de formation continue...",
+    icon: "Award",
+    coverImage: "/images/book_cover_pro.jpg",
+    badge: "Supports Professionnels",
+    features: ["Brochures de cours", "Modules de formation", "Reliure spirale/thermo..."]
+  },
+  {
+    id: "ed-edu-annales",
+    name: "Cahiers d'Exercices, Annales & Brochures d'Examens...",
+    category: "edition",
+    subCategory: "education",
+    priceEstimate: "À partir de 1 000 FCFA / livret",
+    unit: "livret",
+    baseCost: 1000,
+    description: "Édition et impression de cahiers d'exercices, annales d'examens, brochures d'examens et guides pédagogiques...",
+    icon: "FileCheck",
+    coverImage: "/images/aprosac.jpg",
+    badge: "Exercices & Examens",
+    features: ["Cahiers de TD/TP", "Annales corrigées", "Guides pédagogiques..."]
   },
 
   // SECRÉTARIAT BUREAUTIQUE BILINGUE
