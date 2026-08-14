@@ -127,7 +127,7 @@ export default function AppointmentPage() {
                   required
                   value={formData.clientName}
                   onChange={handleChange}
-                  placeholder="Ex: Samuel Eto'o"
+                  placeholder="Ex: Junior"
                   className="w-full px-4 py-3 bg-white border border-gray-250 focus:border-blue-900 rounded-xl text-sm outline-none transition-all shadow-sm"
                 />
               </div>
@@ -141,7 +141,7 @@ export default function AppointmentPage() {
                     required
                     value={formData.clientEmail}
                     onChange={handleChange}
-                    placeholder="Ex: samuel@example.com"
+                    placeholder="Ex: junior@example.com"
                     className="w-full px-4 py-3 bg-white border border-gray-250 focus:border-blue-900 rounded-xl text-sm outline-none transition-all shadow-sm"
                   />
                 </div>

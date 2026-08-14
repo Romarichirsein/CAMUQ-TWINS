@@ -94,42 +94,37 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
               </h3>
 
               <div className="space-y-4">
-                <div className="flex gap-4 items-start">
+                <div className="flex gap-4 items-center">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-blue-900 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-xs text-gray-400 uppercase tracking-wider">Téléphones directes</h4>
-                    <div className="text-sm sm:text-base text-blue-950 font-bold mt-0.5">
-                      <a href={`tel:${COMPANY_PHONES[0].replace(/\s+/g, '')}`} className="hover:underline block">
-                        {COMPANY_PHONES[0]}
-                      </a>
-                      <a href={`tel:${COMPANY_PHONES[1].replace(/\s+/g, '')}`} className="hover:underline block">
-                        {COMPANY_PHONES[1]}
-                      </a>
-                    </div>
+                  <div className="text-sm sm:text-base text-blue-950 font-bold">
+                    <a href={`tel:${COMPANY_PHONES[0].replace(/\s+/g, '')}`} className="hover:underline block">
+                      {COMPANY_PHONES[0]}
+                    </a>
+                    <a href={`tel:${COMPANY_PHONES[1].replace(/\s+/g, '')}`} className="hover:underline block">
+                      {COMPANY_PHONES[1]}
+                    </a>
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-start">
+                <div className="flex gap-4 items-center">
                   <div className="w-10 h-10 rounded-xl bg-yellow-50 border border-yellow-100 text-yellow-600 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xs text-gray-400 uppercase tracking-wider">Adresse Email</h4>
-                    <a href={`mailto:${COMPANY_EMAIL}`} className="text-sm sm:text-base text-blue-950 font-bold mt-0.5 hover:underline break-all block">
+                    <a href={`mailto:${COMPANY_EMAIL}`} className="text-sm sm:text-base text-blue-950 font-bold hover:underline break-all block">
                       {COMPANY_EMAIL}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-start">
+                <div className="flex gap-4 items-center">
                   <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100 text-gray-600 flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-xs text-gray-400 uppercase tracking-wider">Heures d&apos;ouverture</h4>
-                    <p className="text-sm sm:text-base text-blue-950 font-bold mt-0.5 leading-snug">
+                    <p className="text-sm sm:text-base text-blue-950 font-bold leading-snug">
                       Lundi - Samedi : 07h30 - 19h30
                     </p>
                     <p className="text-xs text-gray-400 mt-0.5">Fermé le Dimanche</p>
@@ -141,7 +136,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
             {/* Google Maps Container Iframe mock styled premium */}
             <div className="rounded-3xl overflow-hidden border border-gray-150 h-64 shadow-md relative bg-slate-200">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15919.141973041076!2d9.736561339396347!3d4.043640224163991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061128be2e1767f%3A0xc95861491741ef0a!2sDouala%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1715000000000!5m2!1sfr!2sfr" 
+                src="https://maps.google.com/maps?q=Nkolfoulou%2C+Yaound%C3%A9%2C+Cameroun&t=&z=14&ie=UTF8&iwloc=&output=embed" 
                 className="w-full h-full border-0 absolute inset-0"
                 allowFullScreen={false} 
                 loading="lazy" 
@@ -149,7 +144,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
               ></iframe>
               <div className="absolute bottom-3 left-3 bg-blue-950/90 text-white text-[10px] uppercase font-bold px-3 py-1.5 rounded-xl border border-white/10 backdrop-blur-sm shadow flex items-center gap-1.5 pointer-events-none">
                 <Landmark className="w-3.5 h-3.5 text-yellow-400" />
-                <span>CAMUQ & TWINS EMPIRE Ltd, Cameroun</span>
+                <span>CAMUQ & TWINS EMPIRE Ltd, Nkolfoulou - Yaoundé, Cameroun</span>
               </div>
             </div>
 
@@ -193,7 +188,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Ex: Samuel Eto'o"
+                      placeholder="Ex: Junior"
                       className="w-full px-4 py-3 bg-slate-50 border border-transparent focus:border-blue-900 focus:bg-white rounded-xl text-sm outline-none transition-all"
                     />
                   </div>
@@ -206,7 +201,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="Ex: samuel@example.com"
+                      placeholder="Ex: junior@example.com"
                       className="w-full px-4 py-3 bg-slate-50 border border-transparent focus:border-blue-900 focus:bg-white rounded-xl text-sm outline-none transition-all"
                     />
                   </div>

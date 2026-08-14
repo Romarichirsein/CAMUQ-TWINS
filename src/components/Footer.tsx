@@ -62,7 +62,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Contact Details & Channels */}
           <div>
             <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-yellow-400 pl-3">
-              Canaux de Contact
+              Contact
             </h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2 text-gray-400">
@@ -95,7 +95,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Security & Partners / Operators */}
           <div>
             <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-yellow-400 pl-3">
-              Services & Partenaires
+              Services
             </h3>
             <p className="text-xs text-gray-400 mb-3 leading-relaxed">
               Nous opérons les transferts de fonds via MTN Mobile Money & Orange Money, les abonnements Canal+, et le pré-enrôlement CNI/Passeport officiels.
