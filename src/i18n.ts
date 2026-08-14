@@ -10,13 +10,13 @@ export const translations = {
       about: "À Propos",
       contact: "Contact",
       aiAssistant: "Assistant IA",
-      preheader: "Commerce Général - Édition - Prestation de services",
+      preheader: "Commerce Général - Éditions - Prestation de services",
       history: "Notre Histoire",
       ceoMessage: "Mot de la Directrice Générale",
       leadership: "Notre Équipe Dirigeante",
       secretariat: "Secrétariat bureautique bilingue",
       impression: "Impression",
-      edition: "Édition",
+      edition: "Éditions",
       commerce: "Commerce",
       autre: "Autre (Cyber, Mobile Money)",
       personnalise: "Service Personnalisé",
@@ -27,12 +27,12 @@ export const translations = {
     hero: {
       slogan: "Building an empire without borders",
       headline: "CAMUQ & TWINS EMPIRE Ltd",
-      description: "Propulsez votre entreprise ou votre carrière vers de nouveaux sommets ! Bénéficiez de nos services premium en secrétariat bilingue, imprimerie numérique de haute qualité, et de nos formations professionnelles certifiées, allant du design à l'intégration de l'Intelligence Artificielle.",
+      description: "Propulsez votre entreprise ou votre carrière vers de nouveaux sommets ! Bénéficiez de nos services premium en secrétariat bilingue, Éditions, imprimerie numérique de haute qualité, et de nos formations professionnelles certifiées, allant du design à l'intégration de l'Intelligence Artificielle.",
       requestQuoteBtn: "Demander un Devis Instantané",
       chatAiBtn: "Discuter avec l'IA",
       statBilingual: "100% Bilingue & Qualifié",
       statTrainings: "8+ Formations Pro",
-      statFast: "Rapide Service & Livraison",
+      statFast: "Service rapide & Livraison",
       whyUsTitle: "Pourquoi choisir CAMUQ & TWINS EMPIRE ?",
       whyUs1Title: "Expertise Multidirectionnelle & Bilingue",
       whyUs1Desc: "Secrétariat bilingue, impression offset/numérique et commerce général sous un seul toit.",
@@ -45,13 +45,13 @@ export const translations = {
     // Services Section & Services Page
     servicesSection: {
       title: "Découvrez Notre Univers Multidirectionnel",
-      subtitle: "Du commerce général et de l'édition à l'imprimerie de pointe, en passant par les démarches administratives et des formations professionnelles certifiées.",
+      subtitle: "Du commerce général et des Éditions à l'imprimerie de pointe, en passant par les démarches administratives et des formations professionnelles certifiées.",
       pageTitle: "Des Services d'Élite Taillés Pour Vos Exigences",
-      pageSubtitle: "De la papeterie bilingue et l'impression industrielle ou textile, à l'édition littéraire, en passant par le cyber café et la rédaction de rapports/CV.",
+      pageSubtitle: "De la papeterie bilingue et l'impression industrielle ou textile, aux Éditions littéraires, en passant par le cyber café et la rédaction de rapports/CV.",
       tabAll: "Tous nos services",
       tabSecretariat: "Secrétariat Bilingue",
       tabImpression: "Impression",
-      tabEdition: "Édition",
+      tabEdition: "Éditions",
       tabCommerce: "Commerce",
       tabAutre: "Autre (Cyber, Mobile Money)",
       tabPersonnalise: "Service Personnalisé",
@@ -133,7 +133,7 @@ export const translations = {
     // Contact Page
     contact: {
       pageTitle: "Demandez un Devis ou Contactez-nous",
-      pageSubtitle: "Notre équipe bilingue est à votre entière disposition pour répondre à toutes vos questions et chiffrer vos projets en secrétariat, impression, édition ou formation.",
+      pageSubtitle: "Notre équipe bilingue est à votre entière disposition pour répondre à toutes vos questions et chiffrer vos projets en secrétariat, impression, Éditions ou formation.",
       formName: "Votre Nom Complet",
       formEmail: "Adresse Email",
       formPhone: "Numéro de Téléphone (WhatsApp)",
@@ -147,7 +147,7 @@ export const translations = {
 
     // Footer
     footer: {
-      description: "CAMUQ & TWINS EMPIRE Ltd - Votre partenaire bilingue de confiance pour le secrétariat, l'imprimerie, l'édition, le commerce général et la formation professionnelle.",
+      description: "CAMUQ & TWINS EMPIRE Ltd - Votre partenaire bilingue de confiance pour le secrétariat, l'imprimerie, les Éditions, le commerce général et la formation professionnelle.",
       quickLinks: "Liens Rapides",
       ourServices: "Nos Services",
       contactUs: "Nous Contacter",

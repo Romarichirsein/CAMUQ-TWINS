@@ -53,7 +53,7 @@ export default function ServicesSection({ onQuoteRequest, onNavigateToEstimator,
             Découvrez Notre Univers Multidirectionnel
           </h2>
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            Du commerce général et de l&apos;édition à l&apos;imprimerie de pointe, en passant par les démarches administratives et des formations professionnelles certifiées.
+            Du commerce général et des Éditions à l&apos;imprimerie de pointe, en passant par les démarches administratives et des formations professionnelles certifiées.
           </p>
         </div>
 

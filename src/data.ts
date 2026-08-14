@@ -64,29 +64,29 @@ export const SERVICES_DATA: ServiceItem[] = [
     icon: "Shirt"
   },
 
-  // ÉDITION - 2 Sous-catégories
+  // ÉDITIONS - 2 Sous-catégories
   {
     id: "ed-lit-1",
-    name: "Édition de Littérature Générale",
+    name: "Éditions de Littérature Générale",
     category: "edition",
     subCategory: "litterature",
     priceEstimate: "Sur devis",
     unit: "ouvrage",
     baseCost: 0,
     hidePrice: true,
-    description: "Édition, correction et impression d'ouvrages littéraires : romans, poésies, essais, beaux livres et autobiographies.",
+    description: "Éditions, correction et impression d'ouvrages littéraires : romans, poésies, essais, beaux livres et autobiographies.",
     icon: "BookOpen"
   },
   {
     id: "ed-edu-1",
-    name: "Édition d'Ouvrages Éducatifs & Scolaires",
+    name: "Éditions d'Ouvrages Éducatifs & Scolaires",
     category: "edition",
     subCategory: "education",
     priceEstimate: "Sur devis",
     unit: "ouvrage",
     baseCost: 0,
     hidePrice: true,
-    description: "Édition de manuels scolaires, cahiers d'exercices, annales d'examens et guides pédagogiques aux normes académiques.",
+    description: "Éditions de manuels scolaires, cahiers d'exercices, annales d'examens et guides pédagogiques aux normes académiques.",
     icon: "GraduationCap"
   },
 

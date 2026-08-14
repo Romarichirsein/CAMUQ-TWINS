@@ -142,7 +142,7 @@ export default function AboutUs() {
                   </div>
                   <div>
                     <h4 className="font-bold text-sm text-blue-950">Aujourd'hui : Rayonnement</h4>
-                    <p className="text-xs text-gray-500 mt-1">Installation à Nkolfoulou. Leader local multidirectionnel (Services, Édition, Formations Certifiantes et Commerce).</p>
+                    <p className="text-xs text-gray-500 mt-1">Installation à Nkolfoulou. Leader local multidirectionnel (Services, Éditions, Formations Certifiantes et Commerce).</p>
                   </div>
                 </div>
               </div>

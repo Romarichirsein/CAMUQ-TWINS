@@ -79,7 +79,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
             Mettons en Place Votre Prochain Grand Projet
           </h2>
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            Notre équipe commerciale et administrative est à votre écoute pour toute commande d&apos;imprimerie, conseil bilingue, projet d&apos;édition ou inscription académique.
+            Notre équipe commerciale et administrative est à votre écoute pour toute commande d&apos;imprimerie, conseil bilingue, projet d&apos;Éditions ou inscription académique.
           </p>
         </div>
 
