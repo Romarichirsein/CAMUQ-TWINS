@@ -26,6 +26,14 @@ export default function Hero({ onNavigate }: HeroProps) {
           {/* Main Hero Headline and Copy */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left animate-slide-left">
             
+            <div className="inline-flex items-center gap-2 bg-yellow-100/80 text-yellow-900 border border-yellow-300/80 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider shadow-xs">
+              <span>🖨️ IMPRIMERIE</span>
+              <span>•</span>
+              <span>📚 ÉDITIONS</span>
+              <span>•</span>
+              <span>🎓 FORMATIONS</span>
+            </div>
+
             <h1 className="font-sans font-black text-4xl sm:text-5xl lg:text-6xl text-blue-950 tracking-tight leading-[1.1] text-balance">
               {COMPANY_NAME}
             </h1>
@@ -34,8 +42,8 @@ export default function Hero({ onNavigate }: HeroProps) {
               &ldquo;{heroT.slogan}&rdquo;
             </p>
 
-            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              {heroT.description}
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+              Votre partenaire de référence au Cameroun pour l&apos;<strong>Imprimerie haute définition</strong>, les <strong>Éditions littéraires & scolaires</strong> et les <strong>Formations professionnelles certifiées</strong> (Bureautique, IA, Infographie).
             </p>
 
             {/* CTA action buttons to drive conversions */}

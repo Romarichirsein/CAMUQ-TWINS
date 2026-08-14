@@ -27,10 +27,10 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
   };
 
   const categories = [
+    { id: "imprimerie", label: "🖨️ " + sT.tabImpression },
+    { id: "edition", label: "📚 " + sT.tabEdition },
     { id: "all", label: sT.tabAll },
     { id: "secretariat", label: sT.tabSecretariat },
-    { id: "imprimerie", label: sT.tabImpression },
-    { id: "edition", label: sT.tabEdition },
     { id: "commerce", label: sT.tabCommerce },
     { id: "autres", label: sT.tabAutre },
     { id: "personnalise", label: sT.tabPersonnalise }
