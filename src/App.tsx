@@ -21,6 +21,7 @@ import AdminDashboard from "./components/AdminDashboard";
 // Widgets
 import ChatBotWidget from "./components/ChatBotWidget";
 import WhatsAppButton from "./components/WhatsAppButton";
+import AnnouncementModal from "./components/AnnouncementModal";
 import { Language } from "./i18n";
 
 type ViewType = "home" | "about" | "training" | "services" | "products" | "gallery" | "blog" | "faq" | "contact" | "appointment" | "admin";
@@ -231,6 +232,9 @@ export default function App() {
 
       {/* Floating WhatsApp Customer Service Button */}
       <WhatsAppButton />
+
+      {/* Automatic 10s Rentrée Announcement Modal */}
+      <AnnouncementModal onNavigateToTraining={() => handleNavigate("training")} />
 
     </div>
   );
