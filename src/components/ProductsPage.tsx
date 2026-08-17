@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Search, ShoppingCart, Check, SlidersHorizontal, AlertCircle } from "lucide-react";
+import { Search, SlidersHorizontal, AlertCircle, MessageCircle } from "lucide-react";
 import { PRODUCT_DATA } from "../data";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -7,10 +7,11 @@ interface ProductsPageProps {
   onOrderProduct: (productName: string) => void;
 }
 
+const WHATSAPP_NUMBER = "237675231283";
+
 export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [successOrder, setSuccessOrder] = useState<string | null>(null);
 
   const { t } = useLanguage();
   const prodT = t.products;
@@ -25,23 +26,23 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
 
   const filteredProducts = PRODUCT_DATA.filter((product) => {
     const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          product.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
-  const handleQuickOrder = (prodName: string) => {
-    onOrderProduct(prodName);
-    setSuccessOrder(prodName);
-    setTimeout(() => {
-      setSuccessOrder(null);
-    }, 4000);
+  const handleWhatsAppOrder = (productName: string) => {
+    const message = encodeURIComponent(
+      `Bonjour CAMUQ & TWINS EMPIRE ! 👋\n\nJe souhaite commander le produit suivant :\n\n🛒 *${productName}*\n\nMerci de me donner les informations sur la disponibilité et le prix.`
+    );
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
   };
 
   return (
     <div id="products-view" className="py-16 bg-slate-50 animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        
+
         {/* Page Title & Search Bar */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-xs font-black uppercase tracking-wider text-yellow-600 bg-yellow-100/60 px-3.5 py-1.5 rounded-full border border-yellow-200">
@@ -85,29 +86,19 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
           ))}
         </div>
 
-        {/* Success Alert Banner */}
-        {successOrder && (
-          <div className="bg-emerald-50 text-emerald-800 border border-emerald-150 p-4 rounded-2xl flex items-center gap-3 max-w-3xl mx-auto animate-bounce">
-            <Check className="w-6 h-6 text-emerald-600 shrink-0" />
-            <div className="text-xs sm:text-sm font-semibold">
-              Votre demande d&apos;achat pour &ldquo;<strong className="text-emerald-950">{successOrder}</strong>&rdquo; a été pré-remplie ! Veuillez finaliser le formulaire de contact ci-dessous pour valider la livraison.
-            </div>
-          </div>
-        )}
-
         {/* Products Grid */}
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {filteredProducts.map((product) => (
-              <div 
+              <div
                 key={product.id}
-                className="group bg-white rounded-3xl border border-gray-100 hover:border-blue-150 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                className="group bg-white rounded-3xl border border-gray-100 hover:border-green-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between"
               >
-                {/* Photo space */}
+                {/* Product Photo */}
                 <div className="relative h-48 bg-slate-100 overflow-hidden">
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
+                  <img
+                    src={product.image}
+                    alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {!product.available && (
@@ -119,14 +110,18 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
                   )}
                   <div className="absolute top-4 left-4">
                     <span className="text-[9px] font-extrabold uppercase bg-blue-900 text-white px-2.5 py-1 rounded-full shadow-sm tracking-wider">
-                      {product.category === "fourniture" || product.category === "papeterie" ? "Papeterie Bilingue" : product.category === "longrich" ? "Longrich" : "Bijoux"}
+                      {product.category === "fourniture" || product.category === "papeterie"
+                        ? "Papeterie Bilingue"
+                        : product.category === "longrich"
+                        ? "Longrich"
+                        : "Bijoux"}
                     </span>
                   </div>
                 </div>
 
-                {/* Details */}
-                <div className="p-5 space-y-4 flex-grow flex flex-col justify-between">
-                  <div className="space-y-1.5">
+                {/* Product Details */}
+                <div className="p-5 flex flex-col gap-4 flex-grow">
+                  <div className="space-y-1.5 flex-grow">
                     <h3 className="font-sans font-bold text-base sm:text-lg text-blue-950 group-hover:text-blue-900 transition-colors">
                       {product.name}
                     </h3>
@@ -135,30 +130,20 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
-                    <div>
-                      <span className="text-[9px] text-gray-400 block uppercase font-bold tracking-wider">
-                        {product.hidePrice || product.price === 0 || product.category === "fourniture" || product.category === "papeterie" || product.category === "bijoux" ? "Tarification" : `Prix / ${product.unit}`}
-                      </span>
-                      {product.hidePrice || product.price === 0 || product.category === "fourniture" || product.category === "papeterie" || product.category === "bijoux" ? (
-                        <span className="text-xs font-black text-blue-900 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-100 block mt-0.5">Sur devis / À la commande</span>
-                      ) : (
-                        <span className="text-base font-black text-yellow-600">{product.price.toLocaleString()} FCFA</span>
-                      )}
-                    </div>
-                    <button
-                      onClick={() => handleQuickOrder(product.name)}
-                      disabled={!product.available}
-                      className={`p-3 rounded-xl transition-all cursor-pointer ${
-                        product.available 
-                          ? "bg-blue-900 hover:bg-blue-950 text-white shadow-sm hover:shadow-md"
-                          : "bg-slate-100 text-gray-300 cursor-not-allowed"
-                      }`}
-                      title="Passer commande"
-                    >
-                      <ShoppingCart className="w-4 h-4" />
-                    </button>
-                  </div>
+                  {/* WhatsApp Order Button */}
+                  <button
+                    onClick={() => handleWhatsAppOrder(product.name)}
+                    disabled={!product.available}
+                    className={`w-full flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl font-black text-xs uppercase tracking-wider transition-all duration-200 shadow-sm ${
+                      product.available
+                        ? "bg-green-500 hover:bg-green-600 text-white hover:shadow-lg hover:shadow-green-500/25 active:scale-95 cursor-pointer"
+                        : "bg-slate-100 text-gray-300 cursor-not-allowed"
+                    }`}
+                    title="Commander via WhatsApp"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    Commander via WhatsApp
+                  </button>
                 </div>
               </div>
             ))}
@@ -168,7 +153,8 @@ export default function ProductsPage({ onOrderProduct }: ProductsPageProps) {
             <AlertCircle className="w-12 h-12 text-yellow-500 mx-auto" />
             <h4 className="font-bold text-lg text-blue-950">Aucun produit trouvé</h4>
             <p className="text-xs text-gray-500">
-              Essayez de modifier vos filtres ou de vider la barre de recherche pour découvrir l&apos;intégralité de nos fournitures de bureau, bijoux d&apos;exception et produits Longrich.
+              Essayez de modifier vos filtres ou de vider la barre de recherche pour découvrir
+              l&apos;intégralité de nos fournitures de bureau, bijoux d&apos;exception et produits Longrich.
             </p>
           </div>
         )}
