@@ -30,7 +30,7 @@ export default function AppointmentPage() {
     setError(null);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.clientName || !formData.clientEmail || !formData.clientPhone || !formData.date) {
       setError("Veuillez remplir les champs obligatoires (Nom, Email, Téléphone, Date).");
@@ -40,32 +40,47 @@ export default function AppointmentPage() {
     setSubmitting(true);
     setError(null);
 
-    try {
-      const response = await fetch("/api/appointments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
-      const result = await response.json();
-      if (result.success) {
-        setSuccess(result.appointment);
-        setFormData({
-          clientName: "",
-          clientEmail: "",
-          clientPhone: "",
-          serviceType: "Initiation à l'Intelligence Artificielle",
-          date: "",
-          time: "09:00",
-          notes: ""
-        });
-      } else {
-        setError(result.error || "Une erreur s'est produite.");
-      }
-    } catch (err) {
-      setError("Erreur réseau lors de l'enregistrement de votre rendez-vous.");
-    } finally {
-      setSubmitting(false);
-    }
+    const messageText = 
+`Bonjour CAMUQ & TWINS EMPIRE,
+
+Je souhaite réserver un rendez-vous / inscription depuis votre site web :
+
+👤 Nom complet : ${formData.clientName}
+📧 Email : ${formData.clientEmail}
+📞 Téléphone : ${formData.clientPhone}
+📚 Service / Formation : ${formData.serviceType}
+📅 Date souhaitée : ${formData.date} à ${formData.time}
+📝 Notes particulières : ${formData.notes || 'Aucune'}`;
+
+    const targetPhone = "237675231283";
+    const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(messageText)}`;
+    
+    // Direct launch to WhatsApp
+    window.open(whatsappUrl, "_blank");
+
+    setSuccess({
+      id: "RDV-" + Date.now(),
+      clientName: formData.clientName,
+      clientEmail: formData.clientEmail,
+      clientPhone: formData.clientPhone,
+      serviceType: formData.serviceType,
+      date: formData.date,
+      time: formData.time,
+      notes: formData.notes,
+      status: "pending",
+      createdAt: new Date().toISOString()
+    });
+
+    setSubmitting(false);
+    setFormData({
+      clientName: "",
+      clientEmail: "",
+      clientPhone: "",
+      serviceType: "Initiation à l'Intelligence Artificielle",
+      date: "",
+      time: "09:00",
+      notes: ""
+    });
   };
 
   return (

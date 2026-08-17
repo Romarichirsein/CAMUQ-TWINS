@@ -2,6 +2,18 @@ export type Language = "fr" | "en";
 
 export const translations = {
   fr: {
+    common: {
+      onQuote: "Sur devis / À la commande",
+      onDevis: "Sur devis",
+      order: "Commander",
+      register: "S'inscrire",
+      details: "Détails",
+      back: "Retour",
+      search: "Rechercher...",
+      views: "vues",
+      by: "Par"
+    },
+
     // Header & Navigation
     nav: {
       home: "Accueil",
@@ -27,11 +39,15 @@ export const translations = {
     hero: {
       slogan: "Building an empire without borders",
       headline: "CAMUQ & TWINS EMPIRE Ltd",
-      description: "Propulsez votre entreprise ou votre carrière vers de nouveaux sommets ! Bénéficiez de nos services premium en secrétariat bilingue, Éditions, imprimerie numérique de haute qualité, et de nos formations professionnelles certifiées, allant du design à l'intégration de l'Intelligence Artificielle.",
+      badgePrinting: "🖨️ IMPRIMERIE",
+      badgePublishing: "📚 ÉDITIONS",
+      badgeTrainings: "🎓 FORMATIONS",
+      description: "Votre partenaire de référence au Cameroun pour l'Imprimerie haute définition, les Éditions littéraires & scolaires et les Formations professionnelles certifiées (Bureautique, IA, Infographie).",
       requestQuoteBtn: "Demander un Devis Instantané",
       chatAiBtn: "Discuter avec l'IA",
       statBilingual: "100% Bilingue & Qualifié",
       statTrainings: "8+ Formations Pro",
+      statFastTitle: "Rapide",
       statFast: "Service rapide & Livraison",
       whyUsTitle: "Pourquoi choisir CAMUQ & TWINS EMPIRE ?",
       whyUs1Title: "Expertise Multidirectionnelle & Bilingue",
@@ -52,8 +68,8 @@ export const translations = {
       tabSecretariat: "Secrétariat Bilingue",
       tabImpression: "Impression",
       tabEdition: "Éditions",
-      tabCommerce: "Commerce",
-      tabAutre: "Autre (Cyber, Mobile Money)",
+      tabCommerce: "Commerce & Boutique",
+      tabAutre: "Autres Services",
       tabPersonnalise: "Service Personnalisé",
 
       // Subtabs
@@ -68,7 +84,13 @@ export const translations = {
 
       indicativeRate: "Tarif estimé",
       orderBtn: "Commander",
-      quoteBtn: "Demander un devis"
+      quoteBtn: "Demander un devis",
+      
+      // Feature section
+      cyberTitle: "Cyber Café Ultra-Rapide, Mobile Money & Abonnements Canal+",
+      cyberBadge: "Espace Connecté Premium",
+      cyberDesc: "Notre espace technologique vous accueille 6 jours sur 7 avec une connexion par fibre optique stable pour toutes vos démarches administratives complexes (Pré-enrôlement passeport, CNI, attestation d'immatriculation...).",
+      cyberSub: "Nous sommes agréés et sécurisés pour tous vos dépôts/retraits MTN Mobile Money, Orange Money et renouvellement Canal+ sans délai ni tracas."
     },
 
     // Formations / Training Page
@@ -89,6 +111,9 @@ export const translations = {
 
     // About Us Page
     about: {
+      heroTag: "Bâtir un Empire Sans Frontières",
+      heroTitle: "À Propos de Nous & Notre Histoire",
+      heroSub: "Découvrez le parcours de CAMUQ AND TWINS EMPIRE Ltd, ses valeurs fondamentales, son engagement d'excellence et son équipe dirigeante engagée.",
       pageTitle: "À Propos de CAMUQ & TWINS EMPIRE Ltd",
       historyTag: "Notre Histoire",
       historySub: "Un parcours marqué par l'excellence et la croissance",
@@ -98,20 +123,31 @@ export const translations = {
       historyP4: "Animés par notre slogan, « Build an Empire Without Borders », nous avançons chaque jour avec la volonté de créer un empire durable, innovant et sans frontières.",
       historyP5: "Bienvenue dans notre histoire. Bienvenue chez CAMUQ AND TWINS EMPIRE Ltd.",
 
+      timelineTitle: "Repères Chronologiques",
+      t2021Title: "Août 2021 : Fondation",
+      t2021Desc: "Lancement de CAMUQ TRADING HOUSE. Spécialisation en secrétariat, fournitures de bureau et initiation informatique bilingue.",
+      t2025Title: "2025 : Extension & Capital",
+      t2025Desc: "Arrivée de deux nouveaux associés, cession de 50 % des parts sociales et création de CAMUQ AND TWINS EMPIRE Ltd.",
+      todayTitle: "Aujourd'hui : Rayonnement",
+      todayDesc: "Installation à Nkolfoulou. Leader local multidirectionnel (Services, Éditions, Formations Certifiantes et Commerce).",
+      hqTag: "Notre Siège Social",
+      hqLocation: "Nkolfoulou, Cameroun",
+
       acteursSectionTag: "Les Acteurs de CAMUQ AND TWINS EMPIRE Ltd",
       acteursSectionTitle: "Bâtisseurs d'un Empire sans Frontières",
       acteursSub: "Découvrez les acteurs majeurs de CAMUQ AND TWINS EMPIRE Ltd : une équipe expérimentée et visionnaire, conduite par une Directrice Générale passionnée, aux côtés du Directeur des Opérations et du Directeur Commercial et Marketing.",
 
-      dgName: "Flore NOUTELI FOYETT",
+      dgEditorial: "Éditorial",
       dgTitle: "Directrice Générale",
+      dgName: "Flore NOUTELI FOYETT",
       dgBio: "Entrepreneure visionnaire, forte de plus de 20 ans d'expérience dans la gestion d'entreprises de secteurs variés, Mme Foyett Flore incarne le leadership, l'innovation et la résilience. Convaincue que les plus grands succès se construisent ensemble, elle porte avec passion la vision de CAMUQ AND TWINS EMPIRE Ltd : bâtir un empire sans frontières.",
 
-      doName: "LIMNYUY Luke SENYUY",
       doTitle: "Directeur des Opérations",
-      doBio: "Professionnel engagé et rigoureux, Mark cumule plus de 10 ans d'expérience dans la gestion des opérations. Il veille à l'efficacité des processus, à la qualité des services et à la bonne exécution de la vision de l'entreprise, en faisant de l'excellence opérationnelle une priorité.",
+      doName: "LIMNYUY Luke SENYUY",
+      doBio: "Professionnel engagé et rigoureux, cumule plus de 10 ans d'expérience dans la gestion des opérations. Il veille à l'efficacité des processus, à la qualité des services et à la bonne exécution de la vision de l'entreprise, en faisant de l'excellence opérationnelle une priorité.",
 
-      dcmName: "Luke",
       dcmTitle: "Directeur Commercial et Marketing",
+      dcmName: "Luke",
       dcmBio: "Avec plus de 10 ans d'expérience dans le développement commercial et le marketing, Luke met son sens de la stratégie, de la communication et de la relation client au service de la croissance de l'entreprise. Son ambition est de faire rayonner la marque et de créer des partenariats durables."
     },
 
@@ -130,6 +166,43 @@ export const translations = {
       available: "En stock"
     },
 
+    // Gallery Page
+    gallery: {
+      pageTag: "Galerie d'Images CAMUQ & TWINS EMPIRE",
+      pageTitle: "Immersion Visuelle au Cœur de Notre Empire",
+      pageSubtitle: "Parcourez nos ateliers d'impression numérique, nos salles de cours connectées et découvrez des exemples concrets de projets réalisés pour nos clients.",
+      all: "Tous nos clichés",
+      imprimerie: "Imprimerie",
+      formations: "Formations",
+      secretariat: "Secrétariat",
+      autres: "Cyber & Autres",
+      emptyTitle: "Aucune photo trouvée",
+      emptyDesc: "Aucune image ne correspond au filtre sélectionné pour le moment."
+    },
+
+    // Blog Page
+    blog: {
+      pageTag: "Blog & Actualités CAMUQ & TWINS EMPIRE",
+      pageTitle: "Conseils, Actualités & Guides Pratiques",
+      pageSubtitle: "Explorez nos derniers articles sur les technologies d'IA, les démarches administratives et les meilleures pratiques pour votre entreprise.",
+      searchPlaceholder: "Rechercher un article ou un mot-clé...",
+      allCat: "Toutes les catégories",
+      backBtn: "Retour à tous les articles",
+      views: "vues",
+      by: "Par",
+      disclaimer: "Avertissement de publication : Les avis exprimés dans cette section visent à guider et orienter notre clientèle d'étudiants et d'entreprises dans leurs choix opérationnels au quotidien."
+    },
+
+    // FAQ Page
+    faq: {
+      pageTag: "Foire Aux Questions CAMUQ & TWINS EMPIRE",
+      pageTitle: "Des Réponses Claires à Vos Questions",
+      pageSubtitle: "Vous avez des questions sur nos formations professionnelles certifiées, nos tarifs de secrétariat bilingue, d'imprimerie ou nos démarches en ligne ? Consultez notre foire aux questions.",
+      searchPlaceholder: "Rechercher une question ou un thème précis...",
+      emptyTitle: "Aucune question trouvée",
+      emptyDesc: "Essayez de modifier votre recherche ou contactez notre équipe en direct."
+    },
+
     // Contact Page
     contact: {
       pageTitle: "Demandez un Devis ou Contactez-nous",
@@ -143,6 +216,37 @@ export const translations = {
       addressTitle: "Adresse & Localisation",
       phoneTitle: "Téléphone & WhatsApp",
       emailTitle: "Email Officiel"
+    },
+
+    // Appointment Page
+    appointment: {
+      pageTag: "Prise de Rendez-vous en Ligne",
+      pageTitle: "Réservez un Créneau avec Nos Experts",
+      pageSubtitle: "Planifiez une rencontre en boutique ou en ligne avec nos spécialistes pour discuter de vos projets d'impression, d'édition ou de formation.",
+      formName: "Votre Nom Complet *",
+      formEmail: "Adresse Email *",
+      formPhone: "Numéro de Téléphone / WhatsApp *",
+      formService: "Service ou Formation Concerné *",
+      formDate: "Date Souhaitée *",
+      formTime: "Heure Souhaitée *",
+      formNotes: "Notes ou Précisions Particulières",
+      submitBtn: "Confirmer mon Rendez-vous",
+      successMsg: "Votre rendez-vous a été enregistré avec succès !"
+    },
+
+    // Partners Section
+    partners: {
+      sectionTag: "Synergie de Croissance",
+      sectionTitle: "Nos Partenaires Stratégiques",
+      sectionSub: "Des alliances solides au service de l'excellence, de l'approvisionnement et de l'impact social."
+    },
+
+    // Testimonials Section
+    testimonials: {
+      sectionTag: "Preuve Sociale & Confiance",
+      sectionTitle: "Ce que disent nos clients satisfaits",
+      sectionSub: "Découvrez les retours d'expérience des professionnels, étudiants et entrepreneurs qui font confiance à CAMUQ & TWINS EMPIRE.",
+      leaveFeedbackBtn: "Laisser un témoignage client"
     },
 
     // Footer
@@ -161,6 +265,18 @@ export const translations = {
   },
 
   en: {
+    common: {
+      onQuote: "On Quote / Custom Order",
+      onDevis: "On Quote",
+      order: "Order Now",
+      register: "Register",
+      details: "Details",
+      back: "Back",
+      search: "Search...",
+      views: "views",
+      by: "By"
+    },
+
     // Header & Navigation
     nav: {
       home: "Home",
@@ -186,11 +302,15 @@ export const translations = {
     hero: {
       slogan: "Building an empire without borders",
       headline: "CAMUQ & TWINS EMPIRE Ltd",
-      description: "Propel your business or career to new heights! Benefit from our premium bilingual secretariat services, top-quality digital printing, and certified professional training from graphic design to AI integration.",
+      badgePrinting: "🖨️ PRINTING",
+      badgePublishing: "📚 PUBLISHING",
+      badgeTrainings: "🎓 TRAININGS",
+      description: "Your reference partner in Cameroon for high-definition printing, literary & educational publishing, and certified professional training (Office Automation, AI, Graphic Design).",
       requestQuoteBtn: "Request an Instant Quote",
       chatAiBtn: "Chat with AI",
       statBilingual: "100% Bilingual & Qualified",
       statTrainings: "8+ Pro Trainings",
+      statFastTitle: "Fast",
       statFast: "Fast Service & Delivery",
       whyUsTitle: "Why choose CAMUQ & TWINS EMPIRE?",
       whyUs1Title: "Multidirectional & Bilingual Expertise",
@@ -211,8 +331,8 @@ export const translations = {
       tabSecretariat: "Bilingual Secretariat",
       tabImpression: "Printing",
       tabEdition: "Publishing",
-      tabCommerce: "Trade & Commerce",
-      tabAutre: "Other (Cyber, Mobile Money)",
+      tabCommerce: "Trade & Store",
+      tabAutre: "Other Services",
       tabPersonnalise: "Custom Service",
 
       // Subtabs
@@ -227,7 +347,13 @@ export const translations = {
 
       indicativeRate: "Estimated Rate",
       orderBtn: "Order Now",
-      quoteBtn: "Request a Quote"
+      quoteBtn: "Request a Quote",
+      
+      // Feature section
+      cyberTitle: "Ultra-Fast Cyber Café, Mobile Money & Canal+ Subscriptions",
+      cyberBadge: "Premium Connected Space",
+      cyberDesc: "Our tech hub welcomes you 6 days a week with a stable fiber optic connection for all your complex administrative procedures (Passport pre-enrollment, CNI, tax registration...).",
+      cyberSub: "We are authorized and secure for all your MTN Mobile Money, Orange Money deposits/withdrawals, and Canal+ renewals with zero hassle."
     },
 
     // Formations / Training Page
@@ -248,6 +374,9 @@ export const translations = {
 
     // About Us Page
     about: {
+      heroTag: "Building an Empire Without Borders",
+      heroTitle: "About Us & Our Story",
+      heroSub: "Discover the journey of CAMUQ AND TWINS EMPIRE Ltd, its core values, commitment to excellence, and dedicated leadership team.",
       pageTitle: "About CAMUQ & TWINS EMPIRE Ltd",
       historyTag: "Our Story",
       historySub: "A journey marked by excellence and growth",
@@ -257,20 +386,31 @@ export const translations = {
       historyP4: "Driven by our slogan, “Build an Empire Without Borders”, we move forward every day dedicated to creating a sustainable, innovative, and borderless empire.",
       historyP5: "Welcome to our story. Welcome to CAMUQ AND TWINS EMPIRE Ltd.",
 
+      timelineTitle: "Chronological Milestones",
+      t2021Title: "August 2021: Founding",
+      t2021Desc: "Launch of CAMUQ TRADING HOUSE. Specialization in secretariat, office supplies, and bilingual IT training.",
+      t2025Title: "2025: Expansion & Capital",
+      t2025Desc: "Arrival of two new partners, transfer of 50% shares, and establishment of CAMUQ AND TWINS EMPIRE Ltd.",
+      todayTitle: "Today: Outreach & Leadership",
+      todayDesc: "Settlement in Nkolfoulou. Multidirectional local leader (Services, Publishing, Certified Training, and Trade).",
+      hqTag: "Our Headquarters",
+      hqLocation: "Nkolfoulou, Cameroon",
+
       acteursSectionTag: "Key Actors of CAMUQ AND TWINS EMPIRE Ltd",
       acteursSectionTitle: "Builders of an Empire Without Borders",
       acteursSub: "Discover the key leaders of CAMUQ AND TWINS EMPIRE Ltd: an experienced, visionary team led by a passionate Managing Director, alongside the Operations Director and Commercial & Marketing Director.",
 
-      dgName: "Flore NOUTELI FOYETT",
+      dgEditorial: "Editorial",
       dgTitle: "Managing Director (CEO)",
+      dgName: "Flore NOUTELI FOYETT",
       dgBio: "Visionary entrepreneur with over 20 years of experience managing businesses across diverse sectors, Mrs. Flore Foyett embodies leadership, innovation, and resilience. Convinced that great achievements are built together, she passionately drives CAMUQ AND TWINS EMPIRE Ltd's vision: building a borderless empire.",
 
-      doName: "LIMNYUY Luke SENYUY",
       doTitle: "Operations Director (COO)",
+      doName: "LIMNYUY Luke SENYUY",
       doBio: "Dedicated and rigorous professional with over 10 years of experience in operations management. He ensures process efficiency, service quality, and the smooth execution of the company's vision with operational excellence as a priority.",
 
-      dcmName: "Luke",
       dcmTitle: "Commercial & Marketing Director (CMO)",
+      dcmName: "Luke",
       dcmBio: "With over 10 years of experience in business development and marketing, Luke brings strategic vision, communication skills, and customer relationship expertise to fuel company growth and forge lasting partnerships."
     },
 
@@ -278,15 +418,52 @@ export const translations = {
     products: {
       pageTag: "CAMUQ & TWINS EMPIRE Sales Catalog",
       pageTitle: "Our Store & Exclusively Selected Items",
-      pageSubtitle: "Find your school and office supplies, nourish your body with natural Longrich products, or discover refined jewelry.",
-      searchPlaceholder: "Search for a product, supply, Longrich...",
+      pageSubtitle: "Procure your bilingual stationery, equip your offices, take care of your body with natural Longrich products, or discover refined jewelry.",
+      searchPlaceholder: "Search for a product, bilingual stationery, Longrich...",
       allCat: "All Catalog",
-      fournitureCat: "Office Supplies",
+      fournitureCat: "Bilingual Stationery",
       papeterieCat: "Bilingual Stationery",
       longrichCat: "Longrich Products",
       bijouxCat: "Jewelry & Accessories",
       orderBtn: "Order This Product",
       available: "In Stock"
+    },
+
+    // Gallery Page
+    gallery: {
+      pageTag: "CAMUQ & TWINS EMPIRE Image Gallery",
+      pageTitle: "Visual Immersion into Our Empire",
+      pageSubtitle: "Browse our digital printing workshops, connected classrooms, and discover concrete examples of projects completed for our clients.",
+      all: "All Our Photos",
+      imprimerie: "Printing",
+      formations: "Trainings",
+      secretariat: "Secretariat",
+      autres: "Cyber & Others",
+      emptyTitle: "No photos found",
+      emptyDesc: "No images match the selected filter at this moment."
+    },
+
+    // Blog Page
+    blog: {
+      pageTag: "CAMUQ & TWINS EMPIRE Blog & News",
+      pageTitle: "Tips, News & Practical Guides",
+      pageSubtitle: "Explore our latest articles on AI technologies, administrative procedures, and best operational practices for your business.",
+      searchPlaceholder: "Search for an article or keyword...",
+      allCat: "All categories",
+      backBtn: "Back to all articles",
+      views: "views",
+      by: "By",
+      disclaimer: "Publication Disclaimer: The opinions expressed in this section aim to guide our student and corporate clients in their daily operational choices."
+    },
+
+    // FAQ Page
+    faq: {
+      pageTag: "CAMUQ & TWINS EMPIRE FAQ",
+      pageTitle: "Clear Answers to Your Questions",
+      pageSubtitle: "Have questions about our certified professional training courses, bilingual secretariat rates, printing, or online procedures? Check our FAQ.",
+      searchPlaceholder: "Search for a specific question or topic...",
+      emptyTitle: "No questions found",
+      emptyDesc: "Try adjusting your search query or contact our live team."
     },
 
     // Contact Page
@@ -302,6 +479,37 @@ export const translations = {
       addressTitle: "Address & Location",
       phoneTitle: "Phone & WhatsApp",
       emailTitle: "Official Email"
+    },
+
+    // Appointment Page
+    appointment: {
+      pageTag: "Online Appointment Booking",
+      pageTitle: "Book a Slot with Our Experts",
+      pageSubtitle: "Schedule a meeting in store or online with our specialists to discuss your printing, publishing, or training projects.",
+      formName: "Full Name *",
+      formEmail: "Email Address *",
+      formPhone: "Phone Number / WhatsApp *",
+      formService: "Service or Training Concerned *",
+      formDate: "Desired Date *",
+      formTime: "Desired Time *",
+      formNotes: "Notes or Special Details",
+      submitBtn: "Confirm My Appointment",
+      successMsg: "Your appointment has been registered successfully!"
+    },
+
+    // Partners Section
+    partners: {
+      sectionTag: "Growth Synergy",
+      sectionTitle: "Our Strategic Partners",
+      sectionSub: "Strong alliances serving excellence, supply, and social impact."
+    },
+
+    // Testimonials Section
+    testimonials: {
+      sectionTag: "Social Proof & Trust",
+      sectionTitle: "What Our Satisfied Clients Say",
+      sectionSub: "Discover feedback from professionals, students, and entrepreneurs who trust CAMUQ & TWINS EMPIRE.",
+      leaveFeedbackBtn: "Leave a Client Testimonial"
     },
 
     // Footer

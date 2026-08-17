@@ -5,6 +5,7 @@ import {
   FORMATIONS_DATA, 
   PRODUCT_DATA 
 } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ServicesSectionProps {
   onQuoteRequest?: (serviceName: string) => void;
@@ -14,6 +15,10 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({ onQuoteRequest, onNavigateToEstimator, onNavigateToTraining }: ServicesSectionProps) {
   const [activeTab, setActiveTab] = useState<"services" | "formations" | "autres" | "commerce">("services");
+  const { lang, t } = useLanguage();
+  const sT = t.servicesSection;
+  const navT = t.nav;
+  const comT = t.common;
 
   const handleEstimate = (name?: string) => {
     if (onQuoteRequest) {
@@ -50,10 +55,10 @@ export default function ServicesSection({ onQuoteRequest, onNavigateToEstimator,
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3 reveal-on-scroll">
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
-            Découvrez Notre Univers Multidirectionnel
+            {sT.title}
           </h2>
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            Du commerce général et des Éditions à l&apos;imprimerie de pointe, en passant par les démarches administratives et des formations professionnelles certifiées.
+            {sT.subtitle}
           </p>
         </div>
 
@@ -68,7 +73,7 @@ export default function ServicesSection({ onQuoteRequest, onNavigateToEstimator,
             }`}
           >
             <Icons.Printer className="w-4 h-4 shrink-0" />
-            Bureautique & Imprimerie
+            {sT.tabSecretariat} & {sT.tabImpression}
           </button>
           
           <button
@@ -80,7 +85,7 @@ export default function ServicesSection({ onQuoteRequest, onNavigateToEstimator,
             }`}
           >
             <Icons.BookOpen className="w-4 h-4 shrink-0" />
-            Nos Formations
+            {navT.trainings}
           </button>
 
           <button
@@ -92,7 +97,7 @@ export default function ServicesSection({ onQuoteRequest, onNavigateToEstimator,
             }`}
           >
             <Icons.Layers className="w-4 h-4 shrink-0" />
-            Autres Services
+            {sT.tabAutre}
           </button>
 
           <button
@@ -104,7 +109,7 @@ export default function ServicesSection({ onQuoteRequest, onNavigateToEstimator,
             }`}
           >
             <Icons.ShoppingBag className="w-4 h-4 shrink-0" />
-            Commerce & Boutique
+            {sT.tabCommerce}
           </button>
         </div>
 

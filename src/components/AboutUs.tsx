@@ -18,9 +18,36 @@ import PartnersSection from "./PartnersSection";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function AboutUs() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const aboutT = t.about;
-  const values = [
+
+  const values = lang === "en" ? [
+    {
+      icon: Award,
+      title: "Excellence",
+      description: "Every service undergoes rigorous quality control to deliver superior results."
+    },
+    {
+      icon: Briefcase,
+      title: "Professionalism",
+      description: "A qualified, bilingual team committed to working alongside you with precision and timeliness."
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation",
+      description: "We modernize our processes through advanced IT tools and strategic AI integration."
+    },
+    {
+      icon: ShieldCheck,
+      title: "Integrity",
+      description: "Honesty, absolute transparency, and total confidentiality of your sensitive data."
+    },
+    {
+      icon: Target,
+      title: "Client Satisfaction",
+      description: "Your success is our top priority. We tailor solutions to meet your exact expectations."
+    }
+  ] : [
     {
       icon: Award,
       title: "Excellence",
@@ -57,13 +84,13 @@ export default function AboutUs() {
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
           <span className="text-[10px] bg-yellow-400 text-blue-950 font-black px-3 py-1.5 rounded-full uppercase tracking-widest inline-block">
-            Bâtir un Empire Sans Frontières
+            {aboutT.heroTag}
           </span>
           <h1 className="font-sans font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight max-w-4xl mx-auto">
-            À Propos de Nous & Notre Histoire
+            {aboutT.heroTitle}
           </h1>
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Découvrez le parcours de <span className="text-yellow-400 font-bold">CAMUQ AND TWINS EMPIRE Ltd</span>, ses valeurs fondamentales, son engagement d'excellence et son équipe dirigeante engagée.
+            {aboutT.heroSub}
           </p>
         </div>
       </div>
@@ -112,7 +139,7 @@ export default function AboutUs() {
               
               <h3 className="font-sans font-black text-lg text-blue-950 uppercase tracking-wider pb-2 border-b border-slate-100 flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-yellow-500" />
-                Repères Chronologiques
+                {aboutT.timelineTitle}
               </h3>
 
               <div className="space-y-6 relative before:absolute before:left-3.5 before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-200">
@@ -122,8 +149,8 @@ export default function AboutUs() {
                     21
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-blue-950">Août 2021 : Fondation</h4>
-                    <p className="text-xs text-gray-500 mt-1">Lancement de CAMUQ TRADING HOUSE. Spécialisation en secrétariat, fournitures de bureau et initiation informatique bilingue.</p>
+                    <h4 className="font-bold text-sm text-blue-950">{aboutT.t2021Title}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{aboutT.t2021Desc}</p>
                   </div>
                 </div>
 
@@ -133,8 +160,8 @@ export default function AboutUs() {
                     25
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-blue-950">2025 : Extension & Capital</h4>
-                    <p className="text-xs text-gray-500 mt-1">Arrivée de deux nouveaux associés, cession de 50 % des parts sociales et création de CAMUQ AND TWINS EMPIRE Ltd.</p>
+                    <h4 className="font-bold text-sm text-blue-950">{aboutT.t2025Title}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{aboutT.t2025Desc}</p>
                   </div>
                 </div>
 
@@ -144,8 +171,8 @@ export default function AboutUs() {
                     ✓
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-blue-950">Aujourd'hui : Rayonnement</h4>
-                    <p className="text-xs text-gray-500 mt-1">Installation à Nkolfoulou. Leader local multidirectionnel (Services, Éditions, Formations Certifiantes et Commerce).</p>
+                    <h4 className="font-bold text-sm text-blue-950">{aboutT.todayTitle}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{aboutT.todayDesc}</p>
                   </div>
                 </div>
               </div>
@@ -154,8 +181,8 @@ export default function AboutUs() {
               <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100 flex items-center gap-3">
                 <MapPin className="w-6 h-6 text-blue-900 shrink-0" />
                 <div>
-                  <span className="text-[10px] text-blue-800 uppercase font-bold tracking-widest block">Notre Siège Social</span>
-                  <span className="text-xs text-slate-700 font-bold">Nkolfoulou, Cameroun</span>
+                  <span className="text-[10px] text-blue-800 uppercase font-bold tracking-widest block">{aboutT.hqTag}</span>
+                  <span className="text-xs text-slate-700 font-bold">{aboutT.hqLocation}</span>
                 </div>
               </div>
             </div>
@@ -172,25 +199,23 @@ export default function AboutUs() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
             
-            {/* Left Block: Image cropped below elbows, black background */}
+            {/* Left Block */}
             <div className="lg:col-span-4 flex flex-col items-center">
               <div className="relative group">
-                {/* Black solid background wrapper */}
                 <div className="absolute inset-0 bg-black rounded-3xl -rotate-2 transform scale-102 group-hover:rotate-0 transition-transform duration-300"></div>
                 <div className="relative w-64 h-80 rounded-3xl overflow-hidden bg-black border-2 border-yellow-400 shadow-xl">
                   <img 
                     src="/images/flore-nouteli-foyett.jpg" 
-                    alt="Mme Flore NOUTELI FOYETT, Directrice Générale" 
+                    alt={aboutT.dgName} 
                     className="w-full h-full object-cover object-top opacity-95 contrast-105"
                     referrerPolicy="no-referrer"
                   />
-                  {/* Mask or subtle shadow cropped look to look polished */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 </div>
               </div>
               <div className="mt-4 text-center">
                 <span className="text-yellow-400 font-bold block text-sm tracking-wide">Mme Flore NOUTELI-FOYETT</span>
-                <span className="text-[10px] text-slate-300 uppercase tracking-widest font-semibold block mt-0.5">Directrice Générale</span>
+                <span className="text-[10px] text-slate-300 uppercase tracking-widest font-semibold block mt-0.5">{aboutT.dgTitle}</span>
               </div>
             </div>
 
@@ -198,52 +223,48 @@ export default function AboutUs() {
             <div className="lg:col-span-8 space-y-6">
               <div className="space-y-1">
                 <span className="text-[10px] bg-yellow-400 text-blue-950 font-black px-2.5 py-1 rounded-full uppercase tracking-wider inline-block">
-                  Éditorial
+                  {aboutT.dgEditorial}
                 </span>
                 <h3 className="font-sans font-black text-2xl sm:text-3xl tracking-tight text-white mt-2">
-                  Mot de la Directrice Générale
+                  {lang === "en" ? "Message from the Managing Director" : "Mot de la Directrice Générale"}
                 </h3>
               </div>
 
               <div className="space-y-4 text-slate-200 text-sm sm:text-base leading-relaxed font-light italic">
-                <p>
-                  &ldquo; Bienvenue sur le site officiel de CAMUQ AND TWINS EMPIRE Ltd.
-                </p>
-                <p>
-                  C'est avec un immense plaisir que je vous accueille sur cette plateforme, conçue pour vous faire découvrir notre entreprise, nos activités, nos réalisations et les valeurs qui nous animent au quotidien.
-                </p>
-                <p>
-                  Depuis la création de notre entreprise en 2021, notre ambition est restée la même : offrir des services de qualité, accompagner le développement des compétences et proposer des solutions adaptées aux besoins des particuliers, des entreprises et des institutions.
-                </p>
-                <p>
-                  Au fil des années, grâce à la confiance de nos clients, à l'engagement de notre équipe et à l'arrivée de nouveaux associés partageant notre vision, CAMUQ AND TWINS EMPIRE Ltd s'est développée et a diversifié ses domaines d'intervention. Aujourd'hui, nous sommes fiers d'évoluer dans les prestations de services, la formation professionnelle, les éditions et plusieurs autres activités contribuant au développement économique et social.
-                </p>
-                <p>
-                  Notre engagement repose sur des valeurs fortes : l'excellence, l'intégrité, l'innovation, le professionnalisme et la satisfaction de nos clients. Ces principes guident chacune de nos actions et nous motivent à améliorer continuellement la qualité de nos services.
-                </p>
-                <p>
-                  À travers ce site, nous souhaitons renforcer notre proximité avec vous, faciliter nos échanges, présenter nos offres et construire des partenariats solides fondés sur la confiance et la performance.
-                </p>
-                <p>
-                  Je tiens à remercier chaleureusement nos clients, nos partenaires, nos collaborateurs et toutes les personnes qui nous accompagnent depuis le début de cette belle aventure. Votre confiance est notre plus grande motivation.
-                </p>
-                <p>
-                  Je vous invite à parcourir notre site et à découvrir l'univers de CAMUQ AND TWINS EMPIRE Ltd. Nous serons honorés de vous compter parmi nos partenaires et de contribuer à la réussite de vos projets.
-                </p>
-                <p>
-                  Au plaisir de collaborer avec vous. &rdquo;
-                </p>
+                {lang === "en" ? (
+                  <>
+                    <p>&ldquo; Welcome to the official website of CAMUQ AND TWINS EMPIRE Ltd.</p>
+                    <p>It is with great pleasure that I welcome you to this platform, designed to introduce our company, our activities, our achievements, and the core values that drive us daily.</p>
+                    <p>Since founding our company in 2021, our ambition has remained unchanged: to deliver quality services, foster skill development, and provide tailored solutions to individuals, businesses, and institutions.</p>
+                    <p>Over the years, thanks to our clients' trust, our team's dedication, and new partners sharing our vision, CAMUQ AND TWINS EMPIRE Ltd has expanded across services, professional training, publishing, and trade.</p>
+                    <p>Our commitment is built on strong values: excellence, integrity, innovation, professionalism, and client satisfaction. These principles guide our every action.</p>
+                    <p>Through this site, we aim to strengthen our relationship with you, present our offerings, and build solid partnerships based on trust and performance.</p>
+                    <p>I warmly thank our clients, partners, collaborators, and supporters for joining us in this great adventure. Your trust is our greatest motivation.</p>
+                    <p>We look forward to collaborating with you. &rdquo;</p>
+                  </>
+                ) : (
+                  <>
+                    <p>&ldquo; Bienvenue sur le site officiel de CAMUQ AND TWINS EMPIRE Ltd.</p>
+                    <p>C'est avec un immense plaisir que je vous accueille sur cette plateforme, conçue pour vous faire découvrir notre entreprise, nos activités, nos réalisations et les valeurs qui nous animent au quotidien.</p>
+                    <p>Depuis la création de notre entreprise en 2021, notre ambition est restée la même : offrir des services de qualité, accompagner le développement des compétences et proposer des solutions adaptées aux besoins des particuliers, des entreprises et des institutions.</p>
+                    <p>Au fil des années, grâce à la confiance de nos clients, à l'engagement de notre équipe et à l'arrivée de nouveaux associés partageant notre vision, CAMUQ AND TWINS EMPIRE Ltd s'est développée et a diversifié ses domaines d'intervention.</p>
+                    <p>Notre engagement repose sur des valeurs fortes : l'excellence, l'intégrité, l'innovation, le professionnalisme et la satisfaction de nos clients.</p>
+                    <p>À travers ce site, nous souhaitons renforcer notre proximité avec vous et construire des partenariats solides fondés sur la confiance et la performance.</p>
+                    <p>Je tiens à remercier chaleureusement nos clients, nos partenaires, nos collaborateurs et toutes les personnes qui nous accompagnent. Votre confiance est notre plus grande motivation.</p>
+                    <p>Au plaisir de collaborer avec vous. &rdquo;</p>
+                  </>
+                )}
               </div>
 
               <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                  <p className="text-xs text-slate-400">Signature officielle</p>
+                  <p className="text-xs text-slate-400">{lang === "en" ? "Official Signature" : "Signature officielle"}</p>
                   <p className="font-sans font-black text-yellow-400 text-lg tracking-wide">Flore NOUTELI-FOYETT</p>
-                  <p className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Directrice Générale</p>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">{aboutT.dgTitle}</p>
                 </div>
                 <div className="text-slate-400 text-xs sm:text-right">
                   <p className="font-bold text-white">CAMUQ AND TWINS EMPIRE Ltd</p>
-                  <p>Nkolfoulou, Cameroun</p>
+                  <p>{aboutT.hqLocation}</p>
                 </div>
               </div>
 

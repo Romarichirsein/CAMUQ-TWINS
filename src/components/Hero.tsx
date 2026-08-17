@@ -27,11 +27,11 @@ export default function Hero({ onNavigate }: HeroProps) {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left animate-slide-left">
             
             <div className="inline-flex items-center gap-2 bg-yellow-100/80 text-yellow-900 border border-yellow-300/80 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider shadow-xs">
-              <span>🖨️ IMPRIMERIE</span>
+              <span>{heroT.badgePrinting}</span>
               <span>•</span>
-              <span>📚 ÉDITIONS</span>
+              <span>{heroT.badgePublishing}</span>
               <span>•</span>
-              <span>🎓 FORMATIONS</span>
+              <span>{heroT.badgeTrainings}</span>
             </div>
 
             <h1 className="font-sans font-black text-4xl sm:text-5xl lg:text-6xl text-blue-950 tracking-tight leading-[1.1] text-balance">
@@ -43,7 +43,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             </p>
 
             <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-              Votre partenaire de référence au Cameroun pour l&apos;<strong>Imprimerie haute définition</strong>, les <strong>Éditions littéraires & scolaires</strong> et les <strong>Formations professionnelles certifiées</strong> (Bureautique, IA, Infographie).
+              {heroT.description}
             </p>
 
             {/* CTA action buttons to drive conversions */}
@@ -76,7 +76,7 @@ export default function Hero({ onNavigate }: HeroProps) {
                 <div className="text-xs text-gray-500 mt-1">{heroT.statTrainings}</div>
               </div>
               <div className="text-center lg:text-left transform transition-transform hover:scale-105">
-                <div className="font-sans font-extrabold text-2xl text-blue-950">Rapide</div>
+                <div className="font-sans font-extrabold text-2xl text-blue-950">{heroT.statFastTitle}</div>
                 <div className="text-xs text-gray-500 mt-1">{heroT.statFast}</div>
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function Hero({ onNavigate }: HeroProps) {
               
               <h3 className="font-sans font-bold text-lg text-blue-950 tracking-tight mb-4 flex items-center gap-2">
                 <Shield className="w-5 h-5 text-blue-900" />
-                Pourquoi choisir CAMUQ & TWINS EMPIRE ?
+                {heroT.whyUsTitle}
               </h3>
               
               <div className="space-y-4">
@@ -98,8 +98,8 @@ export default function Hero({ onNavigate }: HeroProps) {
                     <Users className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-gray-900">Équipe d'Experts Dévoués</h4>
-                    <p className="text-xs text-gray-500 mt-1">Saisie rapide, correction de mémoires et d'excellents rapports bilingues d'une qualité irréprochable.</p>
+                    <h4 className="font-bold text-sm text-gray-900">{heroT.whyUs1Title}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{heroT.whyUs1Desc}</p>
                   </div>
                 </div>
 
@@ -108,8 +108,8 @@ export default function Hero({ onNavigate }: HeroProps) {
                     <BookOpen className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-gray-900">Cursus de Formation Orientés Emploi</h4>
-                    <p className="text-xs text-gray-500 mt-1">Infographie, Marketing digital, Montage Vidéo et Intelligence Artificielle d'application directe en entreprise.</p>
+                    <h4 className="font-bold text-sm text-gray-900">{heroT.whyUs2Title}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{heroT.whyUs2Desc}</p>
                   </div>
                 </div>
 

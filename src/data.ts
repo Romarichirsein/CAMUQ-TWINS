@@ -535,7 +535,74 @@ export const PRODUCT_DATA: ProductItem[] = [
   }
 ];
 
+export const VACATION_TRAINING_EVENT = {
+  id: "vacances-utiles-2026",
+  title: "Initiation Gratuite à l'Informatique pour les Jeunes (9 à 17 ans)",
+  subtitle: "Édition Spéciale Vacances Utiles — CAMUQ AND TWINS TRAINING",
+  dates: "15 Juin au 13 Août 2026",
+  duration: "2 Mois gratuits",
+  targetAudience: "Jeunes de 9 à 17 ans",
+  location: "Nkolfoulou, Yaoundé",
+  description: "Pendant 2 mois, CAMUQ AND TWINS TRAINING a accueilli les jeunes pour une formation gratuite. Pour empêcher les enfants de s'ennuyer et vagabonder durant les vacances scolaires, du 15 juin au 13 août 2026, CAMUQ AND TWINS TRAINING a initié les enfants de 9 à 17 ans à l'utilisation de l'outil informatique.",
+  highlights: [
+    "Prise en main guidée des ordinateurs et saisie sur clavier",
+    "Bases essentielles de la bureautique (Word, Excel, création de documents)",
+    "Recherche éducative et sécurité sur Internet",
+    "Remise solennelle d'attestations de réussite et valorisation des jeunes"
+  ],
+  images: [
+    {
+      url: "/images/formation-vacances-1.jpg",
+      title: "Remise solennelle des attestations",
+      caption: "Cérémonie de remise des attestations aux jeunes diplômés avec la direction de CAMUQ AND TWINS TRAINING."
+    },
+    {
+      url: "/images/formation-vacances-2.jpg",
+      title: "Cours théorique & projection interactifs",
+      caption: "Explications vivantes sur écran géant par la directrice pédagogique."
+    },
+    {
+      url: "/images/formation-vacances-3.jpg",
+      title: "Ateliers pratiques sur postes informatiques",
+      caption: "Apprentissage individuel et pratique guidée sur les ordinateurs du centre."
+    },
+    {
+      url: "/images/formation-vacances-4.jpg",
+      title: "Immersion & concentration des jeunes",
+      caption: "Session de travaux pratiques bureautiques réunissant les jeunes motivés."
+    }
+  ]
+};
+
 export const GALLERY_DATA: GalleryItem[] = [
+  {
+    id: "g-vac-1",
+    title: "Remise des attestations aux jeunes (Vacances 2026)",
+    category: "formations",
+    image: "/images/formation-vacances-1.jpg",
+    description: "Cérémonie clôturant 2 mois de formation gratuite en informatique pour les 9 à 17 ans."
+  },
+  {
+    id: "g-vac-2",
+    title: "Salle de cours & projection multimédia",
+    category: "formations",
+    image: "/images/formation-vacances-2.jpg",
+    description: "Cours d'initiation informatique dispensé par la direction de CAMUQ AND TWINS TRAINING."
+  },
+  {
+    id: "g-vac-3",
+    title: "Ateliers pratiques sur ordinateur",
+    category: "formations",
+    image: "/images/formation-vacances-3.jpg",
+    description: "Prise en main directe des outils informatiques par les jeunes apprenants."
+  },
+  {
+    id: "g-vac-4",
+    title: "Formation gratuite pour les jeunes de 9 à 17 ans",
+    category: "formations",
+    image: "/images/formation-vacances-4.jpg",
+    description: "Les enfants en pleine session d'apprentissage pour des vacances instructives et constructives."
+  },
   {
     id: "g-1",
     title: "Atelier d'impression grand format",
@@ -574,6 +641,17 @@ export const GALLERY_DATA: GalleryItem[] = [
 ];
 
 export const BLOG_DATA: BlogPost[] = [
+  {
+    id: "b-vacances-2026",
+    title: "Retour sur 2 Mois de Formation Gratuite en Informatique pour les Jeunes (9 à 17 ans)",
+    summary: "Du 15 juin au 13 août 2026, CAMUQ AND TWINS TRAINING a accueilli gratuitement les jeunes pour les initier aux outils informatiques et lutter contre l'oisiveté des vacances.",
+    content: "Pendant 2 mois, CAMUQ AND TWINS TRAINING a accueilli les jeunes pour une formation entièrement gratuite. Pour empêcher les enfants de s'ennuyer et vagabonder durant les vacances scolaires, du 15 juin au 13 août 2026, CAMUQ AND TWINS TRAINING a initié les enfants de 9 à 17 ans à l'utilisation de l'outil informatique.\n\nAu programme : manipulation du clavier, prise en main de l'environnement Windows, création de documents sous Microsoft Word, premiers calculs sous Excel et sensibilisation à un usage responsable d'Internet. La session s'est terminée en beauté par une remise officielle d'attestations de fin de formation, sous le regard fier des parents et formateurs.",
+    image: "/images/formation-vacances-1.jpg",
+    date: "13 Août 2026",
+    author: "Direction CAMUQ AND TWINS TRAINING",
+    category: "Formations",
+    views: 342
+  },
   {
     id: "b-1",
     title: "Comment l'IA révolutionne le secrétariat moderne au Cameroun",

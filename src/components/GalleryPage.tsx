@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { Maximize2, X, ChevronLeft, ChevronRight, AlertCircle } from "lucide-react";
 import { GALLERY_DATA } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const { t } = useLanguage();
+  const gT = t.gallery;
 
   const filters = [
-    { id: "all", label: "Tous nos clichés" },
-    { id: "imprimerie", label: "Imprimerie" },
-    { id: "formations", label: "Formations" },
-    { id: "bureautique", label: "Secrétariat" },
-    { id: "autres", label: "Cyber & Autres" }
+    { id: "all", label: gT.all },
+    { id: "imprimerie", label: gT.imprimerie },
+    { id: "formations", label: gT.formations },
+    { id: "bureautique", label: gT.secretariat },
+    { id: "autres", label: gT.autres }
   ];
 
   const filteredItems = activeFilter === "all"
@@ -39,13 +42,13 @@ export default function GalleryPage() {
         {/* Title Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-black uppercase tracking-wider text-blue-900 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-            Galerie d&apos;Images CAMUQ & TWINS EMPIRE
+            {gT.pageTag}
           </span>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
-            Immersion Visuelle au Cœur de Notre Empire
+            {gT.pageTitle}
           </h2>
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-            Parcourez nos ateliers d&apos;impression numérique, nos salles de cours connectées et découvrez des exemples concrets de projets réalisés pour nos clients.
+            {gT.pageSubtitle}
           </p>
         </div>
 

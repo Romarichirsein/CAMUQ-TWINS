@@ -27,7 +27,7 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
     setError(null);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setError("Veuillez remplir tous les champs obligatoires (Nom, Email, Message).");
@@ -37,33 +37,39 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
     setSubmitting(true);
     setError(null);
 
-    try {
-      const response = await fetch("/api/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
-      
-      if (response.ok) {
-        setSuccess(true);
-        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-      } else {
-        setError("Une erreur s'est produite lors de l'envoi. Veuillez nous contacter directement via WhatsApp ou Téléphone.");
-      }
-    } catch (err) {
-      // Fallback simulate success
-      setSuccess(true);
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-    } finally {
-      setSubmitting(false);
-    }
+    const messageText = 
+`Bonjour CAMUQ & TWINS EMPIRE,
+
+Voici une nouvelle demande transmise depuis votre site internet :
+
+👤 Nom complet : ${formData.name}
+📧 Email : ${formData.email}
+📞 Téléphone : ${formData.phone || 'Non renseigné'}
+📌 Sujet : ${formData.subject || 'Renseignement / Demande de devis'}
+
+📝 Message / Spécifications :
+${formData.message}`;
+
+    const targetPhone = "237675231283";
+    const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(messageText)}`;
+    
+    // Direct launch to WhatsApp
+    window.open(whatsappUrl, "_blank");
+
+    setSuccess(true);
+    setSubmitting(false);
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
   // Pre-configured WhatsApp click launcher link
   const handleWhatsAppRedirect = () => {
-    const formattedPhone = COMPANY_PHONES[0].replace(/\+/g, "").replace(/\s+/g, "");
-    const text = encodeURIComponent(`Bonjour CAMUQ & TWINS EMPIRE, je vous contacte depuis votre site internet concernant : ${formData.subject || 'Vos services'}.`);
-    window.open(`https://wa.me/${formattedPhone}?text=${text}`, "_blank");
+    const targetPhone = "237675231283";
+    const messageText = formData.name || formData.message
+      ? `Bonjour CAMUQ & TWINS EMPIRE,\n\nNom: ${formData.name || 'Client'}\nEmail: ${formData.email || '-'}\nTéléphone: ${formData.phone || '-'}\nSujet: ${formData.subject || 'Renseignement'}\nMessage: ${formData.message || '-'}`
+      : `Bonjour CAMUQ & TWINS EMPIRE, je vous contacte depuis votre site internet pour une demande de renseignement.`;
+    
+    const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(messageText)}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -159,15 +165,15 @@ export default function ContactPage({ prefilledSubject = "" }: ContactPageProps)
             {success ? (
               <div className="bg-emerald-50 text-emerald-800 border border-emerald-150 p-6 rounded-2xl flex flex-col items-center text-center space-y-3">
                 <Check className="w-12 h-12 text-emerald-600 bg-white rounded-full p-2.5 shadow-sm" />
-                <h4 className="font-bold text-lg text-emerald-950">Message envoyé !</h4>
+                <h4 className="font-bold text-lg text-emerald-950">Message transmis via WhatsApp !</h4>
                 <p className="text-xs sm:text-sm leading-relaxed text-emerald-800">
-                  Merci de nous faire confiance. Notre conseiller bilingue va analyser vos spécifications et vous recontacter par email ou téléphone sous 2 heures ouvrables.
+                  Vos informations ont été préparées et transmises directement sur WhatsApp au <strong>+237 675 23 12 83</strong>. Notre équipe va vous répondre immédiatement.
                 </p>
                 <button 
                   onClick={() => setSuccess(false)}
                   className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer"
                 >
-                  Envoyer un autre message
+                  Rédiger un autre message
                 </button>
               </div>
             ) : (

@@ -145,6 +145,17 @@ let database = {
   ],
   blog: [
     {
+      id: "b-vacances-2026",
+      title: "Retour sur 2 Mois de Formation Gratuite en Informatique pour les Jeunes (9 à 17 ans)",
+      summary: "Du 15 juin au 13 août 2026, CAMUQ AND TWINS TRAINING a accueilli gratuitement les jeunes pour les initier aux outils informatiques.",
+      content: "Pendant 2 mois, CAMUQ AND TWINS TRAINING a accueilli les jeunes pour une formation gratuite. Pour empêcher les enfants de s'ennuyer et vagabonder, du 15 juin au 13 août 2026, CAMUQ AND TWINS TRAINING a initié les enfants de 9 à 17 ans à l'utilisation de l'outil informatique. La session s'est clôturée solennellement par une remise d'attestations.",
+      image: "/images/formation-vacances-1.jpg",
+      date: "13 Août 2026",
+      author: "Direction CAMUQ AND TWINS TRAINING",
+      category: "Formations",
+      views: 342
+    },
+    {
       id: "b-1",
       title: "Comment l'IA révolutionne le secrétariat moderne au Cameroun",
       summary: "Découvrez comment l'intégration d'outils d'intelligence artificielle permet aux secrétaires de décupler leur efficacité.",

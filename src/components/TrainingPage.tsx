@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as Icons from "lucide-react";
-import { FORMATIONS_DATA } from "../data";
+import { FORMATIONS_DATA, VACATION_TRAINING_EVENT } from "../data";
 import { useLanguage } from "../context/LanguageContext";
 
 interface TrainingPageProps {
@@ -10,6 +10,7 @@ interface TrainingPageProps {
 export default function TrainingPage({ onRegister }: TrainingPageProps) {
   const [selectedFormation, setSelectedFormation] = useState<typeof FORMATIONS_DATA[0] | null>(null);
   const [filterLevel, setFilterLevel] = useState<string>("all");
+  const [activeGalleryImage, setActiveGalleryImage] = useState<{ url: string; title: string; caption: string } | null>(null);
 
   const { lang, t } = useLanguage();
   const trT = t.training;
@@ -61,7 +62,106 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+        {/* SPECIAL FEATURED SECTION: VACANCES UTILES 2026 */}
+        <section className="bg-gradient-to-br from-blue-950 via-slate-900 to-blue-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl border border-blue-800/40 relative overflow-hidden">
+          {/* Subtle Background Glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div className="relative z-10 space-y-8">
+            {/* Header info badges */}
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-blue-800/60 pb-6">
+              <div className="space-y-1">
+                <span className="inline-flex items-center gap-2 bg-yellow-400 text-blue-950 text-xs font-extrabold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md">
+                  <Icons.Sparkles className="w-4 h-4 fill-blue-950" />
+                  {VACATION_TRAINING_EVENT.subtitle}
+                </span>
+                <h2 className="font-sans font-black text-2xl sm:text-4xl text-white tracking-tight pt-2">
+                  {VACATION_TRAINING_EVENT.title}
+                </h2>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-1.5 bg-blue-900/80 border border-blue-700/60 text-slate-200 text-xs font-bold px-3.5 py-2 rounded-xl">
+                  <Icons.Calendar className="w-4 h-4 text-yellow-400" />
+                  {VACATION_TRAINING_EVENT.dates}
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold px-3.5 py-2 rounded-xl">
+                  <Icons.CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  {VACATION_TRAINING_EVENT.duration}
+                </span>
+              </div>
+            </div>
+
+            {/* Narrative text requested by user */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+              <div className="lg:col-span-2 space-y-4">
+                <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-medium bg-blue-900/40 p-5 rounded-2xl border border-blue-800/50">
+                  {VACATION_TRAINING_EVENT.description}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  {VACATION_TRAINING_EVENT.highlights.map((h, i) => (
+                    <div key={i} className="flex items-start gap-2.5 bg-slate-800/60 p-3 rounded-xl border border-slate-700/50">
+                      <Icons.Check className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
+                      <span className="text-xs sm:text-sm text-slate-200 font-medium">{h}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action box */}
+              <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 text-center space-y-4 flex flex-col justify-center items-center">
+                <div className="p-3 bg-yellow-400/20 rounded-2xl border border-yellow-400/40">
+                  <Icons.Award className="w-10 h-10 text-yellow-400" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-white">Impact & Insertion des Jeunes</h3>
+                  <p className="text-xs text-slate-300 mt-1">Initiation pratique réussie pour les enfants de 9 à 17 ans au centre de Nkolfoulou.</p>
+                </div>
+                <button
+                  onClick={() => onRegister("Formation Informatique & Bureautique Jeunes")}
+                  className="w-full py-3 px-4 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-black text-xs uppercase tracking-wider transition-colors shadow-lg cursor-pointer"
+                >
+                  Répéter pour la prochaine session
+                </button>
+              </div>
+            </div>
+
+            {/* Photo Gallery Grid with Zoom Lightbox */}
+            <div className="space-y-4 pt-4">
+              <div className="flex items-center justify-between">
+                <h3 className="font-bold text-sm uppercase tracking-wider text-yellow-400 flex items-center gap-2">
+                  <Icons.Camera className="w-4 h-4" />
+                  Galerie Photos de la Session Vacances Utiles
+                </h3>
+                <span className="text-xs text-slate-400">Cliquez sur une image pour l&apos;agrandir</span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {VACATION_TRAINING_EVENT.images.map((img, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => setActiveGalleryImage(img)}
+                    className="group relative h-56 rounded-2xl overflow-hidden border border-slate-700/60 shadow-md cursor-pointer bg-slate-800"
+                  >
+                    <img 
+                      src={img.url} 
+                      alt={img.title} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                      <span className="text-xs font-bold text-white group-hover:text-yellow-400 transition-colors">{img.title}</span>
+                      <span className="text-[10px] text-slate-300 line-clamp-1 mt-0.5">{img.caption}</span>
+                    </div>
+                    <div className="absolute top-3 right-3 bg-black/60 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
+                      <Icons.Maximize2 className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Level Filters bar */}
         <div className="flex flex-wrap items-center justify-center gap-2 pb-4">
@@ -191,6 +291,34 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
                     Valider mon Inscription
                   </button>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Gallery Image Lightbox Modal */}
+        {activeGalleryImage && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in" onClick={() => setActiveGalleryImage(null)}>
+            <div className="relative max-w-4xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700/60" onClick={(e) => e.stopPropagation()}>
+              <button 
+                onClick={() => setActiveGalleryImage(null)}
+                className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-black/60 text-white hover:bg-yellow-400 hover:text-blue-950 transition-all cursor-pointer"
+              >
+                <Icons.X className="w-6 h-6" />
+              </button>
+              
+              <div className="relative max-h-[75vh] bg-black flex items-center justify-center overflow-hidden">
+                <img 
+                  src={activeGalleryImage.url} 
+                  alt={activeGalleryImage.title} 
+                  className="max-h-[75vh] w-auto object-contain mx-auto"
+                />
+              </div>
+
+              <div className="p-6 bg-slate-900 border-t border-slate-800 space-y-2">
+                <span className="text-xs font-black uppercase text-yellow-400 tracking-wider">CAMUQ AND TWINS TRAINING — Vacances Utiles 2026</span>
+                <h3 className="font-sans font-black text-xl text-white">{activeGalleryImage.title}</h3>
+                <p className="text-sm text-slate-300">{activeGalleryImage.caption}</p>
               </div>
             </div>
           </div>
