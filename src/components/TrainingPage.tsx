@@ -41,8 +41,8 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
       <div className="relative w-full py-28 sm:py-36 min-h-[380px] sm:min-h-[450px] flex items-center justify-center bg-slate-950 overflow-hidden text-white mb-12 shadow-xl">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/hero-training.jpg" 
-            alt="Nos Formations CAMUQ & TWINS EMPIRE" 
+            src="/images/banniere-nos-formations.jpg" 
+            alt="Nos Formations CAMUQ & TWINS EMPIRE — Salle informatique équipée" 
             className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 opacity-95"
           />
           {/* Lightened overlay so background image is clearly visible */}
