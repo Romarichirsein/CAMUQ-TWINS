@@ -360,7 +360,7 @@ export const FORMATIONS_DATA: TrainingItem[] = [
     icon: "Brain",
     description: "Exploitez la puissance des modèles d'IA (ChatGPT, Midjourney, Claude) pour multiplier votre productivité.",
     longDescription: "Une formation révolutionnaire et inédite ! Apprenez à concevoir des prompts puissants, rédiger des rapports complexes en quelques secondes, générer des images commerciales d'exception et automatiser vos tâches bureautiques récurrentes.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=600&auto=format&fit=crop"
+    image: "/images/formation-ia.jpg"
   },
   {
     id: "f-2",
@@ -371,7 +371,7 @@ export const FORMATIONS_DATA: TrainingItem[] = [
     icon: "Palette",
     description: "Conception graphique professionnelle avec Adobe Photoshop, Illustrator et les bases de la typographie.",
     longDescription: "Apprenez à concevoir des visuels publicitaires, des chartes graphiques, des logos et des maquettes d'impression. Ce module intensif vous donne les clés pour intégrer une agence de communication ou exercer en freelance.",
-    image: "https://images.unsplash.com/photo-1561070791-26c113006238?q=80&w=600&auto=format&fit=crop"
+    image: "/images/formation-infographie.jpg"
   },
   {
     id: "f-3",
@@ -382,7 +382,7 @@ export const FORMATIONS_DATA: TrainingItem[] = [
     icon: "Briefcase",
     description: "Maîtrise complète de la suite Office : Microsoft Word, Excel avancé, PowerPoint et bilinguisme administratif.",
     longDescription: "Devenez un professionnel de l'administration. Ce cursus inclut la mise en page de documents complexes sous Word, le traitement et l'analyse de données sur tableurs Excel et la création de diaporamas percutants pour des réunions d'affaires.",
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=600&auto=format&fit=crop"
+    image: "/images/formation-secretariat.jpg"
   },
   {
     id: "f-4",
@@ -393,7 +393,7 @@ export const FORMATIONS_DATA: TrainingItem[] = [
     icon: "TrendingUp",
     description: "Apprenez à promouvoir vos produits, paramétrer des publicités Facebook/Google et animer une communauté.",
     longDescription: "Le marketing digital est le moteur de croissance moderne. Maîtrisez le SEO, le copywriting, la création d'audiences publicitaires, l'analyse des indicateurs clés (KPIs) et le community management sur Instagram, Facebook et TikTok.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop"
+    image: "/images/formation-marketing.jpg"
   },
   {
     id: "f-5",
@@ -404,7 +404,7 @@ export const FORMATIONS_DATA: TrainingItem[] = [
     icon: "Video",
     description: "Maîtrisez le montage vidéo numérique, l'étalonnage, l'ajout d'effets visuels et de transitions sonores.",
     longDescription: "Créez des vidéos dynamiques pour YouTube, la télévision ou les réseaux sociaux. Apprenez à importer des rushes, couper, ajouter des transitions professionnelles, corriger les couleurs et intégrer des éléments de motion design.",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=600&auto=format&fit=crop"
+    image: "/images/banniere-nos-formations.jpg"
   },
   {
     id: "f-6",
@@ -415,7 +415,7 @@ export const FORMATIONS_DATA: TrainingItem[] = [
     icon: "Languages",
     description: "Perfectionnement en Anglais, Chinois et Français pour communiquer efficacement avec vos partenaires.",
     longDescription: "Dans un monde interconnecté, le multilinguisme (Anglais, Chinois, Français) est un passeport vers la réussite. Pratiquez l'expression orale, la correspondance et apprenez le vocabulaire technique nécessaire pour échanger et négocier sereinement à l'international.",
-    image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=600&auto=format&fit=crop"
+    image: "/images/formation-langues.jpg"
   },
   {
     id: "f-7",
@@ -426,7 +426,7 @@ export const FORMATIONS_DATA: TrainingItem[] = [
     icon: "Monitor",
     description: "Prenez en main un ordinateur moderne : environnement Windows, navigation internet sécurisée, gestion des fichiers.",
     longDescription: "Ce module complet s'adresse à toute personne désireuse d'acquérir les bases de l'informatique. Vous apprendrez à manipuler le clavier, organiser vos dossiers, envoyer des emails professionnels et naviguer en toute sécurité.",
-    image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=600&auto=format&fit=crop"
+    image: "/images/formation-informatique.jpg"
   }
 ];
 
