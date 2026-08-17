@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Calendar, User, Eye, ArrowLeft, Search, Bookmark } from "lucide-react";
 import { BLOG_DATA } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function BlogPage() {
   const [selectedPost, setSelectedPost] = useState<typeof BLOG_DATA[0] | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("all");
+  const { lang, t } = useLanguage();
+  const bT = t.blog;
+  const comT = t.common;
 
   const categories = ["all", "Technologie", "Démarches", "Marketing"];
 
@@ -28,7 +32,7 @@ export default function BlogPage() {
               onClick={() => setSelectedPost(null)}
               className="inline-flex items-center gap-2 text-sm font-bold text-blue-900 hover:text-blue-950 transition-colors cursor-pointer"
             >
-              <ArrowLeft className="w-4 h-4" /> Retour à tous les articles
+              <ArrowLeft className="w-4 h-4" /> {bT.backBtn}
             </button>
 
             {/* Main Picture */}
@@ -49,11 +53,11 @@ export default function BlogPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <User className="w-4 h-4 text-blue-900" />
-                Par {selectedPost.author}
+                {bT.by} {selectedPost.author}
               </span>
               <span className="flex items-center gap-1.5 ml-auto">
                 <Eye className="w-4 h-4 text-blue-900" />
-                {selectedPost.views + 12} vues
+                {selectedPost.views + 12} {bT.views}
               </span>
             </div>
 
@@ -71,7 +75,7 @@ export default function BlogPage() {
                 {selectedPost.content}
               </div>
               <p className="pt-4 text-xs text-gray-400 italic">
-                Avertissement de publication : Les avis exprimés dans cette section visent à guider et orienter notre clientèle d&apos;étudiants et d&apos;entreprises dans leurs choix opérationnels au quotidien.
+                {bT.disclaimer}
               </p>
             </div>
           </div>
@@ -82,13 +86,13 @@ export default function BlogPage() {
             {/* Index Header */}
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-xs font-black uppercase tracking-wider text-yellow-600 bg-yellow-100/60 px-3 py-1.5 rounded-full border border-yellow-200">
-                Le Mag CAMUQ & TWINS EMPIRE
+                {bT.pageTag}
               </span>
               <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight">
-                Actualités, Conseils Pro & Guides Pratiques
+                {bT.pageTitle}
               </h2>
               <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
-                Retrouvez les éclairages de nos experts sur la révolution numérique, la rédaction de documents bilingues de premier ordre et les astuces administratives camerounaises.
+                {bT.pageSubtitle}
               </p>
             </div>
 
@@ -98,7 +102,7 @@ export default function BlogPage() {
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input 
                   type="text"
-                  placeholder="Rechercher un conseil ou un guide..."
+                  placeholder={bT.searchPlaceholder}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-11 pr-4 py-3 bg-slate-50 rounded-xl text-sm border-0 focus:ring-2 focus:ring-blue-900 focus:bg-white outline-none transition-all"
@@ -116,7 +120,7 @@ export default function BlogPage() {
                         : "bg-slate-50 text-gray-500 hover:bg-slate-100 hover:text-blue-900"
                     }`}
                   >
-                    {cat === "all" ? "Toutes les catégories" : cat}
+                    {cat === "all" ? bT.allCat : cat}
                   </button>
                 ))}
               </div>
