@@ -188,15 +188,17 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
                 )}
 
                 <div>
-                  <span className="text-[10px] bg-yellow-100/70 text-yellow-800 border border-yellow-200 font-extrabold uppercase px-2 py-0.5 rounded-full">
-                    {service.category === "secretariat" 
-                      ? "Secrétariat" 
-                      : service.category === "imprimerie" 
-                      ? "Imprimerie" 
-                      : service.category === "edition"
-                      ? (service.subCategory === "litterature" ? "Littérature Générale" : "Éducation & Scolaire")
-                      : "En ligne & Finances"}
-                  </span>
+                  {service.category !== "personnalise" && (
+                    <span className="text-[10px] bg-yellow-100/70 text-yellow-800 border border-yellow-200 font-extrabold uppercase px-2 py-0.5 rounded-full">
+                      {service.category === "secretariat" 
+                        ? "Secrétariat" 
+                        : service.category === "imprimerie" 
+                        ? "Imprimerie" 
+                        : service.category === "edition"
+                        ? (service.subCategory === "litterature" ? "Littérature Générale" : "Éducation & Scolaire")
+                        : "Démarches & Services"}
+                    </span>
+                  )}
                   <h3 className="font-sans font-bold text-lg sm:text-xl text-blue-950 mt-2.5">
                     {service.name}
                   </h3>
