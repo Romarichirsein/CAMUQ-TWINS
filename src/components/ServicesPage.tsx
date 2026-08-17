@@ -235,51 +235,124 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
           ))}
         </div>
 
-        {/* Feature Focus Section: Cyber Café & Services Financiers (Mobile money, Orange money, Canal+) */}
-        <div className="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-blue-900 to-blue-950 text-white shadow-xl relative overflow-hidden border border-blue-950">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-yellow-350 to-transparent rounded-bl-full opacity-10"></div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
-            <div className="space-y-6">
-              <span className="text-[10px] bg-yellow-400 text-blue-950 font-black px-3 py-1 rounded-full uppercase tracking-widest inline-block">
-                Espace Connecté Premium
-              </span>
-              <h3 className="font-sans font-black text-2xl sm:text-3xl lg:text-4xl leading-tight">
-                Cyber Café Ultra-Rapide, Mobile Money & Abonnements Canal+
-              </h3>
-              <p className="text-sm text-blue-100 leading-relaxed">
-                Notre espace technologique vous accueille 6 jours sur 7 avec une connexion par fibre optique stable pour toutes vos démarches administratives complexes (Pré-enrôlement passeport, CNI, attestation d&apos;immatriculation...).
-              </p>
-              <p className="text-xs text-blue-200">
-                Nous sommes agréés et sécurisés pour tous vos dépôts/retraits MTN Mobile Money, Orange Money et renouvellement Canal+ sans délai ni tracas.
-              </p>
+        {/* ✨ Highlight Section: Les 3 Piliers CAMUQ & TWINS EMPIRE */}
+        <div className="mt-16 space-y-6">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-xs font-black uppercase tracking-widest text-yellow-600 bg-yellow-100/60 px-3.5 py-1.5 rounded-full border border-yellow-200 inline-block">
+              Nos Spécialités
+            </span>
+            <h3 className="font-sans font-black text-2xl sm:text-3xl text-blue-950">
+              Formation, Édition &amp; Imprimerie
+            </h3>
+            <p className="text-sm text-gray-500">
+              Trois expertises complémentaires au service de votre réussite professionnelle et de votre communication visuelle.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            {/* Pilier 1 — Formation */}
+            <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-950 to-blue-900 text-white shadow-xl border border-blue-800/50 p-7 flex flex-col gap-5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-yellow-400/10 rounded-bl-full blur-2xl pointer-events-none"></div>
+              <div className="w-14 h-14 rounded-2xl bg-yellow-400/20 border border-yellow-400/40 flex items-center justify-center">
+                <Icons.GraduationCap className="w-7 h-7 text-yellow-400" />
+              </div>
+              <div className="space-y-2 relative z-10">
+                <span className="text-[10px] font-black uppercase tracking-widest text-yellow-400 bg-yellow-400/15 px-2.5 py-1 rounded-md border border-yellow-400/30 inline-block">
+                  CFP C&amp;T-T — Agréé MINEFOP
+                </span>
+                <h4 className="font-sans font-black text-xl text-white leading-tight">
+                  Centre de Formation Professionnelle
+                </h4>
+                <p className="text-xs text-blue-200 leading-relaxed">
+                  Formations Diplômantes (DQP) et Certifiantes (CQP) en Bureautique, Comptabilité, Développement Web, Graphisme, Maintenance Informatique, Marketing Digital et bien plus.
+                </p>
+              </div>
+              <ul className="space-y-1.5 relative z-10">
+                {["Secrétariat Bureautique Bilingue", "Comptabilité Informatisée (Sage)", "Développement d'Applications", "Graphisme & Montage Audiovisuel", "Intelligence Artificielle & IA"].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-xs text-blue-100">
+                    <Icons.CheckCircle2 className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => window.open("https://wa.me/237675231283?text=" + encodeURIComponent("Bonjour, je souhaite des informations sur vos formations."), "_blank")}
+                className="mt-2 w-full py-3 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-black text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 relative z-10"
+              >
+                <Icons.BookOpen className="w-4 h-4" />
+                Découvrir les Formations
+              </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <Icons.Wifi className="w-8 h-8 text-yellow-400" />
-                <h4 className="font-bold text-sm text-white">Fibre Optique Pro</h4>
-                <p className="text-[11px] text-blue-200">Recherches, téléchargements lourds et saisies fluides.</p>
+            {/* Pilier 2 — Édition */}
+            <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-xl border border-slate-700/50 p-7 flex flex-col gap-5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-bl-full blur-2xl pointer-events-none"></div>
+              <div className="w-14 h-14 rounded-2xl bg-blue-400/20 border border-blue-400/30 flex items-center justify-center">
+                <Icons.BookMarked className="w-7 h-7 text-blue-300" />
               </div>
-
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <Icons.Tv className="w-8 h-8 text-yellow-400" />
-                <h4 className="font-bold text-sm text-white">Canal+ Instantané</h4>
-                <p className="text-[11px] text-blue-200">Activation immédiate de vos bouquets préférés en boutique.</p>
+              <div className="space-y-2 relative z-10">
+                <span className="text-[10px] font-black uppercase tracking-widest text-blue-300 bg-blue-400/15 px-2.5 py-1 rounded-md border border-blue-400/30 inline-block">
+                  Maison d&apos;Édition
+                </span>
+                <h4 className="font-sans font-black text-xl text-white leading-tight">
+                  Éditions Littéraires &amp; Pédagogiques
+                </h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Conception, mise en page professionnelle et publication de livres, manuels scolaires, supports de cours, thèses et rapports de stages. Du manuscrit au produit final.
+                </p>
               </div>
-
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <Icons.DollarSign className="w-8 h-8 text-yellow-400" />
-                <h4 className="font-bold text-sm text-white">MoMo & Orange</h4>
-                <p className="text-[11px] text-blue-200">Dépôts, retraits et transferts nationaux et internationaux sécurisés.</p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <Icons.FileCheck className="w-8 h-8 text-yellow-400" />
-                <h4 className="font-bold text-sm text-white">Démarches en ligne</h4>
-                <p className="text-[11px] text-blue-200">Pré-enrôlement passeports et cartes CNI accompagnés.</p>
-              </div>
+              <ul className="space-y-1.5 relative z-10">
+                {["Mise en page de livres & manuels", "Correction orthographique & stylistique", "Conception de couvertures", "Impression numérique en petite série", "Dépôt légal & ISBN (accompagnement)"].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-xs text-slate-200">
+                    <Icons.CheckCircle2 className="w-3.5 h-3.5 text-blue-300 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => window.open("https://wa.me/237675231283?text=" + encodeURIComponent("Bonjour, je souhaite des informations sur vos services d'édition."), "_blank")}
+                className="mt-2 w-full py-3 rounded-xl bg-blue-500 hover:bg-blue-600 text-white font-black text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 relative z-10"
+              >
+                <Icons.BookMarked className="w-4 h-4" />
+                Publier Mon Ouvrage
+              </button>
             </div>
+
+            {/* Pilier 3 — Imprimerie */}
+            <div className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-yellow-950 to-yellow-900 text-white shadow-xl border border-yellow-800/50 p-7 flex flex-col gap-5 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-yellow-300/10 rounded-bl-full blur-2xl pointer-events-none"></div>
+              <div className="w-14 h-14 rounded-2xl bg-yellow-300/20 border border-yellow-400/30 flex items-center justify-center">
+                <Icons.Printer className="w-7 h-7 text-yellow-300" />
+              </div>
+              <div className="space-y-2 relative z-10">
+                <span className="text-[10px] font-black uppercase tracking-widest text-yellow-300 bg-yellow-300/15 px-2.5 py-1 rounded-md border border-yellow-400/30 inline-block">
+                  Imprimerie Numérique
+                </span>
+                <h4 className="font-sans font-black text-xl text-white leading-tight">
+                  Impression, Flyers &amp; Communication Visuelle
+                </h4>
+                <p className="text-xs text-yellow-100 leading-relaxed">
+                  Impression haute qualité pour tous vos supports de communication professionnels. Du flyer à la bannière grand format, en passant par les t-shirts et roll-ups personnalisés.
+                </p>
+              </div>
+              <ul className="space-y-1.5 relative z-10">
+                {["Flyers & affiches (A4 à grand format)", "Roll-ups & banderoles publicitaires", "T-shirts & textiles personnalisés", "Cartes de visite & papeterie pro", "Impression recto-verso & couleurs"].map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-xs text-yellow-100">
+                    <Icons.CheckCircle2 className="w-3.5 h-3.5 text-yellow-300 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => window.open("https://wa.me/237675231283?text=" + encodeURIComponent("Bonjour, je souhaite commander une impression ou un support de communication."), "_blank")}
+                className="mt-2 w-full py-3 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-yellow-950 font-black text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 relative z-10"
+              >
+                <Icons.Printer className="w-4 h-4" />
+                Commander une Impression
+              </button>
+            </div>
+
           </div>
         </div>
 
