@@ -511,6 +511,42 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
             </div>
           </div>
 
+          {/* Video Showcase Section: Formation Gratuite de 2 Mois Offerte aux Enfants */}
+          <div className="bg-slate-950/80 p-5 sm:p-7 rounded-3xl border border-yellow-400/30 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="space-y-1">
+                <span className="inline-flex items-center gap-1.5 bg-yellow-400/20 text-yellow-400 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-md border border-yellow-400/40">
+                  <Icons.PlayCircle className="w-4 h-4 text-yellow-400" /> Vidéo de Présentation
+                </span>
+                <h3 className="font-sans font-black text-xl text-white">
+                  Formation Gratuite de 2 Mois Offerte aux Enfants
+                </h3>
+              </div>
+              <span className="text-xs text-slate-300 bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700">
+                🎓 Session Spéciale Jeunes (9 à 17 ans)
+              </span>
+            </div>
+
+            {/* Video Player Container */}
+            <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-black shadow-2xl">
+              <video
+                controls
+                preload="metadata"
+                controlsList="nodownload"
+                poster="/images/banniere-nos-formations.jpg"
+                className="w-full max-h-[520px] object-contain mx-auto rounded-2xl"
+              >
+                <source src="/videos/video-formation-vacances.mp4" type="video/mp4" />
+                <source src="/video-formation-vacances.mp4" type="video/mp4" />
+                Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+              </video>
+            </div>
+
+            <p className="text-xs text-slate-300 italic text-center">
+              Découvrez en images les moments forts et les apprentissages pratiques lors de la formation gratuite de 2 mois dispensée au centre de Nkolfoulou.
+            </p>
+          </div>
+
           {/* Photo Gallery Grid */}
           <div className="space-y-4 pt-4">
             <h3 className="font-bold text-sm uppercase tracking-wider text-yellow-400 flex items-center gap-2">
