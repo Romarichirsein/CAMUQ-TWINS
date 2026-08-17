@@ -28,57 +28,90 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
 
   const dqpFormations = [
     {
+      code: "SB",
       name: "Secrétariat Bureautique",
+      enName: "Office Automation Secretaryship",
+      level: "3e / BEPC / CAP / O'L",
       desc: "Maîtrise de la suite Microsoft Office (Word, Excel, PowerPoint) et organisation administrative.",
       icon: "FileText"
     },
     {
+      code: "SBB",
       name: "Secrétariat Bureautique Bilingue",
+      enName: "Bilingual Secretaryship",
+      level: "Tle / Upper sixth",
       desc: "Gestion de secrétariat en Anglais et Français des affaires avec rédaction et accueil bilingue.",
       icon: "Globe"
     },
     {
+      code: "SC",
       name: "Secrétariat Comptable",
+      enName: "Accounting Secretaryship",
+      level: "1ère / Lower sixth",
       desc: "Tenue des registres comptables, gestion des pièces justificatives et saisie des opérations financières.",
       icon: "Calculator"
     },
     {
+      code: "SD",
       name: "Secrétariat de Direction",
+      enName: "Executive Secretary",
+      level: "BAC / A Level",
       desc: "Assistance de haut niveau aux dirigeants, gestion d'agenda, organisation de réunions et suivi de dossiers.",
       icon: "Briefcase"
     },
     {
+      code: "CIG",
       name: "Comptabilité Informatisée et Gestion",
+      enName: "Computerized Account. & Mgt",
+      level: "Tle / Upper sixth",
       desc: "Pratique des logiciels comptables (Sage SAARI), bilan, paie et comptabilité analytique d'entreprise.",
       icon: "TrendingUp"
     },
     {
+      code: "MI",
       name: "Maintenance Informatique",
+      enName: "Computer Maintenance",
+      level: "1ère / Lower sixth",
       desc: "Diagnostic, réparation matérielle et logicielle, assemblage d'ordinateurs et installation de systèmes.",
       icon: "Wrench"
     },
     {
+      code: "MRI",
       name: "Maintenance des Réseaux Informatiques",
+      enName: "Computer Netw. Maintenance",
+      level: "Tle Sc. / Upper sixth Sc",
       desc: "Câblage structuré, configuration des routeurs, switchs, administration réseau et sécurité système.",
       icon: "Network"
     },
     {
+      code: "DA",
       name: "Développement d'Application",
+      enName: "Application Development",
+      level: "BAC Scient. / A Level Sc",
       desc: "Programmation web et mobile (HTML, CSS, JavaScript, Python), conception de bases de données et logiciels.",
       icon: "Code"
     },
     {
+      code: "GP",
       name: "Graphisme de Production",
+      enName: "Production of Graphic Design",
+      level: "Tle / Upper sixth",
       desc: "Création visuelle PAO avec Adobe Photoshop, Illustrator & InDesign pour l'imprimerie et la publicité.",
       icon: "Palette"
     },
     {
+      code: "MOAV",
       name: "Montage Audiovisuel",
+      enName: "Audio-Visual Editing",
+      level: "3e / BEPC / CAP / O'L",
       desc: "Montage vidéo professionnel, étalonnage, traitement sonore et motion design (Premiere, After Effects).",
       icon: "Video"
     },
     {
+      code: "WM",
       name: "Webmestre",
+      enName: "Webmaster",
+      level: "BAC / A Level",
       desc: "Gestion, administration et maintenance de sites web, référencement SEO et sécurité des plateformes.",
       icon: "Layout"
     }
@@ -86,13 +119,28 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
 
   const cqpFormations = [
     {
-      name: "Markéting Digital",
+      name: "Langue Anglaise 🇬🇧",
+      desc: "Perfectionnement intensif en Anglais commercial, conversationnel et préparation aux opportunités internationales.",
+      icon: "Languages"
+    },
+    {
+      name: "Langue Chinoise 🇨🇳",
+      desc: "Apprentissage du Mandarin (expression orale, écriture des caractères, négociation et culture d'affaires chinoise).",
+      icon: "Languages"
+    },
+    {
+      name: "Langue Française 🇫🇷",
+      desc: "Renforcement de la grammaire, rédaction administrative et communication orale professionnelle.",
+      icon: "Languages"
+    },
+    {
+      name: "Marketing Digital",
       desc: "Publicité Facebook/Google Ads, stratégie de contenu, community management et analyse d'audience.",
       icon: "Target"
     },
     {
       name: "Sécurité Informatique",
-      desc: "Protections des données, prévention des piratages, cybersécurité d'entreprise et bonnes pratiques.",
+      desc: "Protection des données, prévention des piratages, cybersécurité d'entreprise et bonnes pratiques.",
       icon: "ShieldCheck"
     },
     {
@@ -104,21 +152,6 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
       name: "Intelligence Artificielle",
       desc: "Utilisation pratique de ChatGPT, Midjourney, Claude et automatisation des workflows professionnels.",
       icon: "Brain"
-    },
-    {
-      name: "Langue Chinoise 🇨🇳",
-      desc: "Apprentissage du Mandarin (expression orale, écriture et culture d'affaires chinoise).",
-      icon: "Languages"
-    },
-    {
-      name: "Langue Anglaise 🇬🇧",
-      desc: "Perfectionnement intensif en Anglais commercial et conversationnel pour opportunités à l'international.",
-      icon: "Languages"
-    },
-    {
-      name: "Langue Française 🇫🇷",
-      desc: "Renforcement de la grammaire, rédaction administrative et communication orale professionnelle.",
-      icon: "Languages"
     }
   ];
 
@@ -275,18 +308,33 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
                 className="bg-white p-6 rounded-3xl border border-gray-150 hover:border-blue-300 shadow-sm hover:shadow-lg transition-all space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <div className="p-3 bg-blue-50 text-blue-900 rounded-2xl border border-blue-100">
-                      {renderIcon(item.icon, "w-6 h-6")}
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <div className="flex items-center gap-2">
+                      <div className="p-3 bg-blue-50 text-blue-900 rounded-2xl border border-blue-100">
+                        {renderIcon(item.icon, "w-6 h-6")}
+                      </div>
+                      <span className="text-[11px] font-black uppercase tracking-wider bg-blue-900 text-yellow-400 px-2.5 py-1 rounded-md shadow-sm">
+                        CODE : {item.code}
+                      </span>
                     </div>
                     <span className="text-[10px] font-black uppercase tracking-wider bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded-md">
                       Diplôme DQP
                     </span>
                   </div>
 
-                  <h3 className="font-sans font-extrabold text-lg text-blue-950">
-                    {item.name}
-                  </h3>
+                  <div>
+                    <h3 className="font-sans font-extrabold text-lg text-blue-950">
+                      {item.name}
+                    </h3>
+                    <span className="text-[11px] font-semibold text-gray-400 italic block">
+                      {item.enName}
+                    </span>
+                  </div>
+
+                  <div className="p-2.5 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-between text-xs">
+                    <span className="text-gray-500 font-medium">Niveau d&apos;accès :</span>
+                    <span className="font-extrabold text-blue-950">{item.level}</span>
+                  </div>
 
                   <p className="text-xs text-gray-600 leading-relaxed">
                     {item.desc}
@@ -295,13 +343,13 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
 
                 <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-3">
                   <button
-                    onClick={() => handleWhatsAppEnroll(item.name)}
+                    onClick={() => handleWhatsAppEnroll(`${item.name} (${item.code})`)}
                     className="flex-1 py-2.5 px-3 rounded-xl bg-blue-900 hover:bg-blue-950 text-white text-xs font-black uppercase tracking-wider transition-colors shadow-sm text-center cursor-pointer"
                   >
                     S&apos;inscrire
                   </button>
                   <button
-                    onClick={() => onRegister(item.name)}
+                    onClick={() => onRegister(`${item.name} (${item.code})`)}
                     className="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-blue-950 text-xs font-bold transition-colors cursor-pointer"
                   >
                     Réserver
