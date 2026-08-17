@@ -220,18 +220,33 @@ export const translations = {
 
     // Appointment Page
     appointment: {
-      pageTag: "Prise de Rendez-vous en Ligne",
-      pageTitle: "Réservez un Créneau avec Nos Experts",
-      pageSubtitle: "Planifiez une rencontre en boutique ou en ligne avec nos spécialistes pour discuter de vos projets d'impression, d'édition ou de formation.",
-      formName: "Votre Nom Complet *",
+      pageTag: "Prise de Rendez-vous Directe",
+      pageTitle: "Planifiez Votre Consultation Gratuite",
+      pageSubtitle: "Gagnez du temps en réservant un créneau horaire avec l'un de nos experts académiques ou conseillers d'imprimerie directement depuis notre plateforme.",
+      formTitle: "Formulaire de réservation horaire",
+      formName: "Nom Complet *",
       formEmail: "Adresse Email *",
-      formPhone: "Numéro de Téléphone / WhatsApp *",
+      formPhone: "Numéro de Téléphone *",
       formService: "Service ou Formation Concerné *",
-      formDate: "Date Souhaitée *",
-      formTime: "Heure Souhaitée *",
-      formNotes: "Notes ou Précisions Particulières",
-      submitBtn: "Confirmer mon Rendez-vous",
-      successMsg: "Votre rendez-vous a été enregistré avec succès !"
+      formDate: "Date souhaitée *",
+      formTime: "Créneau Horaire *",
+      formNotes: "Notes additionnelles / questions",
+      formNotesPlaceholder: "Expliquez brièvement votre situation ou vos objectifs pour maximiser l'efficacité de la rencontre...",
+      formNamePlaceholder: "Ex: Junior",
+      formEmailPlaceholder: "Ex: junior@example.com",
+      formPhonePlaceholder: "Ex: 675 23 12 83",
+      timeLabel: "Heure locale",
+      submitBtn: "Planifier mon rendez-vous",
+      submittingBtn: "Réservation en cours...",
+      validationError: "Veuillez remplir les champs obligatoires (Nom, Email, Téléphone, Date).",
+      successTitle: "Rendez-vous pré-enregistré !",
+      successDetails: "Votre rendez-vous pour le",
+      successAt: "à",
+      successConcerning: "concernant",
+      successCode: "est enregistré sous le code de suivi",
+      successConfirmation: "Un SMS et un email de confirmation vous seront envoyés dès validation par l'un de nos employés.",
+      anotherBtn: "Prendre un autre rendez-vous",
+      secureNote: "Traitement confidentiel & sécurisé des données"
     },
 
     // Partners Section
@@ -246,7 +261,13 @@ export const translations = {
       sectionTag: "Preuve Sociale & Confiance",
       sectionTitle: "Ce que disent nos clients satisfaits",
       sectionSub: "Découvrez les retours d'expérience des professionnels, étudiants et entrepreneurs qui font confiance à CAMUQ & TWINS EMPIRE.",
-      leaveFeedbackBtn: "Laisser un témoignage client"
+      leaveFeedbackBtn: "Laisser un Témoignage",
+      verifiedBadge: "Avis Client Vérifié",
+      prevBtn: "Témoignage précédent",
+      nextBtn: "Témoignage suivant",
+      dotLabel: "Aller au témoignage",
+      ctaTitle: "Vous êtes un de nos clients ou partenaires ?",
+      ctaDesc: "Votre avis compte énormément pour nous ! Partagez votre expérience et aidez-nous à continuer de parfaire nos services d'exception."
     },
 
     // Footer
@@ -261,6 +282,16 @@ export const translations = {
     // Floating WhatsApp
     whatsapp: {
       label: "Service Client WhatsApp"
+    },
+
+    // ChatBot Widget
+    chatbot: {
+      greeting: "Bonjour ! Je suis CAMUQ & TWINS EMPIRE AI, votre conseiller virtuel bilingue. Comment puis-je vous aider aujourd'hui ? Saisie de mémoire, impression grand format, formations d'IA ou de marketing ?",
+      inputPlaceholder: "Posez-moi votre question...",
+      assistantLabel: "Assistant Bilingue",
+      errorGeneral: "Désolé, je rencontre des difficultés techniques à traiter votre demande. Veuillez réessayer.",
+      errorNetwork: "Une erreur réseau est survenue. Veuillez vérifier votre connexion et m'écrire à nouveau.",
+      chatTitle: "Discuter avec l'IA CAMUQ & TWINS EMPIRE"
     }
   },
 
@@ -483,18 +514,33 @@ export const translations = {
 
     // Appointment Page
     appointment: {
-      pageTag: "Online Appointment Booking",
-      pageTitle: "Book a Slot with Our Experts",
-      pageSubtitle: "Schedule a meeting in store or online with our specialists to discuss your printing, publishing, or training projects.",
+      pageTag: "Direct Appointment Booking",
+      pageTitle: "Schedule Your Free Consultation",
+      pageSubtitle: "Save time by booking a time slot with one of our academic experts or printing consultants directly from our platform.",
+      formTitle: "Appointment Booking Form",
       formName: "Full Name *",
       formEmail: "Email Address *",
-      formPhone: "Phone Number / WhatsApp *",
+      formPhone: "Phone Number *",
       formService: "Service or Training Concerned *",
       formDate: "Desired Date *",
-      formTime: "Desired Time *",
-      formNotes: "Notes or Special Details",
-      submitBtn: "Confirm My Appointment",
-      successMsg: "Your appointment has been registered successfully!"
+      formTime: "Time Slot *",
+      formNotes: "Additional Notes / Questions",
+      formNotesPlaceholder: "Briefly describe your situation or goals to maximize the efficiency of our meeting...",
+      formNamePlaceholder: "E.g: John",
+      formEmailPlaceholder: "E.g: john@example.com",
+      formPhonePlaceholder: "E.g: +237 675 23 12 83",
+      timeLabel: "Local Time",
+      submitBtn: "Schedule My Appointment",
+      submittingBtn: "Booking in progress...",
+      validationError: "Please fill in all required fields (Name, Email, Phone, Date).",
+      successTitle: "Appointment Pre-Registered!",
+      successDetails: "Your appointment for",
+      successAt: "at",
+      successConcerning: "regarding",
+      successCode: "is registered under tracking code",
+      successConfirmation: "An SMS and email confirmation will be sent to you upon validation by one of our staff members.",
+      anotherBtn: "Book Another Appointment",
+      secureNote: "Confidential & secure data processing"
     },
 
     // Partners Section
@@ -509,7 +555,13 @@ export const translations = {
       sectionTag: "Social Proof & Trust",
       sectionTitle: "What Our Satisfied Clients Say",
       sectionSub: "Discover feedback from professionals, students, and entrepreneurs who trust CAMUQ & TWINS EMPIRE.",
-      leaveFeedbackBtn: "Leave a Client Testimonial"
+      leaveFeedbackBtn: "Leave a Testimonial",
+      verifiedBadge: "Verified Client Review",
+      prevBtn: "Previous testimonial",
+      nextBtn: "Next testimonial",
+      dotLabel: "Go to testimonial",
+      ctaTitle: "Are you one of our clients or partners?",
+      ctaDesc: "Your feedback matters enormously to us! Share your experience and help us continue to perfect our exceptional services."
     },
 
     // Footer
@@ -524,6 +576,16 @@ export const translations = {
     // Floating WhatsApp
     whatsapp: {
       label: "WhatsApp Customer Service"
+    },
+
+    // ChatBot Widget
+    chatbot: {
+      greeting: "Hello! I am CAMUQ & TWINS EMPIRE AI, your bilingual virtual advisor. How can I help you today? Thesis writing, large-format printing, AI or marketing training?",
+      inputPlaceholder: "Ask me your question...",
+      assistantLabel: "Bilingual Assistant",
+      errorGeneral: "Sorry, I'm experiencing technical difficulties processing your request. Please try again.",
+      errorNetwork: "A network error occurred. Please check your connection and write to me again.",
+      chatTitle: "Chat with CAMUQ & TWINS EMPIRE AI"
     }
   }
 };

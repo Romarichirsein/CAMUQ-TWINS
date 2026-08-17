@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Plus, Minus, Search, HelpCircle, AlertCircle } from "lucide-react";
 import { FAQ_DATA } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function FaqPage() {
   const [openId, setOpenId] = useState<string | null>("faq-1");
   const [searchQuery, setSearchQuery] = useState("");
+  const { t } = useLanguage();
+  const fT = t.faq;
 
   const filteredFaqs = FAQ_DATA.filter(faq => 
     faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -18,13 +21,13 @@ export default function FaqPage() {
         {/* Header Title */}
         <div className="text-center space-y-3">
           <span className="text-xs font-black uppercase tracking-wider text-blue-900 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-            Foire Aux Questions CAMUQ & TWINS EMPIRE
+            {fT.pageTag}
           </span>
           <h2 className="font-sans font-black text-3xl text-blue-950 tracking-tight">
-            Des Réponses Claires à Vos Questions
+            {fT.pageTitle}
           </h2>
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-2xl mx-auto">
-            Vous avez des questions sur nos formations professionnelles certifiées, nos tarifs de secrétariat bilingue, d&apos;imprimerie ou nos démarches en ligne ? Consultez notre foire aux questions.
+            {fT.pageSubtitle}
           </p>
         </div>
 
@@ -33,7 +36,7 @@ export default function FaqPage() {
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input 
             type="text"
-            placeholder="Rechercher une question ou un thème précis..."
+            placeholder={fT.searchPlaceholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-11 pr-4 py-3 bg-slate-50 rounded-xl text-sm border-0 focus:ring-2 focus:ring-blue-900 focus:bg-white outline-none transition-all"
@@ -80,8 +83,8 @@ export default function FaqPage() {
         ) : (
           <div className="text-center py-12 max-w-sm mx-auto space-y-2">
             <AlertCircle className="w-10 h-10 text-yellow-500 mx-auto" />
-            <h4 className="font-bold text-sm text-blue-950">Aucun résultat trouvé</h4>
-            <p className="text-xs text-gray-400">Essayez de saisir un autre mot-clé pour interroger notre FAQ.</p>
+            <h4 className="font-bold text-sm text-blue-950">{fT.emptyTitle}</h4>
+            <p className="text-xs text-gray-400">{fT.emptyDesc}</p>
           </div>
         )}
 

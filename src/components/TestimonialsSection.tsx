@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Quote, Star, ChevronLeft, ChevronRight, MessageSquareCode } from "lucide-react";
 import { TESTIMONIALS_DATA } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 interface TestimonialsSectionProps {
   onLeaveFeedback: () => void;
@@ -12,6 +13,8 @@ export default function TestimonialsSection({ onLeaveFeedback }: TestimonialsSec
   const [direction, setDirection] = useState(0); // -1 for left, 1 for right
   const [isHovered, setIsHovered] = useState(false);
   const autoplayTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const { t } = useLanguage();
+  const tmT = t.testimonials;
 
   // Autoplay function
   useEffect(() => {
@@ -84,13 +87,13 @@ export default function TestimonialsSection({ onLeaveFeedback }: TestimonialsSec
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4 reveal-on-scroll">
           <span className="text-[10px] bg-blue-100 text-blue-900 font-bold px-3 py-1.5 rounded-full uppercase tracking-widest inline-block">
-            Preuve Sociale & Confiance
+            {tmT.sectionTag}
           </span>
           <h2 className="font-sans font-black text-3xl sm:text-4xl text-blue-950 tracking-tight leading-tight">
-            Ce que disent nos clients satisfaits
+            {tmT.sectionTitle}
           </h2>
           <p className="text-sm sm:text-base text-gray-500">
-            Découvrez les retours d&apos;expérience des professionnels, étudiants et entrepreneurs qui font confiance à CAMUQ & TWINS EMPIRE.
+            {tmT.sectionSub}
           </p>
         </div>
 
@@ -172,7 +175,7 @@ export default function TestimonialsSection({ onLeaveFeedback }: TestimonialsSec
                     {/* Meta info badge */}
                     <div className="text-xs font-semibold text-gray-400 text-center md:text-left flex items-center justify-center md:justify-start gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                      Avis Client Vérifié • {activeTestimonial.company}
+                      {tmT.verifiedBadge} • {activeTestimonial.company}
                     </div>
                   </div>
 
@@ -186,14 +189,14 @@ export default function TestimonialsSection({ onLeaveFeedback }: TestimonialsSec
             <button
               onClick={handlePrev}
               className="p-3 rounded-full bg-white hover:bg-slate-50 text-blue-950 hover:text-blue-900 shadow-md border border-slate-100 transition-all pointer-events-auto hover:scale-105 active:scale-95 cursor-pointer"
-              aria-label="Témoignage précédent"
+              aria-label={tmT.prevBtn}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
               className="p-3 rounded-full bg-white hover:bg-slate-50 text-blue-950 hover:text-blue-900 shadow-md border border-slate-100 transition-all pointer-events-auto hover:scale-105 active:scale-95 cursor-pointer"
-              aria-label="Témoignage suivant"
+              aria-label={tmT.nextBtn}
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -208,7 +211,7 @@ export default function TestimonialsSection({ onLeaveFeedback }: TestimonialsSec
                 className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                   index === currentIndex ? "w-8 bg-blue-900" : "w-2 bg-slate-300 hover:bg-slate-400"
                 }`}
-                aria-label={`Aller au témoignage ${index + 1}`}
+                aria-label={`${tmT.dotLabel} ${index + 1}`}
               />
             ))}
           </div>
@@ -220,17 +223,17 @@ export default function TestimonialsSection({ onLeaveFeedback }: TestimonialsSec
             <MessageSquareCode className="w-6 h-6" />
           </div>
           <h3 className="font-sans font-bold text-lg text-blue-950">
-            Vous êtes un de nos clients ou partenaires ?
+            {tmT.ctaTitle}
           </h3>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-            Votre avis compte énormément pour nous ! Partagez votre expérience et aidez-nous à continuer de parfaire nos services d&apos;exception.
+            {tmT.ctaDesc}
           </p>
           <div>
             <button
               onClick={onLeaveFeedback}
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-900 hover:bg-blue-950 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow cursor-pointer"
             >
-              Laisser un Témoignage
+              {tmT.leaveFeedbackBtn}
             </button>
           </div>
         </div>

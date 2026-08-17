@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Calendar, Clock, Check, AlertCircle, ShieldCheck } from "lucide-react";
 import { FORMATIONS_DATA, SERVICES_DATA } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function AppointmentPage() {
+  const { t, lang } = useLanguage();
+  const apT = t.appointment;
+
   const [formData, setFormData] = useState({
     clientName: "",
     clientEmail: "",
     clientPhone: "",
-    serviceType: "Initiation à l'Intelligence Artificielle",
+    serviceType: lang === "fr" ? "Initiation à l'Intelligence Artificielle" : "AI Initiation Training",
     date: "",
     time: "09:00",
     notes: ""
@@ -21,8 +25,8 @@ export default function AppointmentPage() {
   ];
 
   const combinedServices = [
-    ...FORMATIONS_DATA.map(f => `Formation : ${f.name}`),
-    ...SERVICES_DATA.map(s => `Service : ${s.name}`)
+    ...FORMATIONS_DATA.map(f => `${lang === "fr" ? "Formation" : "Training"} : ${f.name}`),
+    ...SERVICES_DATA.map(s => `${lang === "fr" ? "Service" : "Service"} : ${s.name}`)
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -33,7 +37,7 @@ export default function AppointmentPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.clientName || !formData.clientEmail || !formData.clientPhone || !formData.date) {
-      setError("Veuillez remplir les champs obligatoires (Nom, Email, Téléphone, Date).");
+      setError(apT.validationError);
       return;
     }
 
@@ -76,7 +80,7 @@ Je souhaite réserver un rendez-vous / inscription depuis votre site web :
       clientName: "",
       clientEmail: "",
       clientPhone: "",
-      serviceType: "Initiation à l'Intelligence Artificielle",
+      serviceType: lang === "fr" ? "Initiation à l'Intelligence Artificielle" : "AI Initiation Training",
       date: "",
       time: "09:00",
       notes: ""
@@ -90,40 +94,40 @@ Je souhaite réserver un rendez-vous / inscription depuis votre site web :
         {/* Title Header */}
         <div className="text-center space-y-3">
           <span className="text-xs font-black uppercase tracking-wider text-yellow-600 bg-yellow-50 px-3 py-1.5 rounded-full border border-yellow-100">
-            Prise de Rendez-vous Directe
+            {apT.pageTag}
           </span>
           <h2 className="font-sans font-black text-3xl text-blue-950 tracking-tight">
-            Planifiez Votre Consultation Gratuite
+            {apT.pageTitle}
           </h2>
           <p className="text-sm sm:text-base text-gray-500 leading-relaxed max-w-2xl mx-auto">
-            Gagnez du temps en réservant un créneau horaire avec l&apos;un de nos experts académiques ou conseillers d&apos;imprimerie directement depuis notre plateforme.
+            {apT.pageSubtitle}
           </p>
         </div>
 
         {success ? (
           <div className="bg-emerald-50 text-emerald-800 border border-emerald-150 p-8 rounded-3xl flex flex-col items-center text-center space-y-4 max-w-2xl mx-auto animate-fade-in shadow-md">
             <Check className="w-14 h-14 text-emerald-600 bg-white rounded-full p-3.5 shadow-sm border border-emerald-100" />
-            <h3 className="font-sans font-black text-xl text-emerald-950">Rendez-vous pré-enregistré !</h3>
+            <h3 className="font-sans font-black text-xl text-emerald-950">{apT.successTitle}</h3>
             <div className="text-xs sm:text-sm text-emerald-800 space-y-2 leading-relaxed">
               <p>
-                Votre rendez-vous pour le <strong className="text-emerald-950">{success.date} à {success.time}</strong> concernant &ldquo;<strong className="text-emerald-950">{success.serviceType}</strong>&rdquo; est enregistré sous le code de suivi <strong className="text-emerald-950">{success.id}</strong>.
+                {apT.successDetails} <strong className="text-emerald-950">{success.date} {apT.successAt} {success.time}</strong> {apT.successConcerning} &ldquo;<strong className="text-emerald-950">{success.serviceType}</strong>&rdquo; {apT.successCode} <strong className="text-emerald-950">{success.id}</strong>.
               </p>
               <p className="text-xs text-emerald-600">
-                Un SMS et un email de confirmation vous seront envoyés dès validation par l&apos;un de nos employés.
+                {apT.successConfirmation}
               </p>
             </div>
             <button
               onClick={() => setSuccess(null)}
               className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer"
             >
-              Prendre un autre rendez-vous
+              {apT.anotherBtn}
             </button>
           </div>
         ) : (
           <div className="bg-slate-50 p-6 sm:p-10 rounded-3xl border border-slate-100 shadow-sm max-w-2xl mx-auto space-y-6">
             <h3 className="font-sans font-black text-lg sm:text-xl text-blue-950 flex items-center gap-2">
               <Calendar className="w-5 h-5 text-blue-900" />
-              Formulaire de réservation horaire
+              {apT.formTitle}
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -135,48 +139,48 @@ Je souhaite réserver un rendez-vous / inscription depuis votre site web :
               )}
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-gray-500 uppercase block">Nom Complet *</label>
+                <label className="text-xs font-bold text-gray-500 uppercase block">{apT.formName}</label>
                 <input 
                   type="text"
                   name="clientName"
                   required
                   value={formData.clientName}
                   onChange={handleChange}
-                  placeholder="Ex: Junior"
+                  placeholder={apT.formNamePlaceholder}
                   className="w-full px-4 py-3 bg-white border border-gray-250 focus:border-blue-900 rounded-xl text-sm outline-none transition-all shadow-sm"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-500 uppercase block">Adresse Email *</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase block">{apT.formEmail}</label>
                   <input 
                     type="email"
                     name="clientEmail"
                     required
                     value={formData.clientEmail}
                     onChange={handleChange}
-                    placeholder="Ex: junior@example.com"
+                    placeholder={apT.formEmailPlaceholder}
                     className="w-full px-4 py-3 bg-white border border-gray-250 focus:border-blue-900 rounded-xl text-sm outline-none transition-all shadow-sm"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-500 uppercase block">Numéro de Téléphone *</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase block">{apT.formPhone}</label>
                   <input 
                     type="text"
                     name="clientPhone"
                     required
                     value={formData.clientPhone}
                     onChange={handleChange}
-                    placeholder="Ex: 675 23 12 83"
+                    placeholder={apT.formPhonePlaceholder}
                     className="w-full px-4 py-3 bg-white border border-gray-250 focus:border-blue-900 rounded-xl text-sm outline-none transition-all shadow-sm"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-gray-500 uppercase block">Service ou Formation Concerné *</label>
+                <label className="text-xs font-bold text-gray-500 uppercase block">{apT.formService}</label>
                 <select
                   name="serviceType"
                   value={formData.serviceType}
@@ -191,7 +195,7 @@ Je souhaite réserver un rendez-vous / inscription depuis votre site web :
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-500 uppercase block">Date souhaitée *</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase block">{apT.formDate}</label>
                   <input 
                     type="date"
                     name="date"
@@ -203,7 +207,7 @@ Je souhaite réserver un rendez-vous / inscription depuis votre site web :
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-gray-500 uppercase block">Créneau Horaire *</label>
+                  <label className="text-xs font-bold text-gray-500 uppercase block">{apT.formTime}</label>
                   <select
                     name="time"
                     value={formData.time}
@@ -211,20 +215,20 @@ Je souhaite réserver un rendez-vous / inscription depuis votre site web :
                     className="w-full px-4 py-3 bg-white border border-gray-250 focus:border-blue-900 rounded-xl text-sm outline-none transition-all shadow-sm"
                   >
                     {availableHours.map((hr) => (
-                      <option key={hr} value={hr}>{hr} (Heure locale)</option>
+                      <option key={hr} value={hr}>{hr} ({apT.timeLabel})</option>
                     ))}
                   </select>
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-gray-500 uppercase block">Notes additionnelles / questions</label>
+                <label className="text-xs font-bold text-gray-500 uppercase block">{apT.formNotes}</label>
                 <textarea 
                   name="notes"
                   rows={3}
                   value={formData.notes}
                   onChange={handleChange}
-                  placeholder="Expliquez brièvement votre situation ou vos objectifs pour maximiser l'efficacité de la rencontre..."
+                  placeholder={apT.formNotesPlaceholder}
                   className="w-full px-4 py-3 bg-white border border-gray-250 focus:border-blue-900 rounded-xl text-sm outline-none transition-all shadow-sm"
                 ></textarea>
               </div>
@@ -235,13 +239,13 @@ Je souhaite réserver un rendez-vous / inscription depuis votre site web :
                   disabled={submitting}
                   className="w-full py-4 rounded-xl bg-blue-900 hover:bg-blue-950 text-white font-black text-xs uppercase tracking-wider transition-colors shadow-md disabled:bg-blue-400 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  {submitting ? "Réservation en cours..." : "Planifier mon rendez-vous"}
+                  {submitting ? apT.submittingBtn : apT.submitBtn}
                 </button>
               </div>
 
               <div className="flex items-center gap-1.5 justify-center text-[11px] text-gray-400 pt-2 font-medium">
                 <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                <span>Traitement confidentiel & sécurisé des données</span>
+                <span>{apT.secureNote}</span>
               </div>
 
             </form>

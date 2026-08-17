@@ -1,12 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MessageSquare, X, Send, Bot, User, CornerDownLeft, Sparkles } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function ChatBotWidget() {
+  const { t } = useLanguage();
+  const cbT = t.chatbot;
+
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([
     {
       role: "assistant",
-      content: "Bonjour ! Je suis CAMUQ & TWINS EMPIRE AI, votre conseiller virtuel bilingue. Comment puis-je vous aider aujourd'hui ? Saisie de mémoire, impression grand format, formations d'IA ou de marketing ?"
+      content: cbT.greeting
     }
   ]);
   const [input, setInput] = useState("");
@@ -43,10 +47,10 @@ export default function ChatBotWidget() {
       if (data.reply) {
         setMessages((prev) => [...prev, { role: "assistant" as const, content: data.reply }]);
       } else {
-        setMessages((prev) => [...prev, { role: "assistant" as const, content: "Désolé, je rencontre des difficultés techniques à traiter votre demande. Veuillez réessayer." }]);
+        setMessages((prev) => [...prev, { role: "assistant" as const, content: cbT.errorGeneral }]);
       }
     } catch (err) {
-      setMessages((prev) => [...prev, { role: "assistant" as const, content: "Une erreur réseau est survenue. Veuillez vérifier votre connexion et m'écrire à nouveau." }]);
+      setMessages((prev) => [...prev, { role: "assistant" as const, content: cbT.errorNetwork }]);
     } finally {
       setLoading(false);
     }
@@ -60,7 +64,7 @@ export default function ChatBotWidget() {
         <button
           onClick={() => setIsOpen(true)}
           className="p-4 rounded-full bg-blue-900 hover:bg-blue-950 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-blue-800 flex items-center justify-center relative cursor-pointer group"
-          title="Discuter avec l'IA CAMUQ & TWINS EMPIRE"
+          title={cbT.chatTitle}
         >
           <Sparkles className="absolute -top-1 -right-1 w-5 h-5 text-yellow-400 animate-pulse bg-blue-950 rounded-full p-1" />
           <MessageSquare className="w-6 h-6 group-hover:rotate-6 transition-transform" />
@@ -80,7 +84,7 @@ export default function ChatBotWidget() {
               </div>
               <div>
                 <h4 className="font-extrabold text-xs sm:text-sm tracking-tight">CAMUQ & TWINS EMPIRE AI</h4>
-                <p className="text-[10px] text-blue-200 uppercase tracking-widest font-bold">Assistant Bilingue</p>
+                <p className="text-[10px] text-blue-200 uppercase tracking-widest font-bold">{cbT.assistantLabel}</p>
               </div>
             </div>
             
@@ -151,7 +155,7 @@ export default function ChatBotWidget() {
           >
             <input 
               type="text"
-              placeholder="Posez-moi votre question..."
+              placeholder={cbT.inputPlaceholder}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               className="flex-1 px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-150 rounded-xl focus:ring-1 focus:ring-blue-900 focus:bg-white outline-none transition-all text-gray-700"
