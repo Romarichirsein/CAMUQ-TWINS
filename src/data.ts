@@ -408,13 +408,13 @@ export const FORMATIONS_DATA: TrainingItem[] = [
   },
   {
     id: "f-6",
-    name: "Bilinguisme & Communication Pro",
+    name: "Langues & Communication Pro",
     duration: "3 Mois",
     level: "Débutant",
     price: "Sur inscription",
     icon: "Languages",
-    description: "Perfectionnement en Anglais et Français des affaires pour communiquer efficacement avec vos partenaires.",
-    longDescription: "Dans un monde interconnecté, le multilinguisme est un passeport vers la réussite. Pratiquez l'expression orale, l'écoute de correspondances d'affaires et apprenez le vocabulaire technique nécessaire pour négocier sereinement à l'international.",
+    description: "Perfectionnement en Anglais, Chinois et Français pour communiquer efficacement avec vos partenaires.",
+    longDescription: "Dans un monde interconnecté, le multilinguisme (Anglais, Chinois, Français) est un passeport vers la réussite. Pratiquez l'expression orale, la correspondance et apprenez le vocabulaire technique nécessaire pour échanger et négocier sereinement à l'international.",
     image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=600&auto=format&fit=crop"
   },
   {
