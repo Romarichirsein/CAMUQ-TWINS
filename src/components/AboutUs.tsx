@@ -15,8 +15,11 @@ import {
 } from "lucide-react";
 import { COMPANY_NAME, COMPANY_SLOGAN } from "../data";
 import PartnersSection from "./PartnersSection";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function AboutUs() {
+  const { t } = useLanguage();
+  const aboutT = t.about;
   const values = [
     {
       icon: Award,
