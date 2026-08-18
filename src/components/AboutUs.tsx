@@ -11,7 +11,8 @@ import {
   Quote,
   Briefcase,
   Users,
-  Lightbulb
+  Lightbulb,
+  User
 } from "lucide-react";
 import { COMPANY_NAME, COMPANY_SLOGAN } from "../data";
 import PartnersSection from "./PartnersSection";
@@ -283,7 +284,7 @@ export default function AboutUs() {
               {aboutT.acteursSectionTitle}
             </h3>
             <p className="text-xs sm:text-sm text-yellow-600 font-extrabold uppercase tracking-widest italic">
-              « Build an Empire Without Borders »
+              « Building an Empire Without Borders »
             </p>
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
               {aboutT.acteursSub}
@@ -335,17 +336,17 @@ export default function AboutUs() {
             {/* Level 2: DCM to her right (left on screen) & DO to her left (right on screen) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl reveal-on-scroll">
               
-              {/* DCM (Directeur Commercial et Marketing) - on her right (left of screen) */}
+              {/* DCM (Directeur Commercial et Marketing) - LIMNYUY Luke SENYUY */}
               <div className="flex justify-center">
                 <div className="bg-white p-5 rounded-3xl border border-slate-150 shadow-lg w-full max-w-sm text-center space-y-4 transform transition-transform hover:scale-102">
-                  <div className="w-56 h-72 rounded-2xl overflow-hidden bg-slate-100 relative mx-auto border border-slate-150">
+                  <div className="w-56 h-72 rounded-2xl overflow-hidden bg-black relative mx-auto border border-slate-900">
                     <img 
-                      src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=500&h=700" 
+                      src="/images/limnyuy-luke-senyuy.jpg" 
                       alt={aboutT.dcmName} 
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover object-top opacity-95 contrast-105"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-2 text-center">
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 text-center">
                       <span className="text-[9px] bg-blue-900 text-white font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
                         DCM
                       </span>
@@ -362,17 +363,15 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              {/* DO (Directeur des Opérations) - on her left (right of screen) */}
+              {/* DO (Directeur des Opérations) - FONYUY Mark SENYUY */}
               <div className="flex justify-center">
                 <div className="bg-white p-5 rounded-3xl border border-slate-150 shadow-lg w-full max-w-sm text-center space-y-4 transform transition-transform hover:scale-102">
-                  <div className="w-56 h-72 rounded-2xl overflow-hidden bg-black relative mx-auto border border-slate-150">
-                    <img 
-                      src="/images/limnyuy-luke-senyuy.jpg" 
-                      alt={aboutT.doName} 
-                      className="w-full h-full object-cover object-top opacity-95 contrast-105"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-2 text-center">
+                  <div className="w-56 h-72 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-blue-900 relative mx-auto border border-slate-700 flex flex-col items-center justify-center p-4 shadow-inner">
+                    <div className="w-20 h-20 rounded-full bg-blue-900/70 border-2 border-yellow-400/50 flex items-center justify-center shadow-lg">
+                      <User className="w-10 h-10 text-yellow-400 opacity-90" />
+                    </div>
+                    <span className="text-xs font-bold text-slate-200 mt-3 tracking-wider">{aboutT.doName}</span>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 text-center">
                       <span className="text-[9px] bg-blue-900 text-white font-bold px-2 py-0.5 rounded-full uppercase tracking-widest">
                         DO
                       </span>

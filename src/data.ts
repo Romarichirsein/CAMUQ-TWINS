@@ -125,7 +125,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     hidePrice: true,
     description: "Édition grand format, illustration couleur HD et reliure de prestige pour beaux-livres, contes et albums d'art...",
     icon: "BookMarked",
-    coverImage: "/images/limnyuy-luke-senyuy.jpg",
+    coverImage: "/images/book_cover_novel.jpg",
     badge: "Beaux-Livres & Contes",
     features: ["Grand Format A4/Carré", "Papier Couché 135g HD", "Couverture Rigide..."]
   },
