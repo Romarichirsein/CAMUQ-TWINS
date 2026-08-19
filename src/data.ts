@@ -537,8 +537,8 @@ export const PRODUCT_DATA: ProductItem[] = [
 
 export const VACATION_TRAINING_EVENT = {
   id: "formation-ong-iyf-2026",
-  title: "Initiation Gratuite à l'Informatique — Jeunes de l'ONG IYF d’Essos",
-  subtitle: "Formation Citoyenne & Solidaire (2 Mois : Mars - Avril 2026) — CAMUQ AND TWINS TRAINING",
+  title: "Formation Gratuite de 2 Mois aux Jeunes",
+  subtitle: "Initiation Informatique & Bureautique (Jeunes de l'ONG IYF d’Essos : Mars - Avril 2026) — CAMUQ AND TWINS TRAINING",
   dates: "Mars - Avril 2026 (2 Mois)",
   duration: "2 Mois gratuits",
   targetAudience: "Jeunes de l'ONG IYF d’Essos",
