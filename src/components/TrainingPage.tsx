@@ -559,7 +559,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
             </div>
           </div>
 
-          {/* Video Showcase Section: Formation Gratuite de 2 Mois Offerte aux Enfants */}
+          {/* Video Showcase Section: Formation Gratuite de 2 Mois Offerte aux Jeunes de l'ONG IYF d’Essos (Mars - Avril 2026) */}
           <div className="bg-slate-950/80 p-5 sm:p-7 rounded-3xl border border-yellow-400/30 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="space-y-1">
@@ -567,11 +567,11 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
                   <Icons.PlayCircle className="w-4 h-4 text-yellow-400" /> Vidéo de Présentation
                 </span>
                 <h3 className="font-sans font-black text-xl text-white">
-                  Formation Gratuite de 2 Mois Offerte aux Enfants
+                  Formation Gratuite de 2 Mois Offerte aux Jeunes de l'ONG IYF d’Essos
                 </h3>
               </div>
               <span className="text-xs text-slate-300 bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700">
-                🎓 Session Spéciale Jeunes (9 à 17 ans)
+                🎓 Session Solidaire (Mars - Avril 2026)
               </span>
             </div>
 
@@ -591,7 +591,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
             </div>
 
             <p className="text-xs text-slate-300 italic text-center">
-              Découvrez en images les moments forts et les apprentissages pratiques lors de la formation gratuite de 2 mois dispensée au centre de Nkolfoulou.
+              Découvrez en images les moments forts et les apprentissages pratiques lors de la formation gratuite de 2 mois dispensée aux jeunes de l'ONG IYF d’Essos au centre de Nkolfoulou (Mars - Avril 2026).
             </p>
           </div>
 

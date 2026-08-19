@@ -146,11 +146,11 @@ let database = {
   blog: [
     {
       id: "b-vacances-2026",
-      title: "Retour sur 2 Mois de Formation Gratuite en Informatique pour les Jeunes (9 à 17 ans)",
-      summary: "Du 15 juin au 13 août 2026, CAMUQ AND TWINS TRAINING a accueilli gratuitement les jeunes pour les initier aux outils informatiques.",
-      content: "Pendant 2 mois, CAMUQ AND TWINS TRAINING a accueilli les jeunes pour une formation gratuite. Pour empêcher les enfants de s'ennuyer et vagabonder, du 15 juin au 13 août 2026, CAMUQ AND TWINS TRAINING a initié les enfants de 9 à 17 ans à l'utilisation de l'outil informatique. La session s'est clôturée solennellement par une remise d'attestations.",
+      title: "Retour sur 2 Mois de Formation Gratuite en Informatique : Jeunes de l'ONG IYF d’Essos (Mars - Avril 2026)",
+      summary: "Pendant 2 mois (Mars - Avril 2026), CAMUQ AND TWINS TRAINING a accueilli gratuitement les jeunes de l'ONG IYF d’Essos pour les initier aux outils informatiques.",
+      content: "Pendant 2 mois, de mars à avril 2026, CAMUQ AND TWINS TRAINING a accueilli les jeunes de l'ONG IYF d’Essos pour une formation entièrement gratuite en informatique. Au programme : manipulation du clavier, prise en main de l'environnement Windows, création de documents sous Microsoft Word, premiers calculs sous Excel et sensibilisation à un usage responsable d'Internet. La session s'est terminée en beauté par une remise officielle d'attestations de fin de formation.",
       image: "/images/formation-vacances-1.jpg",
-      date: "13 Août 2026",
+      date: "Avril 2026",
       author: "Direction CAMUQ AND TWINS TRAINING",
       category: "Formations",
       views: 342
