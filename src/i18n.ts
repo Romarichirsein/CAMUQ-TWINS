@@ -144,11 +144,11 @@ export const translations = {
 
       doTitle: "Directeur des Opérations",
       doName: "FONYUY Mark SENYUY",
-      doBio: "Professionnel engagé et rigoureux, cumule plus de 10 ans d'expérience dans la gestion des opérations. Il veille à l'efficacité des processus, à la qualité des services et à la bonne exécution de la vision de l'entreprise, en faisant de l'excellence opérationnelle une priorité.",
+      doBio: "Professionnel engagé et rigoureux, Mark cumule plus de 10 ans d'expérience dans la gestion des opérations. Il veille à l'efficacité des processus, à la qualité des services et à la bonne exécution de la vision de l'entreprise, en faisant de l'excellence opérationnelle une priorité.",
 
       dcmTitle: "Directeur Commercial et Marketing",
       dcmName: "LIMNYUY Luke SENYUY",
-      dcmBio: "Avec plus de 10 ans d'expérience dans le développement commercial et le marketing, LIMNYUY Luke SENYUY met son sens de la stratégie, de la communication et de la relation client au service de la croissance de l'entreprise. Son ambition est de faire rayonner la marque et de créer des partenariats durables."
+      dcmBio: "Avec plus de 10 ans d'expérience dans le développement commercial et le marketing, Luke met son sens de la stratégie, de la communication et de la relation client au service de la croissance de l'entreprise. Son ambition est de faire rayonner la marque et de créer des partenariats durables."
     },
 
     // Products Page
@@ -438,11 +438,11 @@ export const translations = {
 
       doTitle: "Operations Director (COO)",
       doName: "FONYUY Mark SENYUY",
-      doBio: "Dedicated and rigorous professional with over 10 years of experience in operations management. He ensures process efficiency, service quality, and the smooth execution of the company's vision with operational excellence as a priority.",
+      doBio: "Committed and rigorous professional, Mark brings over 10 years of experience in operations management. He ensures process efficiency, service quality, and the smooth execution of the company's vision with operational excellence as a priority.",
 
       dcmTitle: "Commercial & Marketing Director (CMO)",
       dcmName: "LIMNYUY Luke SENYUY",
-      dcmBio: "With over 10 years of experience in business development and marketing, LIMNYUY Luke SENYUY brings strategic vision, communication skills, and customer relationship expertise to fuel company growth and forge lasting partnerships."
+      dcmBio: "With over 10 years of experience in business development and marketing, Luke brings strategic vision, communication skills, and customer relationship expertise to fuel company growth and forge lasting partnerships."
     },
 
     // Products Page
