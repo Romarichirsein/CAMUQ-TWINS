@@ -536,25 +536,25 @@ export const PRODUCT_DATA: ProductItem[] = [
 ];
 
 export const VACATION_TRAINING_EVENT = {
-  id: "formation-ong-iyf-2026",
-  title: "Formation Gratuite de 2 Mois aux Jeunes",
-  subtitle: "Initiation Informatique & Bureautique (Jeunes de l'ONG IYF d’Essos : Mars - Avril 2026) — CAMUQ AND TWINS TRAINING",
-  dates: "Mars - Avril 2026 (2 Mois)",
-  duration: "2 Mois gratuits",
-  targetAudience: "Jeunes de l'ONG IYF d’Essos",
-  location: "Nkolfoulou, Yaoundé",
-  description: "Pendant 2 mois (Mars et Avril 2026), CAMUQ AND TWINS TRAINING a accueilli gratuitement les jeunes de l'ONG IYF d’Essos pour une formation complète d'initiation à l'outil informatique et à la bureautique.",
+  id: "vacances-utiles-2026",
+  title: "Initiation Gratuite à l'Informatique pour les Jeunes (9 à 17 ans)",
+  subtitle: "ÉDITION SPÉCIALE VACANCES UTILES — CAMUQ AND TWINS TRAINING",
+  dates: "Du 15 Juin au 13 Août 2026",
+  duration: "Session Vacances Scolaires",
+  targetAudience: "Enfants & Jeunes (9 à 17 ans)",
+  location: "Campus de Nkolfoulou, Yaoundé",
+  description: "Pour empêcher les enfants de s'ennuyer et de vagabonder durant les vacances scolaires, du 15 juin au 13 août 2026, CAMUQ AND TWINS TRAINING a initié les enfants de 9 à 17 ans à l'utilisation concrète et sécurisée de l'outil informatique.",
   highlights: [
     "Prise en main guidée des ordinateurs et saisie sur clavier",
     "Bases essentielles de la bureautique (Word, Excel, création de documents)",
     "Recherche éducative et sécurité sur Internet",
-    "Remise solennelle d'attestations de réussite aux jeunes de l'ONG IYF d'Essos"
+    "Remise solennelle d'attestations de réussite et valorisation des jeunes"
   ],
   images: [
     {
       url: "/images/formation-vacances-1.jpg",
       title: "Remise solennelle des attestations",
-      caption: "Cérémonie de remise des attestations aux jeunes diplômés de l'ONG IYF d'Essos avec la direction de CAMUQ AND TWINS TRAINING."
+      caption: "Cérémonie de remise des attestations aux jeunes de la session Vacances Utiles avec la direction de CAMUQ AND TWINS TRAINING."
     },
     {
       url: "/images/formation-vacances-2.jpg",
@@ -569,18 +569,38 @@ export const VACATION_TRAINING_EVENT = {
     {
       url: "/images/formation-vacances-4.jpg",
       title: "Immersion & concentration des jeunes",
-      caption: "Session de travaux pratiques réunissant les jeunes motivés de l'ONG IYF d'Essos."
+      caption: "Session de travaux pratiques réunissant les jeunes motivés au campus de Nkolfoulou."
     }
   ]
+};
+
+export const FREE_TRAINING_EVENT = {
+  id: "formation-gratuite-janvier-2026",
+  title: "Formation Gratuite de 2 Mois Offerte aux Jeunes",
+  subtitle: "Session Solidaire & Citoyenne (Depuis Janvier 2026) — CAMUQ AND TWINS TRAINING",
+  dates: "Depuis Janvier 2026 (Durée : 2 Mois)",
+  duration: "2 Mois gratuits",
+  targetAudience: "Jeunes apprenants & passionnés du numérique",
+  location: "Campus de Nkolfoulou, Yaoundé",
+  description: "Organisée depuis janvier 2026, cette formation d'initiation 100% gratuite de 2 mois a permis aux jeunes de découvrir le monde informatique, de pratiquer sur ordinateur et d'acquérir les réflexes de base pour leur autonomie numérique.",
+  noteAttestation: "Session d'initiation solidaire sans délivrance d'attestation.",
+  highlights: [
+    "Initiation pratique complète et gratuite de 2 mois à l'outil informatique",
+    "Apprentissage des fonctions de base et manipulation du clavier / souris",
+    "Initiation aux logiciels bureautiques essentiels",
+    "Session 100% solidaire et citoyenne dispensée au campus de Nkolfoulou"
+  ],
+  videoUrl: "/videos/video-formation-vacances.mp4",
+  videoPoster: "/images/banniere-nos-formations.jpg"
 };
 
 export const GALLERY_DATA: GalleryItem[] = [
   {
     id: "g-vac-1",
-    title: "Remise des attestations aux Jeunes de l'ONG IYF d'Essos",
+    title: "Remise des attestations — Vacances Utiles",
     category: "formations",
     image: "/images/formation-vacances-1.jpg",
-    description: "Cérémonie clôturant 2 mois de formation gratuite en informatique pour les jeunes de l'ONG IYF d’Essos (Mars - Avril 2026)."
+    description: "Cérémonie de remise solennelle des attestations de réussite aux jeunes de l'Édition Vacances Utiles (du 15 juin au 13 août 2026)."
   },
   {
     id: "g-vac-2",
@@ -598,10 +618,10 @@ export const GALLERY_DATA: GalleryItem[] = [
   },
   {
     id: "g-vac-4",
-    title: "Formation gratuite pour les Jeunes de l'ONG IYF d’Essos",
+    title: "Immersion & pratique en salle",
     category: "formations",
     image: "/images/formation-vacances-4.jpg",
-    description: "Les jeunes de l'ONG IYF d’Essos en pleine session d'apprentissage pratique durant les 2 mois de formation (Mars - Avril 2026)."
+    description: "Les jeunes en pleine session d'apprentissage pratique au centre de formation de Nkolfoulou."
   },
   {
     id: "g-1",
@@ -643,11 +663,11 @@ export const GALLERY_DATA: GalleryItem[] = [
 export const BLOG_DATA: BlogPost[] = [
   {
     id: "b-vacances-2026",
-    title: "Retour sur 2 Mois de Formation Gratuite en Informatique : Jeunes de l'ONG IYF d’Essos (Mars - Avril 2026)",
-    summary: "Pendant 2 mois (Mars - Avril 2026), CAMUQ AND TWINS TRAINING a accueilli gratuitement les jeunes de l'ONG IYF d’Essos pour les initier aux outils informatiques.",
-    content: "Pendant 2 mois, en mars et avril 2026, CAMUQ AND TWINS TRAINING a accueilli les jeunes de l'ONG IYF d’Essos pour une formation entièrement gratuite en informatique.\n\nAu programme : manipulation du clavier, prise en main de l'environnement Windows, création de documents sous Microsoft Word, premiers calculs sous Excel et sensibilisation à un usage responsable d'Internet. La session s'est terminée en beauté par une remise officielle d'attestations de fin de formation, sous le regard fier des encadreurs et des formateurs.",
+    title: "Retour sur l'Édition Spéciale Vacances Utiles (15 Juin - 13 Août 2026)",
+    summary: "Pendant les vacances scolaires, CAMUQ AND TWINS TRAINING a initié les jeunes de 9 à 17 ans à l'informatique avec remise solennelle d'attestations.",
+    content: "Pour éviter l'ennui et le vagabondage des enfants durant les vacances scolaires, CAMUQ AND TWINS TRAINING a organisé du 15 juin au 13 août 2026 une session spéciale Vacances Utiles.\n\nAu programme : découverte guidée du matériel informatique, manipulation du clavier, création de documents sous Microsoft Word, initiation aux tableurs Excel et navigation éducative sur Internet. Cette belle session s'est terminée par une remise solennelle d'attestations de réussite et la valorisation des jeunes apprenants devant leurs familles.",
     image: "/images/formation-vacances-1.jpg",
-    date: "Avril 2026",
+    date: "Août 2026",
     author: "Direction CAMUQ AND TWINS TRAINING",
     category: "Formations",
     views: 342

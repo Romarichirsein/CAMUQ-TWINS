@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as Icons from "lucide-react";
-import { FORMATIONS_DATA, VACATION_TRAINING_EVENT } from "../data";
+import { FORMATIONS_DATA, VACATION_TRAINING_EVENT, FREE_TRAINING_EVENT } from "../data";
 import { useLanguage } from "../context/LanguageContext";
 
 interface TrainingPageProps {
@@ -515,7 +515,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
           </div>
         </section>
 
-        {/* SPECIAL FEATURED SECTION: VACANCES UTILES */}
+        {/* ÉVÉNEMENT 1 : ÉDITION SPÉCIALE VACANCES UTILES */}
         <section className="bg-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-slate-800 space-y-8">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
             <div className="space-y-1">
@@ -526,6 +526,10 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
               <h2 className="font-sans font-black text-2xl sm:text-3xl text-white tracking-tight pt-2">
                 {VACATION_TRAINING_EVENT.title}
               </h2>
+            </div>
+            <div className="flex items-center gap-2 bg-blue-950/80 px-4 py-2 rounded-xl border border-blue-800 text-yellow-300 text-xs font-bold">
+              <Icons.Calendar className="w-4 h-4 text-yellow-400" />
+              <span>{VACATION_TRAINING_EVENT.dates}</span>
             </div>
           </div>
 
@@ -548,7 +552,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
               <Icons.Award className="w-10 h-10 text-yellow-400" />
               <div>
                 <h3 className="font-bold text-lg text-white">Impact & Insertion des Jeunes</h3>
-                <p className="text-xs text-slate-300 mt-1">Initiation informatique et pratique au campus de Nkolfoulou.</p>
+                <p className="text-xs text-slate-300 mt-1">Initiation informatique et pratique au campus de Nkolfoulou (9 à 17 ans).</p>
               </div>
               <button
                 onClick={() => handleWhatsAppEnroll("Vacances Utiles Informatique Jeunes")}
@@ -559,46 +563,10 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
             </div>
           </div>
 
-          {/* Video Showcase Section: Formation Gratuite de 2 Mois Offerte aux Jeunes de l'ONG IYF d’Essos (Mars - Avril 2026) */}
-          <div className="bg-slate-950/80 p-5 sm:p-7 rounded-3xl border border-yellow-400/30 space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <div className="space-y-1">
-                <span className="inline-flex items-center gap-1.5 bg-yellow-400/20 text-yellow-400 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-md border border-yellow-400/40">
-                  <Icons.PlayCircle className="w-4 h-4 text-yellow-400" /> Vidéo de Présentation
-                </span>
-                <h3 className="font-sans font-black text-xl text-white">
-                  Formation Gratuite de 2 Mois Offerte aux Jeunes de l'ONG IYF d’Essos
-                </h3>
-              </div>
-              <span className="text-xs text-slate-300 bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700">
-                🎓 Session Solidaire (Mars - Avril 2026)
-              </span>
-            </div>
-
-            {/* Video Player Container */}
-            <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-black shadow-2xl">
-              <video
-                controls
-                preload="metadata"
-                controlsList="nodownload"
-                poster="/images/banniere-nos-formations.jpg"
-                className="w-full max-h-[520px] object-contain mx-auto rounded-2xl"
-              >
-                <source src="/videos/video-formation-vacances.mp4" type="video/mp4" />
-                <source src="/video-formation-vacances.mp4" type="video/mp4" />
-                Votre navigateur ne prend pas en charge la lecture de cette vidéo.
-              </video>
-            </div>
-
-            <p className="text-xs text-slate-300 italic text-center">
-              Découvrez en images les moments forts et les apprentissages pratiques lors de la formation gratuite de 2 mois dispensée aux jeunes de l'ONG IYF d’Essos au centre de Nkolfoulou (Mars - Avril 2026).
-            </p>
-          </div>
-
-          {/* Photo Gallery Grid */}
-          <div className="space-y-4 pt-4">
+          {/* Photo Gallery Grid for Vacances Utiles */}
+          <div className="space-y-4 pt-4 border-t border-slate-800">
             <h3 className="font-bold text-sm uppercase tracking-wider text-yellow-400 flex items-center gap-2">
-              <Icons.Camera className="w-4 h-4" /> Galerie Photos de nos Ateliers
+              <Icons.Camera className="w-4 h-4" /> Galerie Photos : Édition Vacances Utiles
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -619,6 +587,84 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ÉVÉNEMENT 2 : FORMATION GRATUITE DE 2 MOIS (DEPUIS JANVIER) */}
+        <section className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-blue-800/40 space-y-8">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
+            <div className="space-y-1">
+              <span className="inline-flex items-center gap-2 bg-emerald-400 text-slate-950 text-xs font-extrabold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-md">
+                <Icons.HeartHandshake className="w-4 h-4 fill-slate-950" />
+                {FREE_TRAINING_EVENT.subtitle}
+              </span>
+              <h2 className="font-sans font-black text-2xl sm:text-3xl text-white tracking-tight pt-2">
+                {FREE_TRAINING_EVENT.title}
+              </h2>
+            </div>
+            <div className="flex items-center gap-2 bg-slate-800/90 px-4 py-2 rounded-xl border border-slate-700 text-emerald-300 text-xs font-bold">
+              <Icons.Clock className="w-4 h-4 text-emerald-400" />
+              <span>{FREE_TRAINING_EVENT.dates}</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-6 space-y-5">
+              <p className="text-base text-slate-200 leading-relaxed bg-slate-900/90 p-5 rounded-2xl border border-slate-800">
+                {FREE_TRAINING_EVENT.description}
+              </p>
+
+              {/* Highlights without certificates */}
+              <div className="space-y-2.5">
+                <h4 className="text-xs font-black uppercase tracking-wider text-emerald-400">Points Clés de la Formation :</h4>
+                <div className="grid grid-cols-1 gap-2.5">
+                  {FREE_TRAINING_EVENT.highlights.map((h, i) => (
+                    <div key={i} className="flex items-start gap-2.5 bg-slate-900/60 p-3 rounded-xl border border-slate-800">
+                      <Icons.CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <span className="text-xs text-slate-200 font-medium">{h}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Notice regarding attestation */}
+              <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-400/30 flex items-start gap-3">
+                <Icons.Info className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                <p className="text-xs text-amber-200/90 leading-relaxed font-medium">
+                  <strong>Précision :</strong> {FREE_TRAINING_EVENT.noteAttestation} Il s&apos;agissait d&apos;une initiative bénévole et solidaire d&apos;insertion axée exclusivement sur la pratique et l&apos;apprentissage gratuit de l&apos;outil informatique.
+                </p>
+              </div>
+            </div>
+
+            {/* Video Showcase Player */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="bg-slate-950/90 p-4 sm:p-5 rounded-3xl border border-slate-800 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center gap-1.5 bg-emerald-400/20 text-emerald-300 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-md border border-emerald-400/30">
+                    <Icons.PlayCircle className="w-4 h-4 text-emerald-400" /> Vidéo de Présentation
+                  </span>
+                  <span className="text-[11px] text-slate-400">Campus de Nkolfoulou</span>
+                </div>
+
+                <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-black shadow-2xl">
+                  <video
+                    controls
+                    preload="metadata"
+                    controlsList="nodownload"
+                    poster={FREE_TRAINING_EVENT.videoPoster}
+                    className="w-full max-h-[380px] object-contain mx-auto rounded-2xl"
+                  >
+                    <source src={FREE_TRAINING_EVENT.videoUrl} type="video/mp4" />
+                    <source src="/video-formation-vacances.mp4" type="video/mp4" />
+                    Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+                  </video>
+                </div>
+
+                <p className="text-xs text-slate-400 italic text-center">
+                  Aperçu des ateliers d&apos;apprentissage pratique lors de la formation gratuite de 2 mois dispensée au centre de Nkolfoulou.
+                </p>
+              </div>
             </div>
           </div>
         </section>
