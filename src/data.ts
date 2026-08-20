@@ -537,7 +537,7 @@ export const PRODUCT_DATA: ProductItem[] = [
 
 export const VACATION_TRAINING_EVENT = {
   id: "vacances-utiles-2026",
-  title: "Initiation Gratuite à l'Informatique pour les Jeunes (9 à 17 ans)",
+  title: "Initiation à l'Informatique des Jeunes (9 à 17 ans)",
   subtitle: "ÉDITION SPÉCIALE VACANCES UTILES — CAMUQ AND TWINS TRAINING",
   dates: "Du 15 Juin au 13 Août 2026",
   duration: "Session Vacances Scolaires",
