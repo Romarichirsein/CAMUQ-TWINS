@@ -575,14 +575,14 @@ export const VACATION_TRAINING_EVENT = {
 };
 
 export const FREE_TRAINING_EVENT = {
-  id: "formation-gratuite-janvier-2026",
+  id: "formation-gratuite-mars-avril-2026",
   title: "Formation Gratuite de 2 Mois Offerte aux Jeunes",
-  subtitle: "Session Solidaire & Citoyenne (Depuis Janvier 2026) — CAMUQ AND TWINS TRAINING",
-  dates: "Depuis Janvier 2026 (Durée : 2 Mois)",
+  subtitle: "Session Solidaire & Citoyenne (Mars - Avril 2026) — CAMUQ AND TWINS TRAINING",
+  dates: "Mars - Avril 2026 (Durée : 2 Mois)",
   duration: "2 Mois gratuits",
   targetAudience: "Jeunes apprenants & passionnés du numérique",
   location: "Campus de Nkolfoulou, Yaoundé",
-  description: "Organisée depuis janvier 2026, cette formation d'initiation 100% gratuite de 2 mois a permis aux jeunes de découvrir le monde informatique, de pratiquer sur ordinateur et d'acquérir les réflexes de base pour leur autonomie numérique.",
+  description: "Organisée de mars à avril 2026, cette formation d'initiation 100% gratuite de 2 mois a permis aux jeunes de découvrir le monde informatique, de pratiquer sur ordinateur et d'acquérir les réflexes de base pour leur autonomie numérique.",
   noteAttestation: "Session d'initiation solidaire sans délivrance d'attestation.",
   highlights: [
     "Initiation pratique complète et gratuite de 2 mois à l'outil informatique",

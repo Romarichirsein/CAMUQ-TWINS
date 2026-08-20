@@ -591,7 +591,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
           </div>
         </section>
 
-        {/* ÉVÉNEMENT 2 : FORMATION GRATUITE DE 2 MOIS (DEPUIS JANVIER) */}
+        {/* ÉVÉNEMENT 2 : FORMATION GRATUITE DE 2 MOIS (MARS - AVRIL 2026) */}
         <section className="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-blue-800/40 space-y-8">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
             <div className="space-y-1">
