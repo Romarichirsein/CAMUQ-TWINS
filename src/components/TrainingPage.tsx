@@ -515,7 +515,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
           </div>
         </section>
 
-        {/* ÉVÉNEMENT 1 : ÉDITION SPÉCIALE VACANCES UTILES */}
+        {/* ÉVÉNEMENT 1 : VACANCES UTILES ÉDITION 2026 */}
         <section className="bg-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-xl border border-slate-800 space-y-8">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
             <div className="space-y-1">
