@@ -99,8 +99,8 @@ export default function AnnouncementModal({ onNavigateToTraining }: Announcement
                 onClick={() => setIsZoomed(!isZoomed)}
               >
                 <img 
-                  src="/images/affiche-rentree-2026.jpg" 
-                  alt="Affiche Officielle Rentrée Académique 2026-2027 CAMUQ & TWINS TRAINING"
+                  src="/images/flyers.jpeg" 
+                  alt="Flyer Officiel Rentrée Académique CAMUQ & TWINS TRAINING"
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-1.5 backdrop-blur-[2px]">
@@ -223,8 +223,8 @@ export default function AnnouncementModal({ onNavigateToTraining }: Announcement
               <X className="w-6 h-6" /> Fermer l&apos;image
             </button>
             <img 
-              src="/images/affiche-rentree-2026.jpg" 
-              alt="Affiche Officielle Agrandie" 
+              src="/images/flyers.jpeg" 
+              alt="Flyer Officiel Agrandie" 
               className="max-h-[85vh] w-auto rounded-xl shadow-2xl border border-white/20"
             />
           </div>
