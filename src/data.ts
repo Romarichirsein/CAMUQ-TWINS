@@ -1,4 +1,4 @@
-import { ServiceItem, TrainingItem, ProductItem, BlogPost, GalleryItem, TestimonialItem, FaqItem } from "./types";
+import { ServiceItem, TrainingItem, ProductItem, BlogPost, GalleryItem, TestimonialItem, FaqItem, EventItem } from "./types";
 
 export const COMPANY_NAME = "CAMUQ & TWINS EMPIRE Ltd";
 export const COMPANY_SLOGAN = "Building an empire without borders";
@@ -767,5 +767,95 @@ export const FAQ_DATA: FaqItem[] = [
     question: "Quels modes de paiement acceptez-vous ?",
     answer: "Nous acceptons les règlements en espèces dans nos bureaux, les paiements instantanés via MTN Mobile Money et Orange Money, ainsi que les virements bancaires pour les contrats d'entreprises.",
     category: "Général"
+  }
+];
+
+export const EVENTS_DATA: EventItem[] = [
+  {
+    id: "cafe-litteraire-cnps-2026",
+    title: "Participation au 14ᵉ Café littéraire de la CNPS",
+    category: "Rencontre Littéraire & Culturelle",
+    status: "past",
+    badge: "Événement Récent",
+    date: "10 Septembre 2026",
+    time: "Rencontre officielle",
+    location: "Siège / Espace CNPS, Yaoundé",
+    targetAudience: "Acteurs culturels, intellectuels et dirigeants d'entreprises",
+    summary: "La Direction Générale de CAMUQ AND TWINS EMPIRE Ltd a pris part à la 14ᵉ édition du Café littéraire de la CNPS, consacrée à l'ouvrage « La génération buzz ou l’ivresse du divertissement, l’urgence d’estomper » de Eugène Demaison Betteng.",
+    quote: "Chez CAMUQ AND TWINS EMPIRE Ltd, nous croyons que l'entreprise doit aussi être un espace d'apprentissage, d'ouverture et de réflexion.",
+    description: [
+      "La Direction Générale de CAMUQ AND TWINS EMPIRE Ltd a pris part activement à la 14ᵉ édition du Café littéraire de la Caisse Nationale de Prévoyance Sociale (CNPS).",
+      "Cette rencontre littéraire de premier plan a été consacrée à la présentation et au débat autour de l'ouvrage « La génération buzz ou l’ivresse du divertissement, l’urgence d’estomper » de M. Eugène Demaison Betteng.",
+      "L'événement a été l'occasion d'échanger autour de la culture, de la littérature, des transformations sociales et de l'influence du numérique dans notre quotidien.",
+      "Notre présence réaffirme l'engagement de CAMUQ AND TWINS EMPIRE Ltd à promouvoir la culture, le livre, l'excellence intellectuelle et la responsabilité citoyenne dans le monde entrepreneurial."
+    ],
+    image: "/cafe-litteraire-cnps.jpg",
+    priceBadge: "Participation Institutionnelle"
+  },
+  {
+    id: "formation-gratuite-2mois-2026",
+    title: "Session Spéciale : Formation Gratuite de 2 Mois en Informatique & IA",
+    category: "Formation Spéciale",
+    status: "ongoing",
+    badge: "En Cours",
+    date: "Mars - Avril 2026",
+    time: "Séances du matin & soir",
+    location: "Siège CAMUQ & TWINS EMPIRE, Yaoundé",
+    targetAudience: "Jeunes diplômés, chercheurs d'emploi et professionnels en perfectionnement",
+    summary: "Programme intensif 100% gratuit de deux mois couvrant la bureautique professionnelle, l'automatisation et l'initiation aux outils modernes d'Intelligence Artificielle.",
+    quote: "Démocratiser l'accès aux compétences technologiques pour bâtir des profils compétitifs.",
+    description: [
+      "Deux mois d'immersion pratique au sein de notre centre d'apprentissage moderne.",
+      "Modules couverts : Traitement de texte avancé, tableur Excel, cybersécurité de base et prompt engineering pour l'IA générative.",
+      "Accompagnement individualisé par des formateurs certifiés et reconnus.",
+      "Remise d'une attestation de fin de formation qualifiante."
+    ],
+    image: "/banniere-nos-formations.jpg",
+    capacity: "Places limitées (Session actuelle)",
+    priceBadge: "100% Gratuit"
+  },
+  {
+    id: "vacances-utiles-2026",
+    title: "Vacances Utiles Édition 2026 - Initiation à l'Informatique des Jeunes (9 à 17 ans)",
+    category: "Formation Spéciale",
+    status: "upcoming",
+    badge: "Inscriptions Ouvertes",
+    date: "Du 15 Juin au 15 Août 2026",
+    time: "09h00 - 13h00 (Lundi au Vendredi)",
+    location: "Centre CAMUQ & TWINS, Yaoundé",
+    targetAudience: "Élèves du primaire et du secondaire (9 à 17 ans)",
+    summary: "Grand programme d'apprentissage estival : bureautique ludique, infographie junior, découverte de l'IA et sensibilisation à l'usage responsable d'Internet.",
+    quote: "Préparer les leaders et créateurs de demain dès le plus jeune âge.",
+    description: [
+      "Un cursus estival dynamique conçu spécialement pour éveiller le génie numérique des plus jeunes.",
+      "Ateliers 100% pratiques sur ordinateurs individuels : Windows, Word, Excel pour l'école, design graphique junior.",
+      "Jeux pédagogiques, projets de créativité numérique et éducation aux bons usages du web.",
+      "Cérémonie solennelle de clôture et remise de certificats de mérite."
+    ],
+    image: "/flyers.jpeg",
+    capacity: "30 participants par vague",
+    priceBadge: "Tarif Vacances Promo"
+  },
+  {
+    id: "masterclass-infographie-2026",
+    title: "Masterclass Infographie & Design Visuel Professionnel",
+    category: "Atelier Pratique",
+    status: "upcoming",
+    badge: "Bientôt Disponible",
+    date: "Mai 2026",
+    time: "14h00 - 18h00",
+    location: "Laboratoire Multimédia CAMUQ & TWINS EMPIRE",
+    targetAudience: "Infographes débutants, créateurs de contenu, communicants et marketeurs",
+    summary: "Atelier pratique pour maîtriser la conception d'identités visuelles percutantes, les techniques de mise en page pour imprimerie offset et les outils de design assisté par IA.",
+    quote: "De l'idée créative à l'impression finale sur support physique d'excellence.",
+    description: [
+      "Maîtrise des logiciels de référence (Photoshop, Illustrator) pour les supports d'entreprise.",
+      "Préparation professionnelle des fichiers pour l'imprimerie (CMJN, traits de coupe, résolutions).",
+      "Techniques avancées de retouche photo et création de maquettes publicitaires à fort impact.",
+      "Cas pratiques et constitution d'un premier portfolio professionnel pour les participants."
+    ],
+    image: "/formation-infographie.jpg",
+    capacity: "20 places max",
+    priceBadge: "Sur Inscription"
   }
 ];

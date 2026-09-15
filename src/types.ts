@@ -113,3 +113,21 @@ export interface FaqItem {
   answer: string;
   category: string;
 }
+
+export interface EventItem {
+  id: string;
+  title: string;
+  category: "Rencontre Littéraire & Culturelle" | "Formation Spéciale" | "Séminaire & Conférence" | "Atelier Pratique" | "Action Communautaire" | string;
+  status: "upcoming" | "ongoing" | "past";
+  badge: string;
+  date: string;
+  time?: string;
+  location: string;
+  targetAudience?: string;
+  summary: string;
+  quote?: string;
+  description: string[];
+  image: string;
+  capacity?: string;
+  priceBadge?: string;
+}

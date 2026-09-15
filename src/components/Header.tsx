@@ -189,7 +189,19 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
               {navT.trainings}
             </button>
 
-            {/* 4. À Propos (Dropdown: Notre histoire, Mot de la DG, Équipe dirigeante) */}
+            {/* 4. Activités / Événements */}
+            <button
+              onClick={() => handleItemClick("events")}
+              className={`px-3.5 py-2 rounded-lg text-sm font-bold transition-all duration-200 cursor-pointer ${
+                activeSection === "events"
+                  ? "bg-blue-50 text-blue-950 font-extrabold border-b-2 border-blue-900"
+                  : "text-gray-700 hover:text-blue-900 hover:bg-gray-50"
+              }`}
+            >
+              {navT.events}
+            </button>
+
+            {/* 5. À Propos (Dropdown: Notre histoire, Mot de la DG, Équipe dirigeante) */}
             <div className="relative group/aboutdropdown py-2">
               <button
                 onClick={() => handleItemClick("about")}
@@ -335,6 +347,18 @@ export default function Header({ onNavigate, activeSection }: HeaderProps) {
               className="block w-full text-left px-4 py-2.5 rounded-xl text-base font-bold text-gray-800 hover:bg-blue-50"
             >
               {navT.trainings}
+            </button>
+
+            {/* Activités / Événements Mobile */}
+            <button
+              onClick={() => handleItemClick("events")}
+              className={`block w-full text-left px-4 py-2.5 rounded-xl text-base font-bold transition-colors ${
+                activeSection === "events"
+                  ? "bg-blue-50 text-blue-950 font-black border-l-4 border-blue-900"
+                  : "text-gray-800 hover:bg-blue-50"
+              }`}
+            >
+              {navT.events}
             </button>
 
             {/* À Propos Mobile Dropdown */}

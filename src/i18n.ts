@@ -19,6 +19,7 @@ export const translations = {
       home: "Accueil",
       services: "Nos Services",
       trainings: "Nos Formations",
+      events: "ACTIVITÉS / ÉVÉNEMENTS",
       about: "À Propos",
       contact: "Contact",
       aiAssistant: "Assistant IA",
@@ -292,6 +293,32 @@ export const translations = {
       errorGeneral: "Désolé, je rencontre des difficultés techniques à traiter votre demande. Veuillez réessayer.",
       errorNetwork: "Une erreur réseau est survenue. Veuillez vérifier votre connexion et m'écrire à nouveau.",
       chatTitle: "Discuter avec l'IA CAMUQ & TWINS EMPIRE"
+    },
+
+    // Activités & Événements
+    events: {
+      pageTag: "Chronologie & Événements",
+      pageTitle: "Nos Activités & Événements",
+      pageSubtitle: "Découvrez la chronologie vivante de CAMUQ & TWINS EMPIRE : rencontres littéraires, formations de pointe, ateliers pratiques, partenariats et actions citoyennes.",
+      filterAll: "Tous les événements",
+      filterUpcoming: "À Venir",
+      filterOngoing: "En Cours",
+      filterPast: "Rétrospectives / Passés",
+      searchPlaceholder: "Rechercher une activité, un lieu ou un mot-clé...",
+      dateLabel: "Date",
+      locationLabel: "Lieu",
+      activityLabel: "Activité",
+      summaryLabel: "Résumé",
+      photoLabel: "Photos & Visuels",
+      audienceLabel: "Public Cible",
+      registerBtn: "S'inscrire / Participer",
+      detailsBtn: "Consulter la fiche complète",
+      whatsappBtn: "Échanger sur WhatsApp",
+      closeModal: "Fermer la fiche",
+      noResults: "Aucune activité ne correspond à vos critères de recherche.",
+      resetFilters: "Réinitialiser les filtres",
+      programTitle: "Programme & Points Clés",
+      quoteTitle: "Vision & Réflexion Citoyenne"
     }
   },
 
@@ -313,6 +340,7 @@ export const translations = {
       home: "Home",
       services: "Our Services",
       trainings: "Our Trainings",
+      events: "ACTIVITIES & EVENTS",
       about: "About Us",
       contact: "Contact",
       aiAssistant: "AI Assistant",
@@ -586,6 +614,32 @@ export const translations = {
       errorGeneral: "Sorry, I'm experiencing technical difficulties processing your request. Please try again.",
       errorNetwork: "A network error occurred. Please check your connection and write to me again.",
       chatTitle: "Chat with CAMUQ & TWINS EMPIRE AI"
+    },
+
+    // Activities & Events
+    events: {
+      pageTag: "Timeline & Events",
+      pageTitle: "Our Activities & Events",
+      pageSubtitle: "Explore the living timeline of CAMUQ & TWINS EMPIRE: literary meetings, cutting-edge training, practical workshops, partnerships, and civic actions.",
+      filterAll: "All Events",
+      filterUpcoming: "Upcoming",
+      filterOngoing: "Ongoing",
+      filterPast: "Past / Retrospectives",
+      searchPlaceholder: "Search an activity, location, or keyword...",
+      dateLabel: "Date",
+      locationLabel: "Location",
+      activityLabel: "Activity",
+      summaryLabel: "Summary",
+      photoLabel: "Photos & Media",
+      audienceLabel: "Target Audience",
+      registerBtn: "Register / Participate",
+      detailsBtn: "View Full Event Sheet",
+      whatsappBtn: "Inquire via WhatsApp",
+      closeModal: "Close Sheet",
+      noResults: "No activities found matching your search criteria.",
+      resetFilters: "Reset filters",
+      programTitle: "Program & Key Highlights",
+      quoteTitle: "Vision & Civic Thought"
     }
   }
 };

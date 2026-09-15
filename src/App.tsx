@@ -17,6 +17,7 @@ import FaqPage from "./components/FaqPage";
 import ContactPage from "./components/ContactPage";
 import AppointmentPage from "./components/AppointmentPage";
 import AdminDashboard from "./components/AdminDashboard";
+import EventsPage from "./components/EventsPage";
 
 // Widgets
 import ChatBotWidget from "./components/ChatBotWidget";
@@ -24,13 +25,15 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import AnnouncementModal from "./components/AnnouncementModal";
 import { Language } from "./i18n";
 
-type ViewType = "home" | "about" | "training" | "services" | "products" | "gallery" | "blog" | "faq" | "contact" | "appointment" | "admin";
+type ViewType = "home" | "about" | "training" | "services" | "products" | "gallery" | "blog" | "faq" | "contact" | "appointment" | "admin" | "events";
 
 const pathToViewMap: Record<string, ViewType> = {
   "/": "home",
   "/accueil": "home",
   "/nos-services": "services",
   "/nos-formations": "training",
+  "/activites-evenements": "events",
+  "/evenements": "events",
   "/a-propos": "about",
   "/produits": "products",
   "/galerie": "gallery",
@@ -46,6 +49,7 @@ const viewToPathMap: Record<string, string> = {
   home: "/accueil",
   services: "/nos-services",
   training: "/nos-formations",
+  events: "/activites-evenements",
   about: "/a-propos",
   products: "/produits",
   gallery: "/galerie",
@@ -143,6 +147,11 @@ export default function App() {
     handleNavigate("contact");
   };
 
+  const handleRegisterEvent = (eventName: string) => {
+    setPrefilledSubject(`Participation / Inscription : ${eventName}`);
+    handleNavigate("contact");
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col justify-between selection:bg-blue-900 selection:text-white font-sans antialiased text-gray-800">
       
@@ -199,6 +208,10 @@ export default function App() {
 
         {currentView === "training" && (
           <TrainingPage onRegister={handleRegisterTraining} />
+        )}
+
+        {currentView === "events" && (
+          <EventsPage onRegister={handleRegisterEvent} />
         )}
 
         {currentView === "services" && (
