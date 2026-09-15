@@ -193,6 +193,12 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
             <span className="text-xs font-black uppercase tracking-widest text-emerald-300 bg-emerald-500/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-emerald-400/40 shadow-md flex items-center gap-1.5">
               <Icons.Award className="w-4 h-4 text-emerald-400" /> Agréé par le MINEFOP
             </span>
+            <a 
+              href="#formation-a-la-carte" 
+              className="text-xs font-black uppercase tracking-widest text-blue-950 bg-yellow-400 hover:bg-yellow-500 backdrop-blur-md px-4 py-1.5 rounded-full border border-yellow-300 shadow-md flex items-center gap-1.5 transition-all hover:scale-105 cursor-pointer"
+            >
+              <Icons.Sparkles className="w-3.5 h-3.5 fill-blue-950" /> Formation à la carte disponible
+            </a>
           </div>
 
           <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight text-balance drop-shadow-lg">
@@ -202,7 +208,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
             Ambition — Compétence — Réalisation
           </p>
           <p className="text-xs sm:text-base text-slate-200 leading-relaxed font-medium max-w-3xl mx-auto text-balance">
-            Des Formations Diplômantes (DQP) et Certifiantes (CQP) pour l&apos;insertion professionnelle rapide des jeunes et des salariés au Cameroun.
+            Des Formations Diplômantes (DQP), Certifiantes (CQP) et Formations à la carte sur mesure pour l&apos;insertion professionnelle rapide des jeunes et des salariés au Cameroun.
           </p>
         </div>
       </div>
@@ -421,6 +427,121 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
             <span className="text-sm font-black text-blue-950 bg-white px-5 py-2.5 rounded-2xl border border-slate-200 shadow-sm inline-block">
               ✨ Et plusieurs AUTRES MÉTIERS disponibles au centre !
             </span>
+          </div>
+        </section>
+
+        {/* SECTION : FORMATION À LA CARTE (SUR MESURE) */}
+        <section id="formation-a-la-carte" className="bg-gradient-to-br from-blue-950 via-slate-900 to-blue-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl border-2 border-yellow-400/40 relative overflow-hidden space-y-8 scroll-mt-24">
+          <div className="absolute -right-16 -top-16 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -left-16 -bottom-16 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4">
+            <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-blue-950 bg-yellow-400 px-4 py-1.5 rounded-full shadow-md">
+              <Icons.Sparkles className="w-4 h-4 fill-blue-950" />
+              <span>{lang === "fr" ? "Formule 100% Personnalisée" : "100% Customized Formula"}</span>
+            </div>
+
+            <h2 className="font-sans font-black text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight">
+              {lang === "fr" ? "Formation à la Carte" : "Custom / À La Carte Training"}
+            </h2>
+
+            <p className="text-base sm:text-xl text-yellow-300 font-extrabold leading-relaxed max-w-3xl mx-auto">
+              {lang === "fr" 
+                ? "Vous choisissez vos modules, votre niveau, votre rythme et votre lieu de formation." 
+                : "You choose your modules, your level, your pace, and your training location."}
+            </p>
+            <p className="text-xs sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
+              {lang === "fr"
+                ? "Nous construisons un programme adapté à vos besoins et à vos objectifs professionnels."
+                : "We build a customized program adapted to your specific needs and professional goals."}
+            </p>
+          </div>
+
+          {/* Les 4 dimensions de la formation à la carte */}
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-2">
+            {/* 1. Vos Modules */}
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 space-y-3 hover:bg-white/15 transition-all hover:-translate-y-1 shadow-sm">
+              <div className="p-3 bg-yellow-400 text-blue-950 rounded-xl w-fit font-black shadow-md">
+                <Icons.Layers className="w-6 h-6" />
+              </div>
+              <h3 className="font-sans font-black text-lg text-white">
+                {lang === "fr" ? "Vos Modules" : "Your Modules"}
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                {lang === "fr" 
+                  ? "Bureautique, IA, Infographie, Langues, Comptabilité, Marketing... Composez votre cursus sur mesure."
+                  : "Office automation, AI, Graphic Design, Languages, Accounting, Marketing... Design your custom path."}
+              </p>
+            </div>
+
+            {/* 2. Votre Niveau */}
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 space-y-3 hover:bg-white/15 transition-all hover:-translate-y-1 shadow-sm">
+              <div className="p-3 bg-yellow-400 text-blue-950 rounded-xl w-fit font-black shadow-md">
+                <Icons.BarChart3 className="w-6 h-6" />
+              </div>
+              <h3 className="font-sans font-black text-lg text-white">
+                {lang === "fr" ? "Votre Niveau" : "Your Level"}
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                {lang === "fr"
+                  ? "Initiation débutant, remise à niveau accélérée ou perfectionnement expert adapté à vos compétences."
+                  : "Complete beginner, quick refresher, or advanced masterclasses tailored to your background."}
+              </p>
+            </div>
+
+            {/* 3. Votre Rythme */}
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 space-y-3 hover:bg-white/15 transition-all hover:-translate-y-1 shadow-sm">
+              <div className="p-3 bg-yellow-400 text-blue-950 rounded-xl w-fit font-black shadow-md">
+                <Icons.Clock className="w-6 h-6" />
+              </div>
+              <h3 className="font-sans font-black text-lg text-white">
+                {lang === "fr" ? "Votre Rythme" : "Your Pace"}
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                {lang === "fr"
+                  ? "En journée, cours du soir, sessions intensives de week-end ou planning étalé selon votre disponibilité."
+                  : "Day classes, evening sessions, intensive weekend bootcamps, or customized flexible schedule."}
+              </p>
+            </div>
+
+            {/* 4. Votre Lieu */}
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 space-y-3 hover:bg-white/15 transition-all hover:-translate-y-1 shadow-sm">
+              <div className="p-3 bg-yellow-400 text-blue-950 rounded-xl w-fit font-black shadow-md">
+                <Icons.MapPin className="w-6 h-6" />
+              </div>
+              <h3 className="font-sans font-black text-lg text-white">
+                {lang === "fr" ? "Votre Lieu" : "Your Location"}
+              </h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                {lang === "fr"
+                  ? "Dans notre centre équipé (Campus Nkolfoulou, Yaoundé), directement dans votre entreprise ou en ligne."
+                  : "In our fully equipped campus (Yaoundé), on-site at your company, or 100% online."}
+              </p>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="relative z-10 pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={() => onRegister("Formation à la carte (Programme sur mesure)")}
+              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-black text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl hover:shadow-yellow-400/30 hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2"
+            >
+              <Icons.FileCheck className="w-4 h-4" />
+              <span>{lang === "fr" ? "Demander Ma Formation sur Mesure" : "Request My Custom Training"}</span>
+            </button>
+
+            <button
+              onClick={() => {
+                const text = encodeURIComponent(
+                  "Bonjour CAMUQ & TWINS TRAINING, je souhaite concevoir une *Formation à la carte sur mesure* (choix de modules, rythme et lieu). Pouvez-vous me renseigner ?"
+                );
+                window.open(`https://wa.me/237675231283?text=${text}`, "_blank");
+              }}
+              className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-xl hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2"
+            >
+              <Icons.MessageSquare className="w-4 h-4" />
+              <span>{lang === "fr" ? "Échanger sur WhatsApp" : "Discuss on WhatsApp"}</span>
+            </button>
           </div>
         </section>
 
