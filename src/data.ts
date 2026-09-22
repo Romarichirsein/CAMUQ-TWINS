@@ -818,23 +818,23 @@ export const EVENTS_DATA: EventItem[] = [
     id: "vacances-utiles-2026",
     title: "Vacances Utiles Édition 2026 - Initiation à l'Informatique des Jeunes (9 à 17 ans)",
     category: "Formation Spéciale",
-    status: "upcoming",
-    badge: "Inscriptions Ouvertes",
-    date: "Du 15 Juin au 15 Août 2026",
+    status: "past",
+    badge: "Session Clôturée",
+    date: "Du 15 Juin au 13 Août 2026",
     time: "09h00 - 13h00 (Lundi au Vendredi)",
     location: "Centre CAMUQ & TWINS, Yaoundé",
     targetAudience: "Élèves du primaire et du secondaire (9 à 17 ans)",
-    summary: "Grand programme d'apprentissage estival : bureautique ludique, infographie junior, découverte de l'IA et sensibilisation à l'usage responsable d'Internet.",
+    summary: "Grand programme d'apprentissage estival achevé avec succès : bureautique ludique, infographie junior, découverte de l'IA et remise solennelle d'attestations.",
     quote: "Préparer les leaders et créateurs de demain dès le plus jeune âge.",
     description: [
       "Un cursus estival dynamique conçu spécialement pour éveiller le génie numérique des plus jeunes.",
       "Ateliers 100% pratiques sur ordinateurs individuels : Windows, Word, Excel pour l'école, design graphique junior.",
       "Jeux pédagogiques, projets de créativité numérique et éducation aux bons usages du web.",
-      "Cérémonie solennelle de clôture et remise de certificats de mérite."
+      "Cérémonie solennelle de clôture et remise de certificats de mérite aux lauréats."
     ],
     image: "/flyers.jpeg",
-    capacity: "30 participants par vague",
-    priceBadge: "Tarif Vacances Promo"
+    capacity: "Session achevée",
+    priceBadge: "Édition Terminée"
   },
   {
     id: "masterclass-infographie-2026",
