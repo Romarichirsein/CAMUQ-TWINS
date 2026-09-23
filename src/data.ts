@@ -131,6 +131,31 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
 
   {
+    id: "ed-edu-secrets-secretariat",
+    name: "Brochure : Les Secrets Pratiques du Secrétariat (Niveau Débutant)",
+    category: "edition",
+    subCategory: "education",
+    priceEstimate: "1 000 FCFA",
+    unit: "exemplaire",
+    baseCost: 1000,
+    hidePrice: false,
+    description: "Apprenez les fondamentaux du secrétariat de manière simple, pratique et professionnelle ! Vous débutez dans le secrétariat, êtes étudiant(e) ou souhaitez vous perfectionner ? Cette brochure pratique vous accompagne dans l'acquisition des bonnes pratiques indispensables au métier de Secrétaire et d'Assistant(e).",
+    icon: "BookOpen",
+    coverImage: "/secrets-pratiques-secretariat.jpg",
+    badge: "Brochure Pratique • 1 000 FCFA",
+    features: [
+      "Auteur : Flore Nouteli Foyett",
+      "Éditeur : CAMUQ AND TWINS EMPIRE Ltd",
+      "Niveau : Débutant",
+      "Les fondamentaux du métier de secrétaire",
+      "Les bonnes pratiques professionnelles",
+      "Attitudes et comportements professionnels",
+      "Conseils pratiques pour mieux exercer le métier",
+      "Remise de 30% offerte aux distributeurs",
+      "Disponible à la vente immédiate"
+    ]
+  },
+  {
     id: "ed-edu-manuels",
     name: "Édition de Manuels Scolaires",
     category: "edition",
@@ -431,6 +456,17 @@ export const FORMATIONS_DATA: TrainingItem[] = [
 ];
 
 export const PRODUCT_DATA: ProductItem[] = [
+  {
+    id: "p-brochure-secretariat",
+    name: "Brochure : Les Secrets Pratiques du Secrétariat (Niveau Débutant)",
+    category: "papeterie",
+    price: 1000,
+    hidePrice: false,
+    unit: "exemplaire",
+    image: "/secrets-pratiques-secretariat.jpg",
+    description: "Par Flore Nouteli Foyett — Éditions CAMUQ AND TWINS EMPIRE Ltd. Les fondamentaux, bonnes pratiques professionnelles, attitudes et conseils indispensables pour réussir dans le métier de Secrétaire et d'Assistant(e). Remise exceptionnelle de 30% offerte aux distributeurs !",
+    available: true
+  },
   {
     id: "p-1",
     name: "Papeterie Bilingue & Bureau",

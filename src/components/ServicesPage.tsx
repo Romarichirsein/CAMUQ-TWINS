@@ -219,17 +219,33 @@ export default function ServicesPage({ onQuoteRequest, activeFilter, setActiveFi
                 )}
               </div>
 
-              <div className="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between">
+              <div className="mt-8 pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-2">
                 <div>
-                  <span className="text-[9px] text-gray-400 block uppercase font-bold tracking-wider">Tarif estimé</span>
+                  <span className="text-[9px] text-gray-400 block uppercase font-bold tracking-wider">
+                    {service.hidePrice ? "Tarif estimé" : "Prix"}
+                  </span>
                   <span className="text-sm font-extrabold text-blue-900">{service.priceEstimate}</span>
                 </div>
-                <button
-                  onClick={() => onQuoteRequest(service.name)}
-                  className="px-4 py-2 bg-blue-900 hover:bg-yellow-400 hover:text-blue-950 text-xs font-black text-white rounded-xl shadow-sm transition-all flex items-center gap-1 cursor-pointer"
-                >
-                  Commander <Icons.ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      const text = encodeURIComponent(
+                        `Bonjour CAMUQ & TWINS EMPIRE ! 👋\n\nJe souhaite commander :\n📚 *${service.name}*\n💰 Tarif : ${service.priceEstimate}\n\nMerci de m'indiquer les modalités d'achat et de livraison.`
+                      );
+                      window.open(`https://wa.me/237675231283?text=${text}`, "_blank");
+                    }}
+                    className="p-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl shadow-xs transition-colors cursor-pointer flex items-center justify-center"
+                    title="Commander directement sur WhatsApp"
+                  >
+                    <Icons.MessageSquare className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => onQuoteRequest(service.name)}
+                    className="px-3.5 py-2 bg-blue-900 hover:bg-yellow-400 hover:text-blue-950 text-xs font-black text-white rounded-xl shadow-sm transition-all flex items-center gap-1 cursor-pointer"
+                  >
+                    Commander <Icons.ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
