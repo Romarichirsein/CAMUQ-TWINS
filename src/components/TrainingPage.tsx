@@ -166,7 +166,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
 
   const handleWhatsAppEnroll = (formationName: string) => {
     const text = encodeURIComponent(
-      `Bonjour CAMUQ & TWINS TRAINING, je souhaite m'inscrire à la formation : ${formationName} pour la rentrée du 14 Septembre 2026.`
+      `Bonjour CAMUQ & TWINS TRAINING, je souhaite m'inscrire à la formation : ${formationName} pour la rentrée du 12 Octobre 2026.`
     );
     window.open(`https://wa.me/237675231283?text=${text}`, "_blank");
   };
@@ -231,7 +231,7 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
                 </span>
 
                 <h2 className="font-sans font-black text-2xl sm:text-4xl text-white tracking-tight pt-1">
-                  LUNDI 14 SEPTEMBRE 2026 À 7H30
+                  LUNDI 12 OCTOBRE 2026 À 7H30
                 </h2>
                 
                 <div className="flex items-center gap-2 text-yellow-300 text-xs sm:text-sm font-bold">
@@ -253,11 +253,11 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
-                  onClick={() => handleWhatsAppEnroll("Rentrée Septembre 2026")}
+                  onClick={() => handleWhatsAppEnroll("Rentrée 12 Octobre 2026")}
                   className="px-6 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-black text-xs uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 cursor-pointer"
                 >
                   <Icons.MessageSquare className="w-4 h-4" />
-                  S&apos;inscrire à la Rentrée du 14 Septembre
+                  S&apos;inscrire à la Rentrée du 12 Octobre
                 </button>
 
                 <button

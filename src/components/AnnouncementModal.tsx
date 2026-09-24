@@ -41,7 +41,7 @@ export default function AnnouncementModal({ onNavigateToTraining }: Announcement
 
   const handleWhatsAppClick = () => {
     const text = encodeURIComponent(
-      "Bonjour CAMUQ & TWINS TRAINING, je souhaite me pré-inscrire pour la rentrée académique du Lundi 14 Septembre 2026 à 7h30 et bénéficier de la remise de 5%."
+      "Bonjour CAMUQ & TWINS TRAINING, je souhaite me pré-inscrire pour la rentrée académique du Lundi 12 Octobre 2026 à 7h30 et bénéficier de la remise de 5%."
     );
     window.open(`https://wa.me/237675231283?text=${text}`, "_blank");
   };
@@ -137,7 +137,7 @@ export default function AnnouncementModal({ onNavigateToTraining }: Announcement
                 </div>
                 <div className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
                   <Clock className="w-5 h-5 text-yellow-400" />
-                  LUNDI 14 SEPTEMBRE 2026 À 7H30
+                  LUNDI 12 OCTOBRE 2026 À 7H30
                 </div>
                 <div className="flex items-center gap-1.5 text-xs text-slate-200">
                   <MapPin className="w-4 h-4 text-yellow-400 shrink-0" />
