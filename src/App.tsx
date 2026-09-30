@@ -5,6 +5,7 @@ import ServicesSection from "./components/ServicesSection";
 import Footer from "./components/Footer";
 import TestimonialsSection from "./components/TestimonialsSection";
 import PartnersSection from "./components/PartnersSection";
+import PricingDownloadSection from "./components/PricingDownloadSection";
 
 // Modular Pages
 import AboutUs from "./components/AboutUs";
@@ -167,6 +168,12 @@ export default function App() {
             
             {/* Quick interactive cost/devis estimator banner tabs */}
             <ServicesSection onQuoteRequest={handleQuoteRequest} />
+
+            {/* Official Training Tuition & Schedule Download Section */}
+            <PricingDownloadSection 
+              onNavigate={handleNavigate} 
+              onRegisterTraining={handleRegisterTraining} 
+            />
 
             {/* Quick Promo banner leading to Formations */}
             <div className="py-16 bg-slate-900 text-white relative overflow-hidden border-y border-slate-950">

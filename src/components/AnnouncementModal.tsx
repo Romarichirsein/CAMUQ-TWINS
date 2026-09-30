@@ -99,7 +99,7 @@ export default function AnnouncementModal({ onNavigateToTraining }: Announcement
                 onClick={() => setIsZoomed(!isZoomed)}
               >
                 <img 
-                  src="/images/flyers.jpeg" 
+                  src="/images/pop.jpeg" 
                   alt="Flyer Officiel Rentrée Académique CAMUQ & TWINS TRAINING"
                   className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
@@ -223,7 +223,7 @@ export default function AnnouncementModal({ onNavigateToTraining }: Announcement
               <X className="w-6 h-6" /> Fermer l&apos;image
             </button>
             <img 
-              src="/images/flyers.jpeg" 
+              src="/images/pop.jpeg" 
               alt="Flyer Officiel Agrandie" 
               className="max-h-[85vh] w-auto rounded-xl shadow-2xl border border-white/20"
             />

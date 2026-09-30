@@ -266,6 +266,15 @@ export default function TrainingPage({ onRegister }: TrainingPageProps) {
                 >
                   Réserver en ligne
                 </button>
+
+                <a
+                  href="/documents/Tarifaire-2026-2027-CAMUQ-TWINS.pdf"
+                  download="Grille-Tarifaire-2026-2027-CAMUQ-TWINS.pdf"
+                  className="px-5 py-3.5 rounded-xl bg-yellow-400/20 hover:bg-yellow-400 text-yellow-300 hover:text-blue-950 font-black text-xs uppercase tracking-wider border border-yellow-400/50 transition-all flex items-center gap-2 cursor-pointer"
+                >
+                  <Icons.Download className="w-4 h-4" />
+                  <span>Grille Tarifaire (PDF)</span>
+                </a>
               </div>
 
             </div>
