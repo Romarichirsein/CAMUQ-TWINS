@@ -14,7 +14,9 @@ import {
   MessageSquare,
   Sparkles,
   CheckCircle2,
-  Share2
+  Share2,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { EVENTS_DATA, COMPANY_PHONES } from "../data";
 import { EventItem } from "../types";
@@ -31,6 +33,12 @@ export default function EventsPage({ onRegister }: EventsPageProps) {
   const [activeStatus, setActiveStatus] = useState<"all" | "upcoming" | "ongoing" | "past">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+  const [activeModalImage, setActiveModalImage] = useState<string | null>(null);
+
+  const handleOpenEvent = (event: EventItem) => {
+    setSelectedEvent(event);
+    setActiveModalImage(event.gallery && event.gallery.length > 0 ? event.gallery[0] : event.image);
+  };
 
   // Counts for filter pills
   const counts = useMemo(() => {
@@ -233,7 +241,10 @@ export default function EventsPage({ onRegister }: EventsPageProps) {
                   className="bg-white rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group"
                 >
                   {/* Visual Header / Photo */}
-                  <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-900">
+                  <div 
+                    onClick={() => handleOpenEvent(event)}
+                    className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-900 cursor-pointer"
+                  >
                     <img
                       src={event.image}
                       alt={event.title}
@@ -249,11 +260,20 @@ export default function EventsPage({ onRegister }: EventsPageProps) {
                         {event.badge || statusBadge.label}
                       </span>
 
-                      {event.priceBadge && (
-                        <span className="text-[11px] font-black uppercase tracking-wider bg-yellow-400 text-blue-950 px-3 py-1 rounded-full shadow-xs border border-yellow-300">
-                          {event.priceBadge}
-                        </span>
-                      )}
+                      <div className="flex items-center gap-2">
+                        {event.gallery && event.gallery.length > 1 && (
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-slate-950/70 text-white backdrop-blur-xs border border-white/20 shadow-xs">
+                            <Camera className="w-3.5 h-3.5 text-yellow-400" />
+                            <span>{event.gallery.length} photos</span>
+                          </span>
+                        )}
+
+                        {event.priceBadge && (
+                          <span className="text-[11px] font-black uppercase tracking-wider bg-yellow-400 text-blue-950 px-3 py-1 rounded-full shadow-xs border border-yellow-300">
+                            {event.priceBadge}
+                          </span>
+                        )}
+                      </div>
                     </div>
 
                     {/* Bottom Floating Title Info */}
@@ -360,7 +380,7 @@ export default function EventsPage({ onRegister }: EventsPageProps) {
                     {/* Action Buttons */}
                     <div className="pt-2 flex flex-wrap items-center gap-3">
                       <button
-                        onClick={() => setSelectedEvent(event)}
+                        onClick={() => handleOpenEvent(event)}
                         className="flex-1 min-w-[140px] px-4 py-2.5 rounded-xl bg-blue-950 hover:bg-blue-900 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer"
                       >
                         <FileText className="w-3.5 h-3.5 text-yellow-400" />
@@ -415,14 +435,51 @@ export default function EventsPage({ onRegister }: EventsPageProps) {
             </button>
 
             {/* Modal Image Header */}
-            <div className="relative h-64 sm:h-80 w-full bg-slate-900">
+            <div className="relative h-64 sm:h-96 w-full bg-slate-900 group">
               <img
-                src={selectedEvent.image}
+                src={activeModalImage || selectedEvent.image}
                 alt={selectedEvent.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-all duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
               
+              {/* Carousel Controls if multiple images in gallery */}
+              {selectedEvent.gallery && selectedEvent.gallery.length > 1 && (
+                <>
+                  <button
+                    onClick={() => {
+                      const list = selectedEvent.gallery!;
+                      const currentIdx = list.indexOf(activeModalImage || selectedEvent.image);
+                      const prevIdx = (currentIdx - 1 + list.length) % list.length;
+                      setActiveModalImage(list[prevIdx]);
+                    }}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-950/70 hover:bg-slate-900 text-white transition-all cursor-pointer shadow-md"
+                    title="Photo précédente"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={() => {
+                      const list = selectedEvent.gallery!;
+                      const currentIdx = list.indexOf(activeModalImage || selectedEvent.image);
+                      const nextIdx = (currentIdx + 1) % list.length;
+                      setActiveModalImage(list[nextIdx]);
+                    }}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-950/70 hover:bg-slate-900 text-white transition-all cursor-pointer shadow-md"
+                    title="Photo suivante"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+
+                  <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-950/80 text-white backdrop-blur-xs border border-white/20">
+                    <Camera className="w-3.5 h-3.5 text-yellow-400" />
+                    <span>
+                      {Math.max(1, (selectedEvent.gallery.indexOf(activeModalImage || selectedEvent.image) + 1))} / {selectedEvent.gallery.length}
+                    </span>
+                  </div>
+                </>
+              )}
+
               <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
                 <span className="inline-block text-[11px] font-black uppercase tracking-widest bg-yellow-400 text-blue-950 px-3 py-1 rounded-full">
                   {selectedEvent.category}
@@ -488,6 +545,49 @@ export default function EventsPage({ onRegister }: EventsPageProps) {
                 </div>
               </div>
 
+              {/* Galerie Photos avec sélection interactive */}
+              {selectedEvent.gallery && selectedEvent.gallery.length > 1 && (
+                <div className="space-y-3 pt-2">
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-xs sm:text-sm font-black uppercase tracking-wider text-blue-950 flex items-center gap-2">
+                      <Camera className="w-4 h-4 text-yellow-500" />
+                      <span>Photos de l'événement ({selectedEvent.gallery.length})</span>
+                    </h4>
+                    <span className="text-[11px] text-gray-500 hidden sm:inline">
+                      Cliquez sur une photo pour l'agrandir
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-3">
+                    {selectedEvent.gallery.map((imgUrl, idx) => {
+                      const isSelected = (activeModalImage || selectedEvent.image) === imgUrl;
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => setActiveModalImage(imgUrl)}
+                          className={`relative rounded-2xl overflow-hidden aspect-video border-2 transition-all cursor-pointer group/thumb ${
+                            isSelected
+                              ? "border-yellow-400 ring-2 ring-yellow-400/50 scale-[1.02] shadow-md"
+                              : "border-gray-200 hover:border-blue-900 opacity-80 hover:opacity-100"
+                          }`}
+                        >
+                          <img
+                            src={imgUrl}
+                            alt={`${selectedEvent.title} - ${idx + 1}`}
+                            className="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform duration-300"
+                          />
+                          {isSelected && (
+                            <div className="absolute inset-0 bg-yellow-400/20 border-b-2 border-yellow-400 flex items-center justify-center">
+                              <span className="bg-yellow-400 text-blue-950 font-black text-[10px] px-2 py-0.5 rounded-full shadow-xs">Active</span>
+                            </div>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
               {/* Modal Footer Actions */}
               <div className="pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">
                 <button
@@ -521,7 +621,6 @@ export default function EventsPage({ onRegister }: EventsPageProps) {
                   )}
                 </div>
               </div>
-
             </div>
           </div>
         </div>

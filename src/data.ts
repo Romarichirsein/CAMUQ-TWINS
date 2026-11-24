@@ -632,6 +632,27 @@ export const FREE_TRAINING_EVENT = {
 
 export const GALLERY_DATA: GalleryItem[] = [
   {
+    id: "g-lit-1",
+    title: "Mme la Directrice Générale — Semaine de la Littérature Francophone",
+    category: "autres",
+    image: "/images/semaine-litterature-dg.jpg",
+    description: "Présence remarquable de Madame la Directrice Générale de CAMUQ AND TWINS EMPIRE Ltd au Lac municipal de Yaoundé pour l'ouverture de la Semaine de la littérature francophone."
+  },
+  {
+    id: "g-lit-2",
+    title: "Cérémonie d'ouverture & Balade littéraire",
+    category: "autres",
+    image: "/images/semaine-litterature-discours.jpg",
+    description: "Balade littéraire avec les étudiants de la filière Édition et allocution officielle d'ouverture au Lac municipal de Yaoundé."
+  },
+  {
+    id: "g-lit-3",
+    title: "Sieste littéraire & Conte traditionnel en plein air",
+    category: "autres",
+    image: "/images/semaine-litterature-sieste-artistique.jpg",
+    description: "Performance artistique originale mêlant narration, poésie et sonorités d'instruments traditionnels africains."
+  },
+  {
     id: "g-vac-1",
     title: "Remise des attestations — Vacances Utiles",
     category: "formations",
@@ -697,6 +718,17 @@ export const GALLERY_DATA: GalleryItem[] = [
 ];
 
 export const BLOG_DATA: BlogPost[] = [
+  {
+    id: "b-semaine-litterature-2026",
+    title: "Ouverture de la Semaine de la Littérature Francophone au Lac municipal de Yaoundé",
+    summary: "La Directrice Générale de CAMUQ AND TWINS EMPIRE Ltd a pris part à la cérémonie d'ouverture : balade littéraire avec les étudiants en Édition, sieste littéraire et performance artistique.",
+    content: "Le 22 novembre 2026, au Lac municipal de Yaoundé, la Directrice Générale de CAMUQ AND TWINS EMPIRE Ltd a pris part à la cérémonie d'ouverture de la Semaine de la littérature francophone.\n\nCette première journée a été marquée par une balade littéraire avec les étudiants de la filière Édition, suivie d'une expérience originale de sieste littéraire, invitant les participants à vivre la littérature autrement, dans un cadre convivial et en plein air.\n\nEntre le discours d'ouverture de l'Institut français du Cameroun et une performance artistique mêlant narration et sonorités d'instruments traditionnels, les mots, les cultures et les arts se sont rencontrés pour offrir au public un moment riche en découvertes.\n\nUne belle initiative qui rappelle que la littérature ne se limite pas aux pages d'un livre : elle se partage, s'écoute, se vit et se transmet.\n\nCAMUQ AND TWINS EMPIRE Ltd salue cette initiative et souhaite une excellente semaine à tous les acteurs du livre, de l'édition et de la culture.\n\n« Building an Empire Without Borders. »\n\n#CAMUQAndTwinsEmpire #LittératureFrancophone #Édition #Culture",
+    image: "/images/semaine-litterature-dg.jpg",
+    date: "22 Novembre 2026",
+    author: "Direction CAMUQ & TWINS EMPIRE",
+    category: "Édition & Culture",
+    views: 185
+  },
   {
     id: "b-vacances-2026",
     title: "Retour sur l'Édition Spéciale Vacances Utiles (15 Juin - 13 Août 2026)",
@@ -807,6 +839,33 @@ export const FAQ_DATA: FaqItem[] = [
 ];
 
 export const EVENTS_DATA: EventItem[] = [
+  {
+    id: "semaine-litterature-francophone-2026",
+    title: "Ouverture de la Semaine de la Littérature Francophone",
+    category: "Rencontre Littéraire & Culturelle",
+    status: "ongoing",
+    badge: "Semaine en cours",
+    date: "22 Novembre 2026",
+    time: "Cérémonie d'ouverture & Balade littéraire",
+    location: "Lac municipal de Yaoundé, Cameroun",
+    targetAudience: "Acteurs du livre, étudiants en filière Édition, auteurs, éditeurs et public culturel",
+    summary: "Le 22 novembre 2026, au Lac municipal de Yaoundé, la Directrice Générale de CAMUQ AND TWINS EMPIRE Ltd a pris part à la cérémonie d'ouverture de la Semaine de la littérature francophone : balade littéraire avec les étudiants de la filière Édition, sieste littéraire en plein air et performance artistique aux sonorités traditionnelles.",
+    quote: "La littérature ne se limite pas aux pages d'un livre : elle se partage, s'écoute, se vit et se transmet. — Building an Empire Without Borders.",
+    description: [
+      "Le 22 novembre 2026, au Lac municipal de Yaoundé, la Directrice Générale de CAMUQ AND TWINS EMPIRE Ltd a pris part à la cérémonie d'ouverture de la Semaine de la littérature francophone.",
+      "Cette première journée a été marquée par une balade littéraire avec les étudiants de la filière Édition, suivie d'une expérience originale de sieste littéraire, invitant les participants à vivre la littérature autrement, dans un cadre convivial et en plein air.",
+      "Entre le discours d'ouverture de l'Institut français du Cameroun et une performance artistique mêlant narration et sonorités d'instruments traditionnels, les mots, les cultures et les arts se sont rencontrés pour offrir au public un moment riche en découvertes.",
+      "Une belle initiative qui rappelle que la littérature ne se limite pas aux pages d'un livre : elle se partage, s'écoute, se vit et se transmet.",
+      "CAMUQ AND TWINS EMPIRE Ltd salue cette initiative et souhaite une excellente semaine à tous les acteurs du livre, de l'édition et de la culture."
+    ],
+    image: "/images/semaine-litterature-dg.jpg",
+    gallery: [
+      "/images/semaine-litterature-dg.jpg",
+      "/images/semaine-litterature-discours.jpg",
+      "/images/semaine-litterature-sieste-artistique.jpg"
+    ],
+    priceBadge: "Partenariat Culturel & Édition"
+  },
   {
     id: "cafe-litteraire-cnps-2026",
     title: "Participation au 14ᵉ Café littéraire de la CNPS",

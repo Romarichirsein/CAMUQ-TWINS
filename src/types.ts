@@ -128,6 +128,7 @@ export interface EventItem {
   quote?: string;
   description: string[];
   image: string;
+  gallery?: string[];
   capacity?: string;
   priceBadge?: string;
 }
